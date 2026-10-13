@@ -206,3 +206,6 @@ Number of Children	하위 클래스 수	자식 수	객체 지향 지표 NOC. 한
 Overview	개요		프로젝트 개요 페이지 이름. "화면"은 붙이지 않습니다
 Long-lived Branch	장기 브랜치		
 Revision	리비전		SCM 리비전
+Badge	배지		프로젝트 배지
+High Impact	영향 높음		개요의 약자 표시는 상(High), 중(Medium), 하(Low)입니다
+Finding	발견 사항		
