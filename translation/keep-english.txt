@@ -22,3 +22,6 @@ pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCA
 
 # 줄 번호 약식 표기(L12)
 key issue.ncloc_x.short
+
+# 지표 이름으로 영문 그대로 두는 값
+pattern LCOM4

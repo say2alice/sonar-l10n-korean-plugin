@@ -189,3 +189,17 @@ New Code Definition	새 코드 정의
 Reference Branch	기준 브랜치	참조 브랜치	새 코드를 가르는 기준선이 되는 브랜치입니다. 새 코드 정의 방식
 Number of Days	일수		새 코드 정의 방식
 Specific Analysis	특정 분석		새 코드 정의 방식
+Lines of Code	코드 라인		주석을 제외한 코드 라인(ncloc)
+Cyclomatic Complexity	순환 복잡도		
+Cognitive Complexity	인지 복잡도		
+Rating	등급		A ~ E 등급
+Remediation Effort	수정 작업량		
+Debt Ratio	부채 비율		기술 부채 비율
+Uncovered	커버되지 않은		커버되지 않은 라인, 조건
+Lines to Cover	커버할 라인		
+Afferent Coupling	구심 결합도		짝은 Efferent Coupling(원심 결합도)입니다
+Tangle	얽힘		파일 얽힘, 패키지 얽힘
+Integration Test	통합 테스트		약어 IT는 그대로 둡니다
+Line	라인		코드의 줄. 라인 커버리지, 라인 번호, 라인별 등. "줄"은 다른 뜻(줄이다)으로도 쓰이므로 금지 표기로 두지 않습니다
+Statement	구문		코드의 statement
+Number of Children	하위 클래스 수	자식 수	객체 지향 지표 NOC. 한 클래스를 직접 상속하는 하위 클래스의 수입니다
