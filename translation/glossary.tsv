@@ -231,3 +231,6 @@ Mean Time to Resolve	평균 해결 시간		약어 MTTR은 그대로 둡니다
 Top List	상위 목록		대시보드 위젯의 시각화 방식
 Slice By	분할 기준		원형 차트를 조각으로 나누는 기준. Group By는 그룹 기준입니다
 Facet	패싯		
+Browse	탐색	브라우징	프로젝트 권한 이름. 다른 한국어 팩 다수의 표기입니다
+Public	공개	퍼블릭	프로젝트 공개 범위. 짝은 Private(비공개)입니다
+Sparkline	스파크라인		
