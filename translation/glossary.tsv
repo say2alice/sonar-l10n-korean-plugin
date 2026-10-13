@@ -140,7 +140,7 @@ In Review	검토 중
 Reviewed	검토됨		
 Main Code	메인 코드		Test Code는 테스트 코드입니다
 MQR Mode	다중 품질 규칙(MQR) 모드		Multi-Quality Rule Mode
-Standard Experience	표준 환경		MQR 모드와 짝인 모드 이름입니다
+Standard Experience	표준 환경	표준 경험	MQR 모드와 짝인 동작 방식의 이름이라 경험보다 환경이 뜻에 맞습니다
 Agent	에이전트		
 Priority	우선순위		
 Action Plan	실행 계획		
@@ -186,6 +186,6 @@ Dependency Risk	의존성 위험
 Qualify	자격 부여		AI Code Assurance 자격. 짝은 Disqualify(자격 해제)입니다
 Guardrail	안전장치		
 New Code Definition	새 코드 정의		
-Reference Branch	기준 브랜치		새 코드 정의 방식
+Reference Branch	기준 브랜치	참조 브랜치	새 코드를 가르는 기준선이 되는 브랜치입니다. 새 코드 정의 방식
 Number of Days	일수		새 코드 정의 방식
 Specific Analysis	특정 분석		새 코드 정의 방식
