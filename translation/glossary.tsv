@@ -153,3 +153,14 @@ Detection Cause	감지 원인
 Compliance	규정 준수		
 Prioritized Rule	우선순위 규칙		
 Display Mode	표시 모드		
+Built-in	기본 제공		기본 제공 품질 프로필 등
+Custom Rule	사용자 지정 규칙		
+Rule Template	규칙 템플릿		
+Deactivate	비활성화		동작 낱말. 짝은 Activate(활성화)입니다
+Reactivate	다시 활성화		동작 낱말
+Inherited	상속됨		
+Override	재정의		상태 Overridden은 재정의됨입니다
+Extended Description	확장 설명		
+Repository	저장소		규칙 저장소
+Characteristic	특성		
+Available Since	사용 가능 시점		
