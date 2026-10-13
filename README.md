@@ -4,7 +4,8 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 ## 소개
 
-SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹앱 저장소의 `default.ts`로 옮겨졌고, `core.properties`는 머리말에 레거시 파일이라고 적혀 있습니다. Community Build 26.10 기준으로 웹앱의 키 8,509개 중 3,737개는 `core.properties`에 없어서, `core_ko.properties`만 번역하는 언어팩(Marketplace의 한국어팩 `l10nko` 등)으로는 그 문구가 한국어로 표시되지 않습니다. 이 언어팩은 웹앱 `default.ts`의 키 전체를 플러그인 자체 번들에 담아 번역합니다.
+SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹앱 저장소의 `default.ts`로 변경되었습니다.Community Build 26.10 기준으로 웹앱의 키 8,509개 중 3,737개는 `core.properties`에 없어서, `core_ko.properties`만 번역하는 언어팩(Marketplace의 한국어팩 `l10nko` 등)으로는 그 문구가 한국어로 표시되지 않습니다. 이 언어팩은 웹앱 `default.ts`의 키 전체를 플러그인 자체 번들에 담아 번역합니다.
+
 
 | 항목 | 내용 |
 | --- | --- |
@@ -26,8 +27,6 @@ jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니
 ├── scripts/
 │   ├── english-bundle.sh           # 영문 번들 생성기 실행
 │   ├── translation-sheet.sh        # 번역 대조표 생성
-│   ├── key-usage.sh                # 키가 쓰이는 웹앱 소스 찾기
-│   ├── korean-pack-compare.sh      # 다른 한국어 팩과 번역 비교
 │   └── run-sonarqube.sh            # 로컬 SonarQube 컨테이너에 jar 설치
 ├── translation/
 │   ├── glossary.tsv                # 용어집
@@ -43,7 +42,6 @@ jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니
         └── java/.../korean/
             ├── generator/          # 영문 번들 생성기
             ├── TranslationSheet.java  # 번역 대조표 도구
-            ├── KoreanPackComparison.java  # 한국어 팩 비교 도구
             └── *Test.java          # 번들 검사
 ```
 
@@ -87,7 +85,7 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 | `unzip`, `sha256sum`(또는 `shasum`) | Maven Wrapper가 Maven 배포본을 처음 내려받아 검증할 때. Maven은 설치하지 않습니다 |
 | Docker, `curl` | 컨테이너에 설치해 확인할 때 |
 | GitHub 접속 | 영문 번들 생성기가 웹앱 원본을 받을 때. 빌드에는 필요 없습니다 |
-| 참고 자료 클론 | 번역 보조 도구가 문서 저장소의 `local/reference/`에서 읽습니다. 일본어 팩과 러시아어 팩은 번역 대조표, 웹앱 저장소는 키 쓰임 검색, 다른 한국어 팩은 한국어 팩 비교에 씁니다. 받을 저장소와 자리는 문서 저장소의 번역 작업 단위 §3에 있습니다 |
+| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 문서 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
 
 `~/.m2/toolchains.xml`에는 JDK 25 항목이 있어야 합니다. `jdkHome`만 PC에 맞게 바꿉니다.
 
@@ -148,22 +146,6 @@ CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행�
     ```
 
     `BUILD SUCCESS`와 `미번역 키 <수> / <전체 키 수>`가 나오고, 목록이 `target/untranslated-keys.txt`에 생겨야 합니다. 단위를 마치면 1의 명령을 다시 실행해 단위의 미번역이 0키인지 확인합니다.
-
-뜻이 여럿인 키는 웹앱 소스에서 쓰이는 화면을 찾아 번역을 정합니다.
-
-```bash
-scripts/key-usage.sh status
-```
-
-키마다 `== <키>` 아래에 쓰이는 파일과 줄이 나와야 합니다. 찾지 못하면 `(쓰임을 찾지 못했습니다)`가 나옵니다.
-
-단위를 마치면 다른 한국어 팩과 비교해 낱말 선택을 검토합니다. 바꿀 낱말은 사용자가 정하고 용어집에 적습니다.
-
-```bash
-scripts/korean-pack-compare.sh common -
-```
-
-팩마다 같은 번역의 수와, 다른 계열 두 곳 이상이 같은 번역을 쓰는데 우리와 다른 키의 목록이 나와야 합니다. 전체 비교표는 `target/korean-pack-compare-common.tsv`에 생깁니다.
 
 ### 기준 원본 갱신
 

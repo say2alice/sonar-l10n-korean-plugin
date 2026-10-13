@@ -103,3 +103,13 @@ Retry	다시 시도		동작 낱말
 Software Quality	소프트웨어 품질		
 Connected Mode	연결 모드		SonarQube for IDE를 서버에 연결해 쓰는 방식입니다
 Show More	더 보기		짝은 Show Less(적게 보기)입니다
+To Review	검토 필요		보안 핫스팟 상태
+Acknowledged	확인됨		보안 핫스팟 상태
+Fixed	수정됨		보안 핫스팟과 이슈의 상태
+Safe	안전		보안 핫스팟 상태
+Review Priority	검토 우선순위		보안 핫스팟의 위험 노출도입니다
+Comment	댓글	코멘트	
+Activity	활동		
+Location	위치		
+Period	기간		
+Assigned to me	내 담당		필터 이름
