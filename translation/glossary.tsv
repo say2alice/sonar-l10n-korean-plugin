@@ -103,3 +103,68 @@ Retry	다시 시도		동작 낱말
 Software Quality	소프트웨어 품질		
 Connected Mode	연결 모드		SonarQube for IDE를 서버에 연결해 쓰는 방식입니다
 Show More	더 보기		짝은 Show Less(적게 보기)입니다
+To Review	검토 필요		보안 핫스팟 상태
+Acknowledged	확인됨		보안 핫스팟 상태
+Fixed	수정됨		보안 핫스팟과 이슈의 상태
+Safe	안전		보안 핫스팟 상태
+Review Priority	검토 우선순위		보안 핫스팟의 위험 노출도입니다
+Comment	댓글	코멘트	
+Activity	활동		
+Location	위치		
+Period	기간		
+Assigned to me	내 담당		필터 이름
+Assign	할당		동작 낱말. 이슈를 맡은 사람은 Assignee(담당자)입니다
+Won't Fix	수정 안 함		이슈 상태
+Quick Fix	빠른 수정		
+Sandbox	샌드박스		품질 게이트에 영향을 주지 않는 이슈를 모아 두는 상태입니다
+Bug	버그		이슈 유형
+Code Attribute	코드 속성		Clean Code 속성입니다
+Software Quality Impact	소프트웨어 품질 영향		
+Transition	상태 전환		
+Reopening Date	열림 전환 예정일	다시 열 날짜	샌드박스 이슈가 열림 상태로 자동 전환되는 날입니다. 같은 필드인 Snooze Date도 같습니다
+Consistency	일관성		Clean Code 속성 범주
+Intentionality	의도성		Clean Code 속성 범주
+Adaptability	적응성		Clean Code 속성 범주
+Responsibility	책임성		Clean Code 속성 범주
+Confirmed	확인됨		이슈 상태. 보안 핫스팟의 Acknowledged도 확인됨입니다
+Reopened	다시 열림		이슈 상태
+Resolved	해결됨		이슈 상태
+In Sandbox	샌드박스		이슈 상태
+Effort	작업량		이슈를 고치는 데 드는 시간입니다
+Execution Flow	실행 흐름		
+Data Flow	데이터 흐름		
+Variant	변형		
+Removed	제거됨		이슈 해결 방식
+Closed	닫힘		이슈 상태
+In Review	검토 중		
+Reviewed	검토됨		
+Main Code	메인 코드		Test Code는 테스트 코드입니다
+MQR Mode	다중 품질 규칙(MQR) 모드		Multi-Quality Rule Mode
+Standard Experience	표준 환경		MQR 모드와 짝인 모드 이름입니다
+Agent	에이전트		
+Priority	우선순위		
+Action Plan	실행 계획		
+AI CodeFix	AI CodeFix		기능 이름이므로 영문으로 둡니다. 일반명 AI Fix는 AI 수정입니다
+Custom	사용자 지정		Customize와 같습니다
+Scope	범위		
+Module	모듈		
+Issue Lifecycle	이슈 수명 주기		
+Detection Cause	감지 원인		
+Compliance	규정 준수		
+Prioritized Rule	우선순위 규칙		
+Display Mode	표시 모드		
+Built-in	기본 제공		기본 제공 품질 프로필 등
+Custom Rule	사용자 지정 규칙		
+Rule Template	규칙 템플릿		
+Deactivate	비활성화		동작 낱말. 짝은 Activate(활성화)입니다
+Reactivate	다시 활성화		동작 낱말
+Inherited	상속됨		
+Override	재정의		상태 Overridden은 재정의됨입니다
+Extended Description	확장 설명		
+Repository	저장소		규칙 저장소
+Characteristic	특성		
+Available Since	사용 가능 시점		
+High	높음		심각도. Medium은 보통, Low는 낮음입니다
+Work Item	작업 항목		Jira의 작업 항목
+Push to Jira	Jira로 보내기		
+Remediation Function	수정 함수		

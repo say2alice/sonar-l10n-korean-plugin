@@ -4,12 +4,14 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 ## 소개
 
-SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹앱 저장소의 `default.ts`로 옮겨졌고, `core.properties`는 머리말에 레거시 파일이라고 적혀 있습니다. Community Build 26.10 기준으로 웹앱의 키 8,509개 중 3,737개는 `core.properties`에 없어서, `core_ko.properties`만 번역하는 언어팩(Marketplace의 한국어팩 `l10nko` 등)으로는 그 문구가 한국어로 표시되지 않습니다. 이 언어팩은 웹앱 `default.ts`의 키 전체를 플러그인 자체 번들에 담아 번역합니다.
+SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹앱 저장소의 `default.ts`로 변경되었습니다.
+이 언어팩은 웹앱 `default.ts`의 키 전체를 플러그인 자체 번들에 담아 번역합니다.
+
 
 | 항목 | 내용 |
 | --- | --- |
-| 지원 범위 | Community Build 25.12 이상. 최신 버전 기준으로 만든 jar 하나로 지원합니다 |
-| 버전 | `<기준 Community Build 메이저>.<마이너>.<재릴리스 번호>`. 예를 들어 `26.10.0`은 26.10의 웹앱 문구를 기준으로 번역한 첫 릴리스입니다 |
+| 지원 범위 | Community Build 25.12 이상 |
+| 버전 | `<기준 Community Build 메이저>.<마이너>.<재릴리스 번호>` |
 | 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
 | 상태 | 번역 진행 중이며 첫 릴리스 전입니다. 설치와 사용 방법은 첫 릴리스 때 이 문서에 더합니다 |
 
@@ -103,8 +105,6 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 ```
 
 ## 작업 방식
-
-`develop`이 통합 지점이고 `main` 병합이 곧 릴리스입니다. 작업은 `develop`에서 `feature/*` 브랜치를 만들어 하고, 병합 요청으로 `develop`에 병합합니다. README처럼 문서만 고칠 때는 `develop`에 직접 커밋합니다. 릴리스는 `develop`을 `main`에 병합하고 `v<버전>` 태그를 붙입니다. 커밋 메시지, 병합 요청 본문, 커밋 정리 규칙은 문서 저장소의 Git 브랜치 전략에 있습니다.
 
 CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행합니다. 미번역 키는 번역 중에는 보고만 하고, `main` 대상 병합 요청에서만 실패로 처리합니다.
 
