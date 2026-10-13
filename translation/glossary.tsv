@@ -1,0 +1,28 @@
+english	korean	forbidden	note
+Issue	이슈		기존 팩 모두
+Rule	규칙	룰	기존 팩 모두
+Quality Gate	품질 게이트	품질게이트|퀄리티 게이트	기존 팩 모두
+Quality Profile	품질 프로필	품질 프로파일	외래어 표기법. 기존 팩은 프로파일과 프로필로 갈립니다
+Security Hotspot	보안 핫스팟	핫스폿	기존 팩 모두. 외래어 표기법과 다른 관용 표기입니다
+Measure	측정값	측정치	기존 팩 다수
+Metric	지표	메트릭	기능 일반명은 번역합니다. 기존 팩은 메트릭과 지표로 갈립니다
+Branch	브랜치		기존 팩 모두
+Pull Request	풀 리퀘스트	풀리퀘스트|끌어오기 요청	기존 팩 모두
+New Code	새 코드	신규 코드	기존 팩 다수
+Overall Code	전체 코드		기존 팩 모두
+Maintainability	유지보수성	유지 보수성|유지관리성	기존 팩 다수
+Reliability	신뢰성		기존 팩 모두
+Security	보안	보안성|시큐리티	기존 팩 다수
+Coverage	커버리지		기존 팩 모두
+Duplications	중복	중복코드	기존 팩 다수
+Technical Debt	기술 부채	기술 채무|기술적 부채	기존 팩 모두
+Severity	심각도		기존 팩 모두
+Vulnerability	취약점		기존 팩 모두
+Code Smell	Code Smell	코드 스멜|코드 악취|코드 냄새	기존 팩에서 세 가지로 갈려 널리 쓰이는 표기가 없으므로 영문으로 씁니다(번역 지침 §3)
+Application	애플리케이션	어플리케이션	널리 쓰이는 음차 표기. 외래어 표기법을 따릅니다
+Portfolio	포트폴리오		널리 쓰이는 음차 표기. 기존 팩 다수
+False Positive	오탐	거짓 양성|거짓 긍정	기존 팩 다수
+Assignee	담당자		기존 팩 모두
+Webhook	웹훅		기존 팩. 나머지 팩은 영문으로 두었습니다
+Administration	관리		기존 팩 다수
+Accepted	수락됨	수용됨	기존 팩 다수

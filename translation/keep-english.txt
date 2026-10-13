@@ -1,0 +1,12 @@
+# 번역하지 않고 영문 그대로 두는 값의 규칙입니다. 형식과 기준은 문서 저장소 번역 지침 §5에 있습니다.
+# prefix <키 접두사>, pattern <값 전체와 일치하는 정규식>, key <키> 가운데 하나를 한 줄에 적습니다.
+
+# 영문자가 없는 값(인자만 있는 값, 기호, 빈 값)
+pattern [^A-Za-z]*
+
+# 제품명과 상표만으로 된 값
+pattern (SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
+pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins)
+
+# 용어집에서 영문으로 두기로 한 용어만으로 된 값
+pattern Code Smells?
