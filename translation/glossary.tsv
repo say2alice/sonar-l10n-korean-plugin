@@ -227,3 +227,7 @@ Section	섹션		대시보드에서 위젯을 묶는 단위
 Visualization	시각화		위젯의 표시 방식(차트, 상위 목록 등)
 Trend	추세	트렌드	
 Legend	범례		
+Mean Time to Resolve	평균 해결 시간		약어 MTTR은 그대로 둡니다
+Top List	상위 목록		대시보드 위젯의 시각화 방식
+Slice By	분할 기준		원형 차트를 조각으로 나누는 기준. Group By는 그룹 기준입니다
+Facet	패싯		
