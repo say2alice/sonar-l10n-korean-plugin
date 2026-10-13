@@ -176,3 +176,7 @@ Condition	조건		품질 게이트 조건
 Parent	상위		상위 프로필. 하위는 Descendant(하위 프로필)입니다
 Project Version	프로젝트 버전		
 Previous Version	이전 버전		새 코드 정의 방식
+Descendant	하위 프로필		상속하는 프로필. 상위는 Parent입니다
+Sonar way	Sonar way		기본 제공 품질 프로필과 품질 게이트의 이름이므로 영문으로 둡니다
+Exporter	내보내기 도구		
+Grant	부여		권한을 부여하는 동작
