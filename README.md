@@ -2,6 +2,59 @@
 
 SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 플러그인입니다.
 
+## 구성
+
+jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니다. 나머지는 번역 파일을 만들고 검사하는 도구입니다.
+
+```text
+├── pom.xml                         # 빌드 설정. 기준 웹앱 태그 등 기준 버전은 이 파일의 속성에만 둡니다
+├── mvnw, .mvn/wrapper/             # Maven Wrapper
+├── .gitlab-ci.yml                  # CI 검증 잡
+├── scripts/
+│   ├── english-bundle.sh           # 영문 번들 생성기 실행
+│   ├── translation-sheet.sh        # 번역 대조표 생성
+│   └── run-sonarqube.sh            # 로컬 SonarQube 컨테이너에 jar 설치
+├── translation/
+│   ├── glossary.tsv                # 용어집
+│   └── keep-english.txt            # 영문 그대로 두는 값의 규칙
+└── src/
+    ├── main/                       # jar에 들어가는 부분
+    │   ├── java/.../KoreanPackPlugin.java
+    │   └── resources/org/sonar/l10n/
+    │       ├── l10nkorean.properties
+    │       ├── l10nkorean_ko.properties
+    │       └── core_ko.properties
+    └── test/                       # 번들 검사와 도구. jar에 들어가지 않습니다
+        └── java/.../korean/
+            ├── generator/          # 영문 번들 생성기
+            ├── TranslationSheet.java  # 번역 대조표 도구
+            └── *Test.java          # 번들 검사
+```
+
+jar에 들어가는 파일입니다.
+
+| 파일 | 역할 | 고치는 방법 |
+| --- | --- | --- |
+| `KoreanPackPlugin.java` | SonarQube가 플러그인을 적재하는 진입점입니다. 확장을 등록하지 않습니다 | 바꿀 일이 거의 없습니다 |
+| `l10nkorean.properties` | 영어 기본 번들입니다. 서버가 이 파일로 번들의 키를 등록합니다 | 영문 번들 생성기가 만듭니다. 손으로 고치지 않습니다 |
+| `l10nkorean_ko.properties` | 화면에 나오는 한국어 번역입니다. 번역하지 않은 키는 영문 값입니다 | 값만 고칩니다. 키와 순서는 영문 번들 생성기가 맞춥니다 |
+| `core_ko.properties` | 서버가 한국어 로캘로 응답하게 합니다. 키를 넣지 않습니다 | 고치지 않습니다 |
+
+번역의 원본은 서버의 `core.properties`가 아니라 웹앱의 `default.ts`이므로, 번역을 `core_ko.properties`가 아닌 플러그인 자체 번들 `l10nkorean`에 둡니다.
+
+도구는 jar에 넣지 않으면서 빌드와 같은 JDK로 실행하려고 테스트 소스에 두며, `scripts/`의 스크립트가 실행합니다. 번들 검사는 `./mvnw verify`에 포함되어 다음을 확인합니다.
+
+| 검사 | 확인하는 것 |
+| --- | --- |
+| 번들 동기화 | 번역 파일과 영어 기본 번들의 키가 같습니다 |
+| 기준 태그 | 영어 기본 번들을 만든 웹앱 태그가 `pom.xml`의 기준 태그와 같습니다 |
+| 번역 품질 | 인자, ICU 구문, 태그가 원문과 같습니다 |
+| 미번역 | 미번역 키의 수와 목록을 `target/untranslated-keys.txt`에 씁니다. `-Dtranslation.requireComplete=true`일 때만 실패합니다 |
+| 용어 | 번역에 용어집의 금지 표기가 없습니다 |
+| 플러그인, `core_ko.properties` | 확장을 등록하지 않고, `core_ko.properties`에 키가 없습니다 |
+
+설계와 결정의 근거는 문서 저장소의 아키텍처와 결정 기록(ADR)에 있습니다.
+
 ## 빌드
 
 JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 설치하지 않고 Wrapper로 실행합니다. Wrapper가 Maven 배포본을 처음 내려받을 때 `unzip`과 `sha256sum`(또는 `shasum`)이 필요합니다.
