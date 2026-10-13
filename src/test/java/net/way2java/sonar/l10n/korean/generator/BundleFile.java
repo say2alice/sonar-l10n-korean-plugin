@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -38,6 +39,28 @@ public final class BundleFile {
       throw new UncheckedIOException(e);
     }
     return bundle;
+  }
+
+  /** {@link #read}와 같이 읽되 파일에 적힌 키 순서를 지킵니다. 파일이 없으면 빈 맵을 돌려줍니다. */
+  public static Map<String, String> readOrdered(Path file) {
+    Map<String, String> ordered = new LinkedHashMap<>();
+    if (Files.notExists(file)) {
+      return ordered;
+    }
+    // Properties.load()가 항목마다 put()을 부르므로, 이스케이프 해석은 Properties에 맡기고 순서만 따로 받습니다
+    Properties bundle = new Properties() {
+      @Override
+      public synchronized Object put(Object key, Object value) {
+        ordered.put((String) key, (String) value);
+        return super.put(key, value);
+      }
+    };
+    try (Reader in = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+      bundle.load(in);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+    return ordered;
   }
 
   /** 머리말 줄마다 `# `를 붙이고, 키와 값은 주어진 순서로 한 줄에 하나씩 씁니다. */

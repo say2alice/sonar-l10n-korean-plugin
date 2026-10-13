@@ -188,7 +188,7 @@
       </plugin>
 
       <plugin>
-        <!-- 영문 번들 생성기를 Toolchains의 JDK로 실행합니다. 빌드 단계에는 묶지 않고 scripts/english-bundle.sh가 호출합니다 -->
+        <!-- 영문 번들 생성기와 번역 대조표 도구를 Toolchains의 JDK로 실행합니다. 빌드 단계에는 묶지 않고 scripts/의 스크립트가 호출합니다 -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>${exec-maven-plugin.version}</version>
@@ -222,6 +222,19 @@
                 <argument>${sonarqube.webapp.messages.path}</argument>
                 <argument>${diff.from}</argument>
                 <argument>${diff.to}</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>sheet</id>
+            <configuration>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>net.way2java.sonar.l10n.korean.TranslationSheet</argument>
+                <argument>${sheet.unit}</argument>
+                <argument>${sheet.reference}</argument>
+                <argument>${sheet.prefixes}</argument>
               </arguments>
             </configuration>
           </execution>
