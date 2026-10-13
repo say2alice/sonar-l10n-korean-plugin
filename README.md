@@ -16,7 +16,7 @@ JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 �
 
 ## 로컬 실행
 
-Docker가 필요합니다. 빌드한 jar를 공식 이미지의 컨테이너에 설치합니다. 인자는 이미지 태그이며 확인할 버전에 맞게 바꿉니다.
+Docker와 `curl`이 필요합니다. 빌드한 jar를 공식 이미지의 컨테이너에 설치합니다. 인자는 이미지 태그이며 확인할 버전에 맞게 바꿉니다.
 
 1. 컨테이너를 실행하고 jar를 설치합니다.
 
@@ -36,4 +36,4 @@ Docker가 필요합니다. 빌드한 jar를 공식 이미지의 컨테이너에 
 
 ## 라이선스
 
-GNU LGPL v3입니다. 전문은 [LICENSE](LICENSE)에 있습니다.
+GNU LGPL v3입니다. 전문은 [LICENSE](LICENSE)에 있습니다. LGPL v3는 GPL v3를 보충하는 라이선스이므로 GPL v3 전문을 [LICENSE.GPL](LICENSE.GPL)에 함께 둡니다.
