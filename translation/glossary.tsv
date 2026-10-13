@@ -219,3 +219,6 @@ Main Branch	메인 브랜치	주 브랜치
 Dashboard	대시보드		
 Duplicate	복제		동작 낱말. 대시보드를 복사본으로 만드는 동작입니다. 중복(Duplications)과 구분합니다
 Baseline	기준선	베이스라인	새 코드를 가르는 기준이 되는 분석이나 브랜치입니다
+Remediation Agent	Remediation Agent	수정 에이전트	기능 이름이므로 영문으로 둡니다. 일반명 Agent는 에이전트입니다. 사용자 결정
+Project Coverage	프로젝트 적용 범위		프로젝트를 가져오고 분석한 현황입니다. 코드 커버리지(Coverage)와 구분합니다
+Perspective	관점		프로젝트 목록의 보기 방식
