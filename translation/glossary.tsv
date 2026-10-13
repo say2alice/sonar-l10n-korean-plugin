@@ -222,3 +222,8 @@ Baseline	기준선	베이스라인	새 코드를 가르는 기준이 되는 분�
 Remediation Agent	Remediation Agent	수정 에이전트	기능 이름이므로 영문으로 둡니다. 일반명 Agent는 에이전트입니다. 사용자 결정
 Project Coverage	프로젝트 적용 범위		프로젝트를 가져오고 분석한 현황입니다. 코드 커버리지(Coverage)와 구분합니다
 Perspective	관점		프로젝트 목록의 보기 방식
+Widget	위젯		대시보드의 구성 요소
+Section	섹션		대시보드에서 위젯을 묶는 단위
+Visualization	시각화		위젯의 표시 방식(차트, 상위 목록 등)
+Trend	추세	트렌드	
+Legend	범례		
