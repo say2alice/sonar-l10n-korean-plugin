@@ -164,3 +164,7 @@ Extended Description	확장 설명
 Repository	저장소		규칙 저장소
 Characteristic	특성		
 Available Since	사용 가능 시점		
+High	높음		심각도. Medium은 보통, Low는 낮음입니다
+Work Item	작업 항목		Jira의 작업 항목
+Push to Jira	Jira로 보내기		
+Remediation Function	수정 함수		
