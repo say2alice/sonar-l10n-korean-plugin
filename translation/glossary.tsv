@@ -180,3 +180,5 @@ Descendant	하위 프로필		상속하는 프로필. 상위는 Parent입니다
 Sonar way	Sonar way		기본 제공 품질 프로필과 품질 게이트의 이름이므로 영문으로 둡니다
 Exporter	내보내기 도구		
 Grant	부여		권한을 부여하는 동작
+Operator	연산자		품질 게이트 조건의 연산자. Is less than은 미만, Is greater than은 초과입니다
+Threshold	임계값		
