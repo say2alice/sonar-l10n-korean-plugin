@@ -122,3 +122,11 @@ Code Attribute	코드 속성		Clean Code 속성입니다
 Software Quality Impact	소프트웨어 품질 영향		
 Transition	상태 전환		
 Reopening Date	다시 열 날짜		
+Consistency	일관성		Clean Code 속성 범주
+Intentionality	의도성		Clean Code 속성 범주
+Adaptability	적응성		Clean Code 속성 범주
+Responsibility	책임성		Clean Code 속성 범주
+Confirmed	확인됨		이슈 상태. 보안 핫스팟의 Acknowledged도 확인됨입니다
+Reopened	다시 열림		이슈 상태
+Resolved	해결됨		이슈 상태
+In Sandbox	샌드박스		이슈 상태
