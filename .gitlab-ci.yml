@@ -1,0 +1,31 @@
+# 병합 요청과 develop, main 푸시에서 ./mvnw verify를 실행합니다.
+# 설계: 문서 저장소 docs/design/development-environment.md §6
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH == "main"
+
+variables:
+  # 캐시는 프로젝트 폴더 안만 담으므로 Wrapper 배포본과 로컬 저장소를 이곳으로 옮깁니다
+  MAVEN_USER_HOME: "$CI_PROJECT_DIR/.m2"
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+verify:
+  image: eclipse-temurin:25-jdk
+  tags:
+    - shared-docker
+  cache:
+    key: maven
+    paths:
+      - .m2/repository
+      - .m2/wrapper
+  before_script:
+    # mvnw는 unzip이 없으면 .tar.gz를 받아 .zip 기준으로 고정한 SHA-256 검증에 실패합니다
+    - apt-get update -qq && apt-get install -y -qq --no-install-recommends unzip > /dev/null
+    # 컴파일과 테스트의 JDK는 Toolchains로 고르므로 이미지의 JDK 25를 등록합니다
+    - mkdir -p "$HOME/.m2"
+    - >-
+      printf '<toolchains><toolchain><type>jdk</type><provides><version>25</version></provides><configuration><jdkHome>%s</jdkHome></configuration></toolchain></toolchains>\n'
+      "$JAVA_HOME" > "$HOME/.m2/toolchains.xml"
+  script:
+    - ./mvnw -B verify
