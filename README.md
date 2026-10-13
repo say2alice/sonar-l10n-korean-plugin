@@ -2,6 +2,19 @@
 
 SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 플러그인입니다.
 
+## 소개
+
+SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹앱 저장소의 `default.ts`로 옮겨졌고, `core.properties`는 머리말에 레거시 파일이라고 적혀 있습니다. Community Build 26.10 기준으로 웹앱의 키 8,509개 중 3,737개는 `core.properties`에 없어서, `core_ko.properties`만 번역하는 언어팩(Marketplace의 한국어팩 `l10nko` 등)으로는 그 문구가 한국어로 표시되지 않습니다. 이 언어팩은 웹앱 `default.ts`의 키 전체를 플러그인 자체 번들에 담아 번역합니다.
+
+| 항목 | 내용 |
+| --- | --- |
+| 지원 범위 | Community Build 25.12 이상. 최신 버전 기준으로 만든 jar 하나로 지원합니다 |
+| 버전 | `<기준 Community Build 메이저>.<마이너>.<재릴리스 번호>`. 예를 들어 `26.10.0`은 26.10의 웹앱 문구를 기준으로 번역한 첫 릴리스입니다 |
+| 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
+| 상태 | 번역 진행 중이며 첫 릴리스 전입니다. 설치와 사용 방법은 첫 릴리스 때 이 문서에 더합니다 |
+
+설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
+
 ## 구성
 
 jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니다. 나머지는 번역 파일을 만들고 검사하는 도구입니다.
@@ -55,9 +68,47 @@ jar에 들어가는 파일입니다.
 
 설계와 결정의 근거는 문서 저장소의 아키텍처와 결정 기록(ADR)에 있습니다.
 
-## 빌드
+## 개발 환경
 
-JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 설치하지 않고 Wrapper로 실행합니다. Wrapper가 Maven 배포본을 처음 내려받을 때 `unzip`과 `sha256sum`(또는 `shasum`)이 필요합니다.
+이 저장소는 문서 저장소 안에 클론해 작업합니다. 번역 대조표 도구가 문서 저장소의 참고 자료를 읽고, 작업 단위와 번역 규칙도 문서 저장소에 있기 때문입니다.
+
+```bash
+git clone https://gitlab.way2java.net/project/sonar-l10n-ko-docs.git
+cd sonar-l10n-ko-docs
+git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
+```
+
+| 요건 | 쓰는 곳 |
+| --- | --- |
+| JDK 25 | 컴파일과 테스트. `~/.m2/toolchains.xml`에 등록합니다. 셸의 기본 JDK는 바꾸지 않아도 됩니다 |
+| `unzip`, `sha256sum`(또는 `shasum`) | Maven Wrapper가 Maven 배포본을 처음 내려받아 검증할 때. Maven은 설치하지 않습니다 |
+| Docker, `curl` | 컨테이너에 설치해 확인할 때 |
+| GitHub 접속 | 영문 번들 생성기가 웹앱 원본을 받을 때. 빌드에는 필요 없습니다 |
+| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 문서 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
+
+`~/.m2/toolchains.xml`에는 JDK 25 항목이 있어야 합니다. `jdkHome`만 PC에 맞게 바꿉니다.
+
+```xml
+<toolchains>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <version>25</version>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/jdk25</jdkHome>
+    </configuration>
+  </toolchain>
+</toolchains>
+```
+
+## 작업 방식
+
+`develop`이 통합 지점이고 `main` 병합이 곧 릴리스입니다. 작업은 `develop`에서 `feature/*` 브랜치를 만들어 하고, 병합 요청으로 `develop`에 병합합니다. README처럼 문서만 고칠 때는 `develop`에 직접 커밋합니다. 릴리스는 `develop`을 `main`에 병합하고 `v<버전>` 태그를 붙입니다. 커밋 메시지, 병합 요청 본문, 커밋 정리 규칙은 문서 저장소의 Git 브랜치 전략에 있습니다.
+
+CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행합니다. 미번역 키는 번역 중에는 보고만 하고, `main` 대상 병합 요청에서만 실패로 처리합니다.
+
+### 빌드
 
 1. jar를 만듭니다.
 
@@ -67,9 +118,15 @@ JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 �
 
     `BUILD SUCCESS`가 나오고 `target/sonar-l10n-korean-plugin-<버전>.jar`가 생겨야 합니다.
 
-## 번역
+### 번역
 
-번역은 `src/main/resources/org/sonar/l10n/l10nkorean_ko.properties`의 값을 고칩니다. 키와 순서는 영문 번들 생성기가 맞추므로 손으로 바꾸지 않습니다. 번역 규칙과 용어는 문서 저장소의 번역 지침, 용어집은 `translation/glossary.tsv`, 영문 그대로 두는 값의 규칙은 `translation/keep-english.txt`에 있습니다.
+번역은 작업 단위로 나눠 합니다. 작업 단위는 키 접두사(키의 첫 `.` 앞부분)의 묶음이며, 단위마다 `feature/translate-<단위>` 브랜치와 병합 요청 하나입니다. 단위 목록과 접두사, 단위마다 할 일은 문서 저장소의 번역 작업 단위에, 문체와 표기 규칙은 번역 지침에 있습니다.
+
+| 파일 | 고치는 때 |
+| --- | --- |
+| `src/main/resources/org/sonar/l10n/l10nkorean_ko.properties` | 값을 번역할 때. 키와 순서는 영문 번들 생성기가 맞추므로 손으로 바꾸지 않습니다 |
+| `translation/glossary.tsv` | 새 용어를 정했을 때. 번역과 같은 병합 요청에 넣습니다 |
+| `translation/keep-english.txt` | 값 전체를 영문 그대로 두기로 했을 때. 규칙이 없으면 미번역으로 보고됩니다 |
 
 1. 번역 작업 단위의 대조표를 만듭니다. 인자는 단위 이름과 키 접두사이며 `-`는 점이 없는 키입니다. 단위별 접두사는 문서 저장소의 번역 작업 단위에 있습니다.
 
@@ -79,15 +136,17 @@ JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 �
 
     `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 문서 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
 
-2. 빌드해 미번역 키를 확인합니다.
+2. 대조표를 보며 단위의 값을 약 100키씩 묶어 번역합니다.
+
+3. 묶음마다 빌드해 검사를 통과하면 커밋합니다.
 
     ```bash
     ./mvnw verify
     ```
 
-    `미번역 키 <수> / <전체 키 수>`가 나오고, 목록이 `target/untranslated-keys.txt`에 생겨야 합니다.
+    `BUILD SUCCESS`와 `미번역 키 <수> / <전체 키 수>`가 나오고, 목록이 `target/untranslated-keys.txt`에 생겨야 합니다. 단위를 마치면 1의 명령을 다시 실행해 단위의 미번역이 0키인지 확인합니다.
 
-## 기준 원본 갱신
+### 기준 원본 갱신
 
 기준 원본은 `pom.xml`의 `sonarqube.webapp.tag`, `sonarqube.webapp.messages.path`입니다. 이 값을 바꾼 뒤 영어 기본 번들을 다시 만듭니다. GitHub에 접속할 수 있어야 합니다. 전체 절차는 문서 저장소의 기준 원본 갱신 절차에 있습니다.
 
@@ -107,7 +166,7 @@ JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 �
 
     `원본: <태그> <키 수>키`로 시작하는 세 줄이 나와야 합니다.
 
-## Docker 컨테이너에 설치해 확인
+### Docker 컨테이너에 설치해 확인
 
 개발 중 화면 확인과 릴리스 전 호환 확인(지원 하한 25.12와 최신 버전)에 씁니다. 사용자용 설치 안내가 아닙니다.
 
