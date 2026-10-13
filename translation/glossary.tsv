@@ -145,3 +145,11 @@ Agent	에이전트
 Priority	우선순위		
 Action Plan	실행 계획		
 AI CodeFix	AI CodeFix		기능 이름이므로 영문으로 둡니다. 일반명 AI Fix는 AI 수정입니다
+Custom	사용자 지정		Customize와 같습니다
+Scope	범위		
+Module	모듈		
+Issue Lifecycle	이슈 수명 주기		
+Detection Cause	감지 원인		
+Compliance	규정 준수		
+Prioritized Rule	우선순위 규칙		
+Display Mode	표시 모드		
