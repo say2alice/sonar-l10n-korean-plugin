@@ -26,3 +26,29 @@ Assignee	담당자		기존 팩 모두
 Webhook	웹훅		기존 팩. 나머지 팩은 영문으로 두었습니다
 Administration	관리		기존 팩 다수
 Accepted	수락됨	수용됨	기존 팩 다수
+Add	추가		동작 낱말. 버튼은 명사형입니다
+Apply	적용		동작 낱말
+Cancel	취소		동작 낱말
+Change	변경		동작 낱말
+Close	닫기		동작 낱말. 상태 Closed는 닫힘입니다
+Collapse	접기		동작 낱말. 짝은 Expand(펼치기)입니다
+Configure	구성		동작 낱말. Settings(설정)와 구분합니다
+Confirm	확인		동작 낱말
+Copy	복사		동작 낱말
+Create	생성		동작 낱말
+Customize	사용자 지정	커스터마이즈	동작 낱말
+Delete	삭제		동작 낱말. Remove(제거)와 구분합니다
+Dismiss	닫기		동작 낱말. 알림을 닫는 동작입니다
+Download	다운로드		동작 낱말
+Edit	편집		동작 낱말. "수정"은 Fix의 번역에도 쓰이므로 금지 표기로 두지 않습니다
+Expand	펼치기		동작 낱말. Extend(확장)와 구분합니다
+Extend	확장		품질 프로필을 상속해 새 프로필을 만드는 동작입니다
+Active	활성		상태 낱말. 동작 Activate는 활성화입니다
+Deprecated	사용 중단됨		상태 낱말
+Changelog	변경 내역		
+Blocker	차단	블로커	심각도. 다른 심각도는 단위 2에서 정합니다
+Critical	심각	크리티컬	심각도
+Component	컴포넌트		프로젝트 안의 파일, 디렉터리 같은 분석 단위입니다
+Directory	디렉터리	디렉토리	외래어 표기법
+Breadcrumbs	이동 경로		
+AI Code Assurance	AI Code Assurance		기능 이름이므로 영문으로 둡니다. 일반명 AI Code는 AI 코드로 번역합니다
