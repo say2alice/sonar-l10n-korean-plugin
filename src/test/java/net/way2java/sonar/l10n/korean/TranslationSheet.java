@@ -96,7 +96,7 @@ public final class TranslationSheet {
       Set<String> prefixes, ReferencePack japanese, ReferencePack russian) {
     List<Row> rows = new ArrayList<>();
     translation.forEach((key, korean) -> {
-      if (!prefixes.contains(prefixOf(key))) {
+      if (!inUnit(key, prefixes)) {
         return;
       }
       String source = english.getOrDefault(key, "");
@@ -110,6 +110,11 @@ public final class TranslationSheet {
           japanese.translationOf(key), russian.translationOf(key), note.toString()));
     });
     return rows;
+  }
+
+  /** 작업 단위는 키의 첫 `.` 앞부분으로 정합니다. 점이 없는 키와 이름이 같은 접두사도 접두사로 정합니다. */
+  static boolean inUnit(String key, Set<String> prefixes) {
+    return prefixes.contains(prefixOf(key));
   }
 
   /** 키의 첫 `.` 앞부분입니다. 점이 없는 키는 {@link #NO_DOT}입니다(문서 저장소 번역 작업 단위 §1). */
