@@ -12,6 +12,14 @@ variables:
 
 verify:
   image: eclipse-temurin:25-jdk
+  # 미번역 키는 릴리스(main 병합) 때만 실패로 처리합니다(문서 저장소 ADR-0014)
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+      variables:
+        REQUIRE_COMPLETE: "true"
+    - when: on_success
+  variables:
+    REQUIRE_COMPLETE: "false"
   tags:
     - shared-docker
   cache:
@@ -28,4 +36,4 @@ verify:
       printf '<toolchains><toolchain><type>jdk</type><provides><version>25</version></provides><configuration><jdkHome>%s</jdkHome></configuration></toolchain></toolchains>\n'
       "$JAVA_HOME" > "$HOME/.m2/toolchains.xml"
   script:
-    - ./mvnw -B verify
+    - ./mvnw -B verify -Dtranslation.requireComplete=$REQUIRE_COMPLETE
