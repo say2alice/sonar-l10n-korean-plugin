@@ -113,3 +113,12 @@ Activity	활동
 Location	위치		
 Period	기간		
 Assigned to me	내 담당		필터 이름
+Assign	할당		동작 낱말. 이슈를 맡은 사람은 Assignee(담당자)입니다
+Won't Fix	수정 안 함		이슈 상태
+Quick Fix	빠른 수정		
+Sandbox	샌드박스		품질 게이트에 영향을 주지 않는 이슈를 모아 두는 상태입니다
+Bug	버그		이슈 유형
+Code Attribute	코드 속성		Clean Code 속성입니다
+Software Quality Impact	소프트웨어 품질 영향		
+Transition	상태 전환		
+Reopening Date	다시 열 날짜		
