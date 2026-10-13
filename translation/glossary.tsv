@@ -203,3 +203,12 @@ Integration Test	통합 테스트		약어 IT는 그대로 둡니다
 Line	라인		코드의 줄. 라인 커버리지, 라인 번호, 라인별 등. "줄"은 다른 뜻(줄이다)으로도 쓰이므로 금지 표기로 두지 않습니다
 Statement	구문		코드의 statement
 Number of Children	하위 클래스 수	자식 수	객체 지향 지표 NOC. 한 클래스를 직접 상속하는 하위 클래스의 수입니다
+Overview	개요		프로젝트 개요 페이지 이름. "화면"은 붙이지 않습니다
+Long-lived Branch	장기 브랜치		
+Revision	리비전		SCM 리비전
+Badge	배지		프로젝트 배지
+High Impact	영향 높음		개요의 약자 표시는 상(High), 중(Medium), 하(Low)입니다
+Finding	발견 사항		
+Security Report	보안 보고서		
+Requirement	요구 사항		보안 표준의 요구 사항
+Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다

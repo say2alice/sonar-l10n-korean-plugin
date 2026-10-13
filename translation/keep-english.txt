@@ -18,7 +18,8 @@ pattern [A-Z]{2,5}
 pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix
 
 # 보안과 규정 준수 표준의 이름만으로 된 값
-pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA)( [0-9.]+| V[0-9R]+)?
+pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA|CWE Top 25)( [0-9.]+| V[0-9R]+)?
+pattern OWASP (Mobile )?Application Security Verification Standard|DISA Security Technical Implementation Guides
 
 # 줄 번호 약식 표기(L12)
 key issue.ncloc_x.short
