@@ -5,7 +5,7 @@
 pattern [^A-Za-z]*
 
 # 제품명과 상표만으로 된 값
-pattern (SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
+pattern (Sonar|SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
 pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins)
 
 # 용어집에서 영문으로 두기로 한 용어만으로 된 값
