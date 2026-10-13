@@ -106,8 +106,6 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 
 ## 작업 방식
 
-`develop`이 통합 지점이고 `main` 병합이 곧 릴리스입니다. 작업은 `develop`에서 `feature/*` 브랜치를 만들어 하고, 병합 요청으로 `develop`에 병합합니다. README처럼 문서만 고칠 때는 `develop`에 직접 커밋합니다. 릴리스는 `develop`을 `main`에 병합하고 `v<버전>` 태그를 붙입니다. 커밋 메시지, 병합 요청 본문, 커밋 정리 규칙은 문서 저장소의 Git 브랜치 전략에 있습니다.
-
 CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행합니다. 미번역 키는 번역 중에는 보고만 하고, `main` 대상 병합 요청에서만 실패로 처리합니다.
 
 ### 빌드
