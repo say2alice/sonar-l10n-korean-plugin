@@ -182,3 +182,6 @@ Exporter	내보내기 도구
 Grant	부여		권한을 부여하는 동작
 Operator	연산자		품질 게이트 조건의 연산자. Is less than은 미만, Is greater than은 초과입니다
 Threshold	임계값		
+Dependency Risk	의존성 위험		
+Qualify	자격 부여		AI Code Assurance 자격. 짝은 Disqualify(자격 해제)입니다
+Guardrail	안전장치		
