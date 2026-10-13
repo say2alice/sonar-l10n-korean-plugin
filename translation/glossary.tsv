@@ -97,3 +97,9 @@ Bulk Change	일괄 변경
 Violation	위반		
 Tour	둘러보기		
 View	보기		Views는 상용 에디션의 기능 이름이므로 뷰로 씁니다
+Permission	권한		
+Manage	관리		동작 낱말. Administration, Management도 관리입니다
+Retry	다시 시도		동작 낱말
+Software Quality	소프트웨어 품질		
+Connected Mode	연결 모드		SonarQube for IDE를 서버에 연결해 쓰는 방식입니다
+Show More	더 보기		짝은 Show Less(적게 보기)입니다
