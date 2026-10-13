@@ -212,3 +212,10 @@ Finding	발견 사항
 Security Report	보안 보고서		
 Requirement	요구 사항		보안 표준의 요구 사항
 Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다
+Merge Request	머지 리퀘스트	병합 요청|머지 요청	GitLab의 풀 리퀘스트. Pull Request(풀 리퀘스트)와 같은 음차 방식입니다. 약어 MR은 그대로 둡니다. 사용자 결정
+Bind	연결	바인딩	프로젝트를 DevOps 플랫폼이나 Jira에 묶는 동작. Binding, Bound도 연결입니다. 사용자 결정
+Provisioning	프로비저닝	프로비져닝	
+Main Branch	메인 브랜치	주 브랜치	
+Dashboard	대시보드		
+Duplicate	복제		동작 낱말. 대시보드를 복사본으로 만드는 동작입니다. 중복(Duplications)과 구분합니다
+Baseline	기준선	베이스라인	새 코드를 가르는 기준이 되는 분석이나 브랜치입니다
