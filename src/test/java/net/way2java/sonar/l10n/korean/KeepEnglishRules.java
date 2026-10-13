@@ -54,6 +54,11 @@ final class KeepEnglishRules {
     return rules;
   }
 
+  /** 미번역 검사와 번역 대조표가 함께 쓰는 판정입니다(문서 저장소 ADR-0014). */
+  boolean untranslated(String key, String value, String english) {
+    return value.equals(english) && !keeps(key, value);
+  }
+
   /** 값 정규식은 값 전체와 일치해야 합니다. */
   boolean keeps(String key, String value) {
     return keys.contains(key)

@@ -18,7 +18,15 @@ JDK 25가 `~/.m2/toolchains.xml`에 등록되어 있어야 합니다. Maven은 �
 
 번역은 `src/main/resources/org/sonar/l10n/l10nkorean_ko.properties`의 값을 고칩니다. 키와 순서는 영문 번들 생성기가 맞추므로 손으로 바꾸지 않습니다. 번역 규칙과 용어는 문서 저장소의 번역 지침, 용어집은 `translation/glossary.tsv`, 영문 그대로 두는 값의 규칙은 `translation/keep-english.txt`에 있습니다.
 
-1. 빌드해 미번역 키를 확인합니다.
+1. 번역 작업 단위의 대조표를 만듭니다. 인자는 단위 이름과 키 접두사이며 `-`는 점이 없는 키입니다. 단위별 접두사는 문서 저장소의 번역 작업 단위에 있습니다.
+
+    ```bash
+    scripts/translation-sheet.sh common -
+    ```
+
+    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 문서 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
+
+2. 빌드해 미번역 키를 확인합니다.
 
     ```bash
     ./mvnw verify

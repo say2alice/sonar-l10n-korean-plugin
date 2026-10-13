@@ -29,7 +29,7 @@ class UntranslatedKeyTest {
     KeepEnglishRules rules = KeepEnglishRules.load(Bundles.KEEP_ENGLISH);
     List<String> untranslated = new ArrayList<>();
     Bundles.read(Bundles.TRANSLATION).forEach((key, value) -> {
-      if (value.equals(english.get(key)) && !rules.keeps(key, value)) {
+      if (rules.untranslated(key, value, english.get(key))) {
         untranslated.add(key);
       }
     });

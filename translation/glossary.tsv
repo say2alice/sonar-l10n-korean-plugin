@@ -26,3 +26,80 @@ Assignee	담당자		기존 팩 모두
 Webhook	웹훅		기존 팩. 나머지 팩은 영문으로 두었습니다
 Administration	관리		기존 팩 다수
 Accepted	수락됨	수용됨	기존 팩 다수
+Add	추가		동작 낱말. 버튼은 명사형입니다
+Apply	적용		동작 낱말
+Cancel	취소		동작 낱말
+Change	변경		동작 낱말
+Close	닫기		동작 낱말. 상태 Closed는 닫힘입니다
+Collapse	접기		동작 낱말. 짝은 Expand(펼치기)입니다
+Configure	구성		동작 낱말. Settings(설정)와 구분합니다
+Confirm	확인		동작 낱말
+Copy	복사		동작 낱말
+Create	생성		동작 낱말
+Customize	사용자 지정	커스터마이즈	동작 낱말
+Delete	삭제		동작 낱말. Remove(제거)와 구분합니다
+Dismiss	닫기		동작 낱말. 알림을 닫는 동작입니다
+Download	다운로드		동작 낱말
+Edit	편집		동작 낱말. "수정"은 Fix의 번역에도 쓰이므로 금지 표기로 두지 않습니다
+Expand	펼치기		동작 낱말. Extend(확장)와 구분합니다
+Extend	확장		품질 프로필을 상속해 새 프로필을 만드는 동작입니다
+Active	활성		상태 낱말. 동작 Activate는 활성화입니다
+Deprecated	사용 중단됨		상태 낱말
+Changelog	변경 내역		
+Blocker	차단	블로커	심각도. 다른 심각도는 단위 2에서 정합니다
+Critical	심각	크리티컬	심각도
+Component	컴포넌트		프로젝트 안의 파일, 디렉터리 같은 분석 단위입니다
+Directory	디렉터리	디렉토리	외래어 표기법
+Breadcrumbs	이동 경로		
+AI Code Assurance	AI Code Assurance		기능 이름이므로 영문으로 둡니다. 일반명 AI Code는 AI 코드로 번역합니다
+Major	주요		심각도
+Minor	경미		심각도
+Info	정보		심각도. About의 번역과 같습니다
+Favorite	즐겨찾기		
+Load	불러오기		동작 낱말. "로드"는 "다운로드"의 일부이므로 금지 표기로 두지 않습니다
+Learn More	자세히 알아보기		
+Password	비밀번호	패스워드	
+Parameter	매개변수	파라미터	
+Preview	미리 보기	미리보기	
+Owner	소유자		
+Member	멤버		
+Optional	선택 사항		
+Global	전역		
+Inheritance	상속		
+Navigation	내비게이션	네비게이션	외래어 표기법
+Open	열기		동작 낱말. 상태 Open은 열림입니다
+Never	없음		날짜 값이 없을 때 표시합니다
+Remove	제거		동작 낱말. Delete(삭제)와 구분합니다
+Rename	이름 변경		동작 낱말. 다른 한국어 팩과 비교해 정했습니다
+Reset	초기화	리셋	동작 낱말. Clear(지우기)와 구분합니다
+Refresh	새로 고침	새로고침	동작 낱말. Reload는 다시 불러오기입니다
+Restart	재시작		동작 낱말. 다른 한국어 팩과 비교해 정했습니다
+Restore	복원		동작 낱말
+Resolve	해결		동작 낱말
+Resolution	해결		이슈를 해결한 방식(수정됨, 오탐 등)입니다. 다른 한국어 팩과 비교해 정했습니다
+Save	저장		동작 낱말
+Search	검색		동작 낱말
+Select	선택		동작 낱말. 상태 Selected는 선택됨입니다
+Settings	설정		Set, Set Up, Setup도 설정입니다. Configure(구성)와 구분합니다
+Skip	건너뛰기		동작 낱말
+Submit	제출		동작 낱말
+Clear	지우기		동작 낱말. Reset(초기화)와 구분합니다
+Update	업데이트		동작 낱말. 상태 Updated는 업데이트됨입니다
+Review	검토		
+Status	상태		
+Type	유형		
+User	사용자	유저	
+Unassigned	담당자 없음		Not assigned도 같습니다
+Unit Test	단위 테스트		
+Visibility	공개 범위		프로젝트의 공개, 비공개 설정입니다
+Template	템플릿		
+Bulk Change	일괄 변경		
+Violation	위반		
+Tour	둘러보기		
+View	보기		Views는 상용 에디션의 기능 이름이므로 뷰로 씁니다
+Permission	권한		
+Manage	관리		동작 낱말. Administration, Management도 관리입니다
+Retry	다시 시도		동작 낱말
+Software Quality	소프트웨어 품질		
+Connected Mode	연결 모드		SonarQube for IDE를 서버에 연결해 쓰는 방식입니다
+Show More	더 보기		짝은 Show Less(적게 보기)입니다

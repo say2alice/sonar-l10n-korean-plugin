@@ -42,6 +42,20 @@ class BundleFileTest {
 
   // NFR-BD-05
   @Test
+  void readsInFileOrder(@TempDir Path dir) {
+    Map<String, String> source = new LinkedHashMap<>();
+    source.put("zeta", "Z");
+    source.put("a b", " lead");
+    source.put("alpha", "A");
+    Path file = dir.resolve("bundle.properties");
+    BundleFile.write(file, List.of("머리말"), source);
+
+    assertThat(BundleFile.readOrdered(file)).containsExactly(
+        Map.entry("zeta", "Z"), Map.entry("a b", " lead"), Map.entry("alpha", "A"));
+  }
+
+  // NFR-BD-05
+  @Test
   void readsHeaderValue(@TempDir Path dir) {
     Path file = dir.resolve("bundle.properties");
     BundleFile.write(file, List.of("설명", "웹앱 태그: sqcb-26.10.0"), Map.of("k", "v"));
