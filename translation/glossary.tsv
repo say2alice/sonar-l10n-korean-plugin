@@ -52,3 +52,20 @@ Component	컴포넌트		프로젝트 안의 파일, 디렉터리 같은 분석 �
 Directory	디렉터리	디렉토리	외래어 표기법
 Breadcrumbs	이동 경로		
 AI Code Assurance	AI Code Assurance		기능 이름이므로 영문으로 둡니다. 일반명 AI Code는 AI 코드로 번역합니다
+Major	주요		심각도
+Minor	경미		심각도
+Info	정보		심각도. About의 번역과 같습니다
+Favorite	즐겨찾기		
+Load	불러오기		동작 낱말. "로드"는 "다운로드"의 일부이므로 금지 표기로 두지 않습니다
+Learn More	자세히 알아보기		
+Password	비밀번호	패스워드	
+Parameter	매개변수	파라미터	
+Preview	미리 보기	미리보기	
+Owner	소유자		
+Member	멤버		
+Optional	선택 사항		
+Global	전역		
+Inheritance	상속		
+Navigation	내비게이션	네비게이션	외래어 표기법
+Open	열기		동작 낱말. 상태 Open은 열림입니다
+Never	없음		날짜 값이 없을 때 표시합니다
