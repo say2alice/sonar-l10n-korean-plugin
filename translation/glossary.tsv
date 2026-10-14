@@ -259,3 +259,6 @@ Early Access	얼리 액세스		무료 체험으로 먼저 제공하는 기능
 Monorepo	모노레포	모노리포	Monorepository도 모노레포입니다
 Slug	슬러그		저장소 슬러그, 그룹 URL 슬러그
 Mapping	매핑		역할 권한 매핑
+Signing Secret	서명 시크릿		Slack 앱 자격 증명
+Localization	지역화	현지화|로컬라이제이션	
+Announcement	공지		

@@ -6,7 +6,7 @@ pattern (\{[A-Za-z0-9_]+\}|[^A-Za-z])*
 
 # 제품명과 상표만으로 된 값
 pattern (Sonar|SonarSource|SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
-pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins|Jira)
+pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins|Jira|Slack)
 # 제품명 뒤에 URL이나 ID가 붙은 입력 항목 이름(GitHub API URL, GitHub App ID)
 pattern (GitHub|GitLab|Bitbucket Data Center|Azure DevOps)( API)? URL|(GitHub )?App ID(: \{[A-Za-z0-9_]+\})?
 # 에디션 이름
