@@ -314,7 +314,7 @@ Agentic Task	에이전트 작업	에이전틱	Hunter Agent와 Remediation Agent�
 Pending	대기 중	보류 중	백그라운드 작업과 에이전트 작업의 상태
 Reindex	다시 색인	재색인|리인덱스	
 Recompute	다시 계산	재계산	포트폴리오와 애플리케이션의 집계를 다시 계산하는 동작
-Secret Key	비밀 키	시크릿 키	속성 암호화에 쓰는 키. 헤더의 Secret과 Client Secret은 시크릿입니다
+Secret Key	시크릿 키	비밀 키	속성 암호화에 쓰는 키. Secret은 모두 시크릿으로 옮깁니다(Secret Token은 시크릿 토큰). 사용자 결정
 Maintenance	유지보수	유지 관리|유지 보수	서버 유지보수 화면. Maintainability(유지보수성)와 같은 띄어쓰기입니다. 사용자 결정
 Scan Unit	Scan Unit	스캔 유닛|스캔 단위|스캔 크레딧	Hunter Agent의 과금 단위. 영문으로 둡니다. 사용자 결정
 Playbook	Playbook	플레이북	Hunter Agent의 Playbook 기반 추론. 영문으로 둡니다. 사용자 결정
