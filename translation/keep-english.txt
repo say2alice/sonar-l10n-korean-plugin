@@ -235,3 +235,8 @@ key short_number_suffix.m
 key page_title.template.default
 key page_title.template.with_category
 key page_title.template.with_instance
+
+# 라이선스 이름과 버전 표기 틀
+key footer.license.lgplv3
+key footer.version.full
+key footer.version.short
