@@ -268,3 +268,26 @@ Retention	보존		데이터 보존 기간
 Audit Log	감사 로그		
 Advanced Security	Advanced Security		SonarQube Advanced Security. 상용 기능 이름이므로 영문으로 둡니다
 Software Composition Analysis	소프트웨어 구성 분석		약어 SCA는 그대로 둡니다
+Modern Authentication	최신 인증	모던 인증	Microsoft의 OAuth 기반 인증. Basic Authentication은 기본 인증입니다
+Tenant	테넌트		Microsoft 테넌트
+Background Task	백그라운드 작업	백그라운드 태스크	
+User Token	사용자 토큰		
+Appearance	모양		내 계정의 테마 설정
+Permission Holder	권한 보유자		
+Marketplace	마켓플레이스		
+Plugin	플러그인		
+Uninstall	제거	언인스톨	동작 낱말. 플러그인 제거
+Update Center	업데이트 센터		
+Scanner Context	스캐너 컨텍스트		
+Worker	Worker	워커	Compute Engine Worker. 영문으로 둡니다. 사용자 결정
+Compute Engine	Compute Engine		SonarQube 서버 구성 요소 이름이므로 영문으로 둡니다. 약어 CE도 그대로 둡니다
+Log Level	로그 수준	로그 레벨	
+Search Engine	검색 엔진		SonarQube 서버 구성 요소
+Node	노드		클러스터의 애플리케이션 노드, 검색 노드
+Revoke	폐기		토큰을 폐기하는 동작. 권한을 거두는 revoke는 회수입니다
+Delivery	전송		웹훅 전송
+Payload	Payload	페이로드	웹훅 Payload. 영문으로 둡니다. 사용자 결정
+Group Membership	그룹 멤버십		
+Callback URL	콜백 URL		
+Reauthorize	다시 인증		
+Web API	Web API	웹 API	SonarQube API 문서의 이름이므로 영문으로 둡니다
