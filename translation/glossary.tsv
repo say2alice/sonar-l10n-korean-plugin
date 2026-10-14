@@ -299,3 +299,11 @@ Compilation Database	컴파일 데이터베이스
 Automatic Analysis	자동 분석		CI-based Analysis는 CI 기반 분석입니다
 Auto-import	자동 가져오기		
 Prerequisite	사전 요구사항	전제 조건|사전 요구 사항	튜토리얼의 사전 준비 단계. 사용자 결정
+LLM Provider	LLM 공급자	LLM 제공자|LLM 프로바이더	AI 기능이 쓰는 모델 제공 서비스. Identity Provider(ID 공급자)와 같은 낱말입니다. 사용자 결정
+Vortex	Vortex	보텍스	Sonar Vortex. 제품 이름이므로 영문으로 둡니다. 단계 이름 Guide, Verify도 영문으로 둡니다. 사용자 결정
+Hunter Agent	Hunter Agent	헌터 에이전트	기능 이름이므로 영문으로 둡니다. 사용자 결정
+Agent-Centric Development Cycle	에이전트 중심 개발 주기		약어 ACDC는 그대로 둡니다. 사용자 결정
+Manual Remediation	수동 수정	수동 조치	Remediation Agent의 실행 방식. 사용자 결정
+Automated Remediation	자동 수정	자동 조치	Remediation Agent의 실행 방식. 홍보 문구의 Scheduled는 예약입니다. 사용자 결정
+Overage	초과 사용	오버리지|초과분	월 사용 한도를 넘어 추가로 쓰는 유료 사용량. Overage credits는 초과 사용 크레딧, Increase overage는 초과 사용량을 늘리다입니다. 사용자 결정
+Base Branch	베이스 브랜치		수정 브랜치와 풀 리퀘스트의 기반이 되는 저장소 브랜치. 새 코드 정의의 Reference Branch(기준 브랜치)와 구별합니다

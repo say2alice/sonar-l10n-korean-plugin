@@ -217,3 +217,10 @@ pattern GitHub Actions|GitLab CI|Azure Pipelines|Bitbucket Pipelines
 
 # 꺾쇠로 감싼 자리 표시 값. 번역하면 번역 품질 검사가 꺾쇠를 태그로 셉니다
 key onboarding.analysis.build_wrapper.execute_build_command
+
+# AI 기능의 제품, 기능, 모델 이름만으로 된 값
+key ai_capabilities_server.vortex.title
+key ai_capabilities.llm_providers.supported_models.hunter_agent
+key ai_capabilities.llm_providers.supported_models.remediation_agent
+# 시간대 예시 값
+key ai_capabilities.remediation_agent.scheduled.timezone.placeholder
