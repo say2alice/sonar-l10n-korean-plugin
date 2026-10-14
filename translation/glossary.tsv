@@ -268,3 +268,6 @@ Retention	보존		데이터 보존 기간
 Audit Log	감사 로그		
 Advanced Security	Advanced Security		SonarQube Advanced Security. 상용 기능 이름이므로 영문으로 둡니다
 Software Composition Analysis	소프트웨어 구성 분석		약어 SCA는 그대로 둡니다
+Modern Authentication	최신 인증	모던 인증	Microsoft의 OAuth 기반 인증. Basic Authentication은 기본 인증입니다
+Tenant	테넌트		Microsoft 테넌트
+Background Task	백그라운드 작업	백그라운드 태스크	
