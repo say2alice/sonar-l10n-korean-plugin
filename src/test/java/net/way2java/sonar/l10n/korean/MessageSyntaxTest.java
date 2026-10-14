@@ -24,23 +24,7 @@ class MessageSyntaxTest {
       if (source == null || source.equals(translated)) {
         return;
       }
-      MessageStructure expected = MessageStructure.of(source);
-      MessageStructure actual;
-      try {
-        actual = MessageStructure.of(translated);
-      } catch (IllegalArgumentException e) {
-        violations.add(key + ": ICU 구문 오류 " + e.getMessage());
-        return;
-      }
-      if (!expected.arguments().equals(actual.arguments())) {
-        violations.add(key + ": 인자 " + expected.arguments() + " → " + actual.arguments());
-      }
-      if (!expected.selectBranches().equals(actual.selectBranches())) {
-        violations.add(key + ": select 분기 " + expected.selectBranches() + " → " + actual.selectBranches());
-      }
-      if (!expected.tags().equals(actual.tags())) {
-        violations.add(key + ": 태그 " + expected.tags() + " → " + actual.tags());
-      }
+      MessageStructure.differences(source, translated).forEach(difference -> violations.add(key + ": " + difference));
     });
 
     assertThat(violations).as("원문과 구성이 다른 번역 %s", Bundles.describe(violations)).isEmpty();

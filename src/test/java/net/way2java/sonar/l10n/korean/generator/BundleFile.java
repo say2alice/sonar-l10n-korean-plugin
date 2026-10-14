@@ -43,10 +43,19 @@ public final class BundleFile {
 
   /** {@link #read}와 같이 읽되 파일에 적힌 키 순서를 지킵니다. 파일이 없으면 빈 맵을 돌려줍니다. */
   public static Map<String, String> readOrdered(Path file) {
-    Map<String, String> ordered = new LinkedHashMap<>();
     if (Files.notExists(file)) {
-      return ordered;
+      return new LinkedHashMap<>();
     }
+    try (Reader in = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+      return readOrdered(in);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+  }
+
+  /** {@link #readOrdered(Path)}와 같되 열려 있는 입력에서 읽습니다. 입력은 닫지 않습니다. */
+  public static Map<String, String> readOrdered(Reader in) throws IOException {
+    Map<String, String> ordered = new LinkedHashMap<>();
     // Properties.load()가 항목마다 put()을 부르므로, 이스케이프 해석은 Properties에 맡기고 순서만 따로 받습니다
     Properties bundle = new Properties() {
       @Override
@@ -55,11 +64,7 @@ public final class BundleFile {
         return super.put(key, value);
       }
     };
-    try (Reader in = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-      bundle.load(in);
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
+    bundle.load(in);
     return ordered;
   }
 

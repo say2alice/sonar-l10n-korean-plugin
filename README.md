@@ -19,7 +19,7 @@ SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹�
 
 ## 구성
 
-jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니다. 나머지는 번역 파일을 만들고 검사하는 도구입니다.
+jar에 들어가는 것은 진입점 클래스 하나와 번들 파일입니다. 나머지는 번역 파일을 만들고 검사하는 도구입니다.
 
 ```text
 ├── pom.xml                         # 빌드 설정. 기준 웹앱 태그 등 기준 버전은 이 파일의 속성에만 둡니다
@@ -27,21 +27,24 @@ jar에 들어가는 것은 진입점 클래스 하나와 번들 파일 셋입니
 ├── .gitlab-ci.yml                  # CI 검증 잡
 ├── scripts/
 │   ├── english-bundle.sh           # 영문 번들 생성기 실행
+│   ├── commercial-bundle.sh        # 상용 번들 동기화 도구 실행
 │   ├── translation-sheet.sh        # 번역 대조표 생성
 │   └── run-sonarqube.sh            # 로컬 SonarQube 컨테이너에 jar 설치
 ├── translation/
 │   ├── glossary.tsv                # 용어집
-│   └── keep-english.txt            # 영문 그대로 두는 값의 규칙
+│   ├── keep-english.txt            # 영문 그대로 두는 값의 규칙
+│   └── commercial/                 # 상용 에디션 서버 번들의 영문 사본. jar에 들어가지 않습니다
 └── src/
     ├── main/                       # jar에 들어가는 부분
     │   ├── java/.../KoreanPackPlugin.java
     │   └── resources/org/sonar/l10n/
     │       ├── l10nkorean.properties
     │       ├── l10nkorean_ko.properties
-    │       └── core_ko.properties
+    │       ├── core_ko.properties
+    │       └── <상용 번들>_ko.properties  # governance_ko.properties 등 일곱 개
     └── test/                       # 번들 검사와 도구. jar에 들어가지 않습니다
         └── java/.../korean/
-            ├── generator/          # 영문 번들 생성기
+            ├── generator/          # 영문 번들 생성기, 상용 번들 동기화 도구
             ├── TranslationSheet.java  # 번역 대조표 도구
             └── *Test.java          # 번들 검사
 ```
@@ -54,6 +57,7 @@ jar에 들어가는 파일입니다.
 | `l10nkorean.properties` | 영어 기본 번들입니다. 서버가 이 파일로 번들의 키를 등록합니다 | 영문 번들 생성기가 만듭니다. 손으로 고치지 않습니다 |
 | `l10nkorean_ko.properties` | 화면에 나오는 한국어 번역입니다. 번역하지 않은 키는 영문 값입니다 | 값만 고칩니다. 키와 순서는 영문 번들 생성기가 맞춥니다 |
 | `core_ko.properties` | 서버가 한국어 로캘로 응답하게 합니다. 키를 넣지 않습니다 | 고치지 않습니다 |
+| `<상용 번들>_ko.properties` | 상용 에디션 서버 본체의 번들(`governance` 등)이 우리 번역을 가리지 않게 합니다. 키는 `translation/commercial/`의 영문 사본과 같습니다 | 번역 파일에도 있는 키는 번역 파일에서 고치고 `scripts/commercial-bundle.sh sync`로 옮깁니다. 번들에만 있는 키는 이 파일에서 값만 고칩니다 |
 
 번역의 원본은 서버의 `core.properties`가 아니라 웹앱의 `default.ts`이므로, 번역을 `core_ko.properties`가 아닌 플러그인 자체 번들 `l10nkorean`에 둡니다.
 
@@ -66,6 +70,7 @@ jar에 들어가는 파일입니다.
 | 번역 품질 | 인자, ICU 구문, 태그가 원문과 같습니다 |
 | 미번역 | 미번역 키의 수와 목록을 `target/untranslated-keys.txt`에 씁니다. `-Dtranslation.requireComplete=true`일 때만 실패합니다 |
 | 용어 | 번역에 용어집의 금지 표기가 없습니다 |
+| 상용 번들 | 한국어 파일의 키가 영문 사본과 같고, 번역 파일에도 있는 키의 값이 번역 파일과 같습니다. 번들에만 있는 키의 구성과 미번역도 봅니다 |
 | 플러그인, `core_ko.properties` | 확장을 등록하지 않고, `core_ko.properties`에 키가 없습니다 |
 
 설계와 결정의 근거는 문서 저장소의 아키텍처와 결정 기록(ADR)에 있습니다.
@@ -165,6 +170,38 @@ CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행�
     ```
 
     `원본: <태그> <키 수>키`로 시작하는 세 줄이 나와야 합니다.
+
+### 상용 번들 갱신
+
+상용 에디션 서버 본체의 번들 일곱 개(`governance` 등)는 같은 키가 있으면 우리 번역을 가립니다. 그래서 번들마다 한국어 파일을 둡니다. 영문 사본은 `translation/commercial/`에, 한국어 파일은 `src/main/resources/org/sonar/l10n/<번들>_ko.properties`에 있습니다. 근거는 문서 저장소의 ADR-0016에 있습니다.
+
+번역 파일의 값을 고쳤거나 기준 원본을 갱신한 뒤에는 한국어 파일을 맞춥니다.
+
+1. 번역 파일의 값을 상용 번들 한국어 파일에 옮깁니다.
+
+    ```bash
+    scripts/commercial-bundle.sh sync
+    ```
+
+    번들마다 `<번들>: <키 수>키, 번역 파일과 같은 키 <수>, 번들에만 있는 키 <수>(영문 값 <수>)` 줄이 나와야 합니다.
+
+새 상용 에디션 버전의 번들로 바꿀 때는 공식 이미지에서 서버 jar를 꺼내 영문 사본을 다시 씁니다. Docker가 필요하며, 이미지 태그는 바꿀 버전에 맞게 바꿉니다.
+
+1. 영문 사본과 한국어 파일을 다시 씁니다.
+
+    ```bash
+    scripts/commercial-bundle.sh update 2026.5.2-enterprise
+    ```
+
+    `상용 서버: <버전>, 번들 <수>개` 다음에 번들마다 키 추가, 삭제, 값 변경 수가 나와야 합니다. 영문이 바뀐 키는 영문 값으로 되돌아가 미번역으로 보고됩니다.
+
+2. 번들에만 있는 키 중 미번역을 확인합니다.
+
+    ```bash
+    ./mvnw verify
+    ```
+
+    `상용 번들 미번역 키 <수>`가 나오고, 목록이 `target/untranslated-commercial-keys.txt`에 생겨야 합니다.
 
 ### Docker 컨테이너에 설치해 확인
 
