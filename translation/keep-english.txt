@@ -260,3 +260,6 @@ key dependencies.risk.what.basicInfo.knownExploited.kev
 pattern Cargo|CocoaPods|Packagist|Conan|Go|npm|NuGet|PyPI|Gem|vcpkg
 # 약어와 인자만으로 된 값
 key dependencies.risks.cvss_score
+
+# 태그와 인자만으로 된 값
+key portfolio_dashboard.breakdown.slice_filter.dimension_with_value
