@@ -211,7 +211,7 @@ Badge	배지		프로젝트 배지
 High Impact	영향 높음		개요의 약자 표시는 상(High), 중(Medium), 하(Low)입니다
 Finding	발견 사항		
 Security Report	보안 보고서		
-Requirement	요구 사항		보안 표준의 요구 사항
+Requirement	요구사항	요구 사항	보안 표준의 요구사항. 사용자 결정
 Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다
 Merge Request	머지 리퀘스트	병합 요청|머지 요청	GitLab의 풀 리퀘스트. Pull Request(풀 리퀘스트)와 같은 음차 방식입니다. 약어 MR은 그대로 둡니다. 사용자 결정
 Bind	연결	바인딩	프로젝트를 DevOps 플랫폼이나 Jira에 묶는 동작. Binding, Bound도 연결입니다. 사용자 결정
@@ -291,3 +291,11 @@ Group Membership	그룹 멤버십
 Callback URL	콜백 URL		
 Reauthorize	다시 인증		
 Web API	Web API	웹 API	SonarQube API 문서의 이름이므로 영문으로 둡니다
+Onboarding	온보딩		프로젝트 온보딩
+API Token	API 토큰		Bitbucket Cloud의 API 토큰
+Scanner	스캐너		npm 프로젝트용 스캐너 등. 제품명 SonarScanner는 영문으로 둡니다
+Build Wrapper	Build Wrapper	빌드 래퍼	C/C++ 분석 도구 이름이므로 영문으로 둡니다
+Compilation Database	컴파일 데이터베이스		
+Automatic Analysis	자동 분석		CI-based Analysis는 CI 기반 분석입니다
+Auto-import	자동 가져오기		
+Prerequisite	사전 요구사항	전제 조건|사전 요구 사항	튜토리얼의 사전 준비 단계. 사용자 결정
