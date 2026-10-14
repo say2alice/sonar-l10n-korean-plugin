@@ -3,7 +3,7 @@
 #
 # 사용법: scripts/english-bundle.sh generate
 #         scripts/english-bundle.sh diff <이전 태그> <새 태그>
-# 예:     scripts/english-bundle.sh diff sqcb-25.12.0 sqcb-26.10.0
+# 예:     scripts/english-bundle.sh diff sqcb-26.1.0 sqcb-26.10.0
 #
 # generate는 영어 기본 번들을 만들고 번역 파일의 키를 맞춥니다. 결과 파일은 커밋합니다.
 # diff는 차이를 출력하고 같은 내용을 target/diff-<이전 태그>-<새 태그>.txt에 저장합니다.

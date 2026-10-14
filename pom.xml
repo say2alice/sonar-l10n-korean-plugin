@@ -42,8 +42,8 @@
 
     <sonar.plugin.key>l10nkorean</sonar.plugin.key>
     <sonar.plugin.class>net.way2java.sonar.l10n.korean.KoreanPackPlugin</sonar.plugin.class>
-    <!-- 지원 하한인 Community Build 25.12의 API 버전 -->
-    <sonar.plugin.api.min.version>13.4.2.4284</sonar.plugin.api.min.version>
+    <!-- 지원 하한인 Community Build 26.1의 API 버전 -->
+    <sonar.plugin.api.min.version>13.4.3.4290</sonar.plugin.api.min.version>
 
     <!-- 번역 기준 원본. 영문 번들 생성기와 기준 태그 검사가 읽습니다(문서 저장소 ADR-0015) -->
     <sonarqube.webapp.tag>sqcb-26.10.0</sonarqube.webapp.tag>
