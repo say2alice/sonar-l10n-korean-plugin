@@ -296,3 +296,5 @@ API Token	API 토큰		Bitbucket Cloud의 API 토큰
 Scanner	스캐너		npm 프로젝트용 스캐너 등. 제품명 SonarScanner는 영문으로 둡니다
 Build Wrapper	Build Wrapper	빌드 래퍼	C/C++ 분석 도구 이름이므로 영문으로 둡니다
 Compilation Database	컴파일 데이터베이스		
+Automatic Analysis	자동 분석		CI-based Analysis는 CI 기반 분석입니다
+Auto-import	자동 가져오기		

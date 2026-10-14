@@ -167,6 +167,7 @@ key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step1.sentence.path
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.default_scanner
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.add_scanner_for_msbuild
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step3.sentence.name
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step4.sentence.install_auto
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_from
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_auto
 key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.replace.sentence.default
