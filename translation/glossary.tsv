@@ -262,3 +262,8 @@ Mapping	매핑		역할 권한 매핑
 Signing Secret	서명 시크릿		Slack 앱 자격 증명
 Localization	지역화	현지화|로컬라이제이션	
 Announcement	공지		
+Exclusion	제외		분석 범위의 파일 제외. 짝은 Inclusion(포함)입니다
+Housekeeping	데이터 정리	하우스키핑	오래된 분석, 브랜치, 로그 데이터를 지우는 설정 범주
+Retention	보존		데이터 보존 기간
+Audit Log	감사 로그		
+Advanced Security	Advanced Security		SonarQube Advanced Security. 상용 기능 이름이므로 영문으로 둡니다
