@@ -305,3 +305,4 @@ Hunter Agent	Hunter Agent	헌터 에이전트	기능 이름이므로 영문으�
 Agent-Centric Development Cycle	에이전트 중심 개발 주기		약어 ACDC는 그대로 둡니다. 사용자 결정
 Manual Remediation	수동 수정	수동 조치	Remediation Agent의 실행 방식. 사용자 결정
 Automated Remediation	자동 수정	자동 조치	Remediation Agent의 실행 방식. 홍보 문구의 Scheduled는 예약입니다. 사용자 결정
+Overage	초과 사용	오버리지|초과분	월 사용 한도를 넘어 추가로 쓰는 유료 사용량. Overage credits는 초과 사용 크레딧, Increase overage는 초과 사용량을 늘리다입니다. 사용자 결정
