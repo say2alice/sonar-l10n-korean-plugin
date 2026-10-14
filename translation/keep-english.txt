@@ -51,3 +51,6 @@ key settings.default.password
 # Web API 문서의 이름과 HTTP 헤더 이름
 pattern Web API( v2)?
 key api_documentation.v2.request_subheader.request_content_type
+
+# 용어집에서 영문으로 두기로 한 용어와 콜론만으로 된 값
+key webhooks.delivery.payload
