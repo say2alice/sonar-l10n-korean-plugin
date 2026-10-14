@@ -236,3 +236,6 @@ Public	공개	퍼블릭	프로젝트 공개 범위. 짝은 Private(비공개)입
 Sparkline	스파크라인		
 PR Decoration	PR 데코레이션	PR 장식	분석 결과를 풀 리퀘스트에 표시하는 기능. 사용자 결정
 Event	이벤트		프로젝트 활동의 버전, 품질 게이트 변경 등의 기록
+Private	비공개	프라이빗	프로젝트 공개 범위. 짝은 Public(공개)입니다
+Role	역할		"롤"은 "스크롤"의 일부이므로 금지 표기로 두지 않습니다
+Execute Analysis	분석 실행		프로젝트 권한 이름. 같은 권한 목록의 See Source Code는 소스 코드 보기, Administer Issues는 이슈 관리입니다
