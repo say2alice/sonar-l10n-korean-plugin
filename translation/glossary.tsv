@@ -211,7 +211,7 @@ Badge	배지		프로젝트 배지
 High Impact	영향 높음		개요의 약자 표시는 상(High), 중(Medium), 하(Low)입니다
 Finding	발견 사항		
 Security Report	보안 보고서		
-Requirement	요구 사항		보안 표준의 요구 사항
+Requirement	요구사항	요구 사항	보안 표준의 요구사항. 사용자 결정
 Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다
 Merge Request	머지 리퀘스트	병합 요청|머지 요청	GitLab의 풀 리퀘스트. Pull Request(풀 리퀘스트)와 같은 음차 방식입니다. 약어 MR은 그대로 둡니다. 사용자 결정
 Bind	연결	바인딩	프로젝트를 DevOps 플랫폼이나 Jira에 묶는 동작. Binding, Bound도 연결입니다. 사용자 결정
