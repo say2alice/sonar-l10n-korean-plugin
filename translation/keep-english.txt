@@ -8,7 +8,7 @@ pattern (\{[A-Za-z0-9_]+\}|[^A-Za-z])*
 pattern (Sonar|SonarSource|SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
 pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins|Jira)
 # 제품명 뒤에 URL이나 ID가 붙은 입력 항목 이름(GitHub API URL, GitHub App ID)
-pattern (GitHub|GitLab|Bitbucket Data Center|Azure DevOps)( API)? URL|(GitHub )?App ID
+pattern (GitHub|GitLab|Bitbucket Data Center|Azure DevOps)( API)? URL|(GitHub )?App ID(: \{[A-Za-z0-9_]+\})?
 # 에디션 이름
 pattern (Developer|Enterprise|Data Center) Edition
 
@@ -31,3 +31,8 @@ key issue.ncloc_x.short
 
 # 지표 이름으로 영문 그대로 두는 값
 pattern LCOM4
+
+# 입력란의 예시 값(영문 슬러그)
+key settings.almintegration.github.manifest.name.placeholder
+key settings.almintegration.github.manifest.organization.placeholder
+key settings.authentication.gitlab.form.allowedGroups.placeholder
