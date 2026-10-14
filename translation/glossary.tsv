@@ -320,3 +320,13 @@ Scan Unit	Scan Unit	스캔 유닛|스캔 단위|스캔 크레딧	Hunter Agent의
 Playbook	플레이북		Hunter Agent의 플레이북 기반 추론
 Broken Access Control	취약한 접근 제어		OWASP Top 10의 항목 이름
 Run History	실행 기록		Hunter Agent 탭
+Intended Architecture	의도한 아키텍처		권한 설명에서 정한 표기
+Deviation	이탈	편차	의도한 아키텍처에서 벗어난 코드. Structural Deviation은 구조 이탈, Relationship Deviation은 관계 이탈입니다. 사용자 결정
+Directive	지시	디렉티브	코드를 바꾸라는 아키텍처 지시. 사용자 결정
+Exit Point	진출점		다른 프로젝트나 시스템을 호출하는 코드 위치. 사용자 결정
+Entry Point	진입점		다른 프로젝트의 호출을 받는 위치. 사용자 결정
+Weak Tangle	약한 얽힘		
+Split Responsibility	분산된 책임		하위 컴포넌트가 서로 연결되지 않은 컴포넌트
+Oversized Component	과대 컴포넌트		
+Code Artifact	코드 아티팩트		
+System Component	시스템 컴포넌트		
