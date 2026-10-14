@@ -1,0 +1,347 @@
+english	korean	forbidden	note
+Issue	이슈		기존 팩 모두
+Rule	규칙	룰	기존 팩 모두
+Quality Gate	품질 게이트	품질게이트|퀄리티 게이트	기존 팩 모두
+Quality Profile	품질 프로필	품질 프로파일	외래어 표기법. 기존 팩은 프로파일과 프로필로 갈립니다
+Security Hotspot	보안 핫스팟	핫스폿	기존 팩 모두. 외래어 표기법과 다른 관용 표기입니다
+Measure	측정값	측정치	기존 팩 다수
+Metric	지표	메트릭	기능 일반명은 번역합니다. 기존 팩은 메트릭과 지표로 갈립니다
+Branch	브랜치		기존 팩 모두
+Pull Request	풀 리퀘스트	풀리퀘스트|끌어오기 요청	기존 팩 모두
+New Code	새 코드	신규 코드	기존 팩 다수
+Overall Code	전체 코드		기존 팩 모두
+Maintainability	유지보수성	유지 보수성|유지관리성	기존 팩 다수
+Reliability	신뢰성		기존 팩 모두
+Security	보안	보안성|시큐리티	기존 팩 다수
+Coverage	커버리지		기존 팩 모두
+Duplications	중복	중복코드	기존 팩 다수
+Technical Debt	기술 부채	기술 채무|기술적 부채	기존 팩 모두
+Severity	심각도		기존 팩 모두
+Vulnerability	취약점		기존 팩 모두
+Code Smell	Code Smell	코드 스멜|코드 악취|코드 냄새	기존 팩에서 세 가지로 갈려 널리 쓰이는 표기가 없으므로 영문으로 씁니다(번역 지침 §3)
+Application	애플리케이션	어플리케이션	널리 쓰이는 음차 표기. 외래어 표기법을 따릅니다
+Portfolio	포트폴리오		널리 쓰이는 음차 표기. 기존 팩 다수
+False Positive	오탐	거짓 양성|거짓 긍정	기존 팩 다수
+Assignee	담당자		기존 팩 모두
+Webhook	Webhook	웹훅	영문으로 둡니다. 사용자 결정
+Administration	관리		기존 팩 다수
+Accepted	수락됨	수용됨	기존 팩 다수
+Add	추가		동작 낱말. 버튼은 명사형입니다
+Apply	적용		동작 낱말
+Cancel	취소		동작 낱말
+Change	변경		동작 낱말
+Close	닫기		동작 낱말. 상태 Closed는 닫힘입니다
+Collapse	접기		동작 낱말. 짝은 Expand(펼치기)입니다
+Configure	구성		동작 낱말. Settings(설정)와 구분합니다
+Confirm	확인		동작 낱말
+Copy	복사		동작 낱말
+Create	생성		동작 낱말
+Customize	사용자 지정	커스터마이즈	동작 낱말
+Delete	삭제		동작 낱말. Remove(제거)와 구분합니다
+Dismiss	닫기		동작 낱말. 알림을 닫는 동작입니다
+Download	다운로드		동작 낱말
+Edit	편집		동작 낱말. "수정"은 Fix의 번역에도 쓰이므로 금지 표기로 두지 않습니다
+Expand	펼치기		동작 낱말. Extend(확장)와 구분합니다
+Extend	확장		품질 프로필을 상속해 새 프로필을 만드는 동작입니다
+Active	활성		상태 낱말. 동작 Activate는 활성화입니다
+Deprecated	사용 중단됨		상태 낱말
+Changelog	변경 내역		
+Blocker	차단	블로커	심각도. 다른 심각도는 단위 2에서 정합니다
+Critical	심각	크리티컬	심각도
+Component	컴포넌트		프로젝트 안의 파일, 디렉터리 같은 분석 단위입니다
+Directory	디렉터리	디렉토리	외래어 표기법
+Breadcrumbs	이동 경로		
+AI Code Assurance	AI Code Assurance		기능 이름이므로 영문으로 둡니다. 일반명 AI Code는 AI 코드로 번역합니다
+Major	주요		심각도
+Minor	경미		심각도
+Info	정보		심각도. About의 번역과 같습니다
+Favorite	즐겨찾기		
+Load	불러오기		동작 낱말. "로드"는 "다운로드"의 일부이므로 금지 표기로 두지 않습니다
+Learn More	자세히 알아보기		
+Password	비밀번호	패스워드	
+Parameter	매개변수	파라미터	
+Preview	미리 보기	미리보기	
+Owner	소유자		
+Member	멤버		
+Optional	선택 사항		
+Global	전역		
+Inheritance	상속		
+Navigation	내비게이션	네비게이션	외래어 표기법
+Open	열기		동작 낱말. 상태 Open은 열림입니다
+Never	없음		날짜 값이 없을 때 표시합니다
+Remove	제거		동작 낱말. Delete(삭제)와 구분합니다
+Rename	이름 변경		동작 낱말. 다른 한국어 팩과 비교해 정했습니다
+Reset	초기화	리셋	동작 낱말. Clear(지우기)와 구분합니다
+Refresh	새로 고침	새로고침	동작 낱말. Reload는 다시 불러오기입니다
+Restart	재시작		동작 낱말. 다른 한국어 팩과 비교해 정했습니다
+Restore	복원		동작 낱말
+Resolve	해결		동작 낱말
+Resolution	해결		이슈를 해결한 방식(수정됨, 오탐 등)입니다. 다른 한국어 팩과 비교해 정했습니다
+Save	저장		동작 낱말
+Search	검색		동작 낱말
+Select	선택		동작 낱말. 상태 Selected는 선택됨입니다
+Settings	설정		Set, Set Up, Setup도 설정입니다. Configure(구성)와 구분합니다
+Skip	건너뛰기		동작 낱말
+Submit	제출		동작 낱말
+Clear	지우기		동작 낱말. Reset(초기화)와 구분합니다
+Update	업데이트		동작 낱말. 상태 Updated는 업데이트됨입니다
+Review	검토		
+Status	상태		
+Type	유형		
+User	사용자	유저	
+Unassigned	담당자 없음		Not assigned도 같습니다
+Unit Test	단위 테스트		
+Visibility	공개 범위		프로젝트의 공개, 비공개 설정입니다
+Template	템플릿		
+Bulk Change	일괄 변경		
+Violation	위반		
+Tour	둘러보기		
+View	보기		Views는 상용 에디션의 기능 이름이므로 뷰로 씁니다
+Permission	권한		
+Manage	관리		동작 낱말. Administration, Management도 관리입니다
+Retry	다시 시도		동작 낱말
+Software Quality	소프트웨어 품질		
+Connected Mode	연결 모드		SonarQube for IDE를 서버에 연결해 쓰는 방식입니다
+Show More	더 보기		짝은 Show Less(적게 보기)입니다
+To Review	검토 필요		보안 핫스팟 상태
+Acknowledged	확인됨		보안 핫스팟 상태
+Fixed	수정됨		보안 핫스팟과 이슈의 상태
+Safe	안전		보안 핫스팟 상태
+Review Priority	검토 우선순위		보안 핫스팟의 위험 노출도입니다
+Comment	댓글	코멘트	
+Activity	활동		
+Location	위치		
+Period	기간		
+Assigned to me	내 담당		필터 이름
+Assign	할당		동작 낱말. 이슈를 맡은 사람은 Assignee(담당자)입니다
+Won't Fix	수정 안 함		이슈 상태
+Quick Fix	빠른 수정		
+Sandbox	샌드박스		품질 게이트에 영향을 주지 않는 이슈를 모아 두는 상태입니다
+Bug	버그		이슈 유형
+Code Attribute	코드 속성		Clean Code 속성입니다
+Software Quality Impact	소프트웨어 품질 영향		
+Transition	상태 전환		
+Reopening Date	열림 전환 예정일	다시 열 날짜	샌드박스 이슈가 열림 상태로 자동 전환되는 날입니다. 같은 필드인 Snooze Date도 같습니다
+Consistency	일관성		Clean Code 속성 범주
+Intentionality	의도성		Clean Code 속성 범주
+Adaptability	적응성		Clean Code 속성 범주
+Responsibility	책임성		Clean Code 속성 범주
+Confirmed	확인됨		이슈 상태. 보안 핫스팟의 Acknowledged도 확인됨입니다
+Reopened	다시 열림		이슈 상태
+Resolved	해결됨		이슈 상태
+In Sandbox	샌드박스		이슈 상태
+Effort	작업량		이슈를 고치는 데 드는 시간입니다
+Execution Flow	실행 흐름		
+Data Flow	데이터 흐름		
+Variant	변형		
+Removed	제거됨		이슈 해결 방식
+Closed	닫힘		이슈 상태
+In Review	검토 중		
+Reviewed	검토됨		
+Main Code	메인 코드		Test Code는 테스트 코드입니다
+MQR Mode	다중 품질 규칙(MQR) 모드		Multi-Quality Rule Mode
+Standard Experience	표준 환경	표준 경험	MQR 모드와 짝인 동작 방식의 이름이라 경험보다 환경이 뜻에 맞습니다
+Agent	에이전트		
+Priority	우선순위		
+Action Plan	실행 계획		
+AI CodeFix	AI CodeFix		기능 이름이므로 영문으로 둡니다. 일반명 AI Fix는 AI 수정입니다
+Custom	사용자 지정		Customize와 같습니다
+Scope	범위		
+Module	모듈		
+Issue Lifecycle	이슈 수명 주기		
+Detection Cause	감지 원인		
+Compliance	규정 준수		
+Prioritized Rule	우선순위 규칙		
+Display Mode	표시 모드		
+Built-in	기본 제공		기본 제공 품질 프로필 등
+Custom Rule	사용자 지정 규칙		
+Rule Template	규칙 템플릿		
+Deactivate	비활성화		동작 낱말. 짝은 Activate(활성화)입니다
+Reactivate	다시 활성화		동작 낱말
+Inherited	상속됨		
+Override	재정의		상태 Overridden은 재정의됨입니다
+Extended Description	확장 설명		
+Repository	저장소		규칙 저장소
+Characteristic	특성		
+Available Since	사용 가능 시점		
+High	높음		심각도. Medium은 보통, Low는 낮음입니다
+Work Item	작업 항목		Jira의 작업 항목
+Push to Jira	Jira로 보내기		
+Remediation Function	수정 함수		
+Release	릴리스		
+Passed	통과		품질 게이트 상태
+Failed	실패		품질 게이트 상태
+Risky	위험		품질 게이트가 실패한 상태의 릴리스
+Condition	조건		품질 게이트 조건
+Parent	상위		상위 프로필. 하위는 Descendant(하위 프로필)입니다
+Project Version	프로젝트 버전		
+Previous Version	이전 버전		새 코드 정의 방식
+Descendant	하위 프로필		상속하는 프로필. 상위는 Parent입니다
+Sonar way	Sonar way		기본 제공 품질 프로필과 품질 게이트의 이름이므로 영문으로 둡니다
+Exporter	내보내기 도구		
+Grant	부여		권한을 부여하는 동작
+Operator	연산자		품질 게이트 조건의 연산자. Is less than은 미만, Is greater than은 초과입니다
+Threshold	임계값		
+Dependency Risk	의존성 위험		
+Qualify	자격 부여		AI Code Assurance 자격. 짝은 Disqualify(자격 해제)입니다
+Guardrail	안전장치		
+New Code Definition	새 코드 정의		
+Reference Branch	기준 브랜치	참조 브랜치	새 코드를 가르는 기준선이 되는 브랜치입니다. 새 코드 정의 방식
+Number of Days	일수		새 코드 정의 방식
+Specific Analysis	특정 분석		새 코드 정의 방식
+Lines of Code	코드 라인		주석을 제외한 코드 라인(ncloc)
+Cyclomatic Complexity	순환 복잡도		
+Cognitive Complexity	인지 복잡도		
+Rating	등급		A ~ E 등급
+Remediation Effort	수정 작업량		
+Debt Ratio	부채 비율		기술 부채 비율
+Uncovered	커버되지 않은		커버되지 않은 라인, 조건
+Lines to Cover	커버할 라인		
+Afferent Coupling	Afferent Coupling	구심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Efferent Coupling	Efferent Coupling	원심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Tangle	얽힘		파일 얽힘, 패키지 얽힘
+Integration Test	통합 테스트		약어 IT는 그대로 둡니다
+Line	라인		코드의 줄. 라인 커버리지, 라인 번호, 라인별 등. "줄"은 다른 뜻(줄이다)으로도 쓰이므로 금지 표기로 두지 않습니다
+Statement	구문		코드의 statement
+Number of Children	하위 클래스 수	자식 수	객체 지향 지표 NOC. 한 클래스를 직접 상속하는 하위 클래스의 수입니다
+Overview	개요		프로젝트 개요 페이지 이름. "화면"은 붙이지 않습니다
+Long-lived Branch	장기 브랜치		
+Revision	리비전		SCM 리비전
+Badge	배지		프로젝트 배지
+High Impact	영향 높음		개요의 약자 표시는 상(High), 중(Medium), 하(Low)입니다
+Finding	발견 사항		
+Security Report	보안 보고서		
+Requirement	요구사항	요구 사항	보안 표준의 요구사항. 사용자 결정
+Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다
+Merge Request	머지 리퀘스트	병합 요청|머지 요청	GitLab의 풀 리퀘스트. Pull Request(풀 리퀘스트)와 같은 음차 방식입니다. 약어 MR은 그대로 둡니다. 사용자 결정
+Bind	연결	바인딩	프로젝트를 DevOps 플랫폼이나 Jira에 묶는 동작. Binding, Bound도 연결입니다. 사용자 결정
+Provisioning	프로비저닝	프로비져닝	
+Main Branch	메인 브랜치	주 브랜치	
+Dashboard	대시보드		
+Duplicate	복제		동작 낱말. 대시보드를 복사본으로 만드는 동작입니다. 중복(Duplications)과 구분합니다
+Baseline	기준선	베이스라인	새 코드를 가르는 기준이 되는 분석이나 브랜치입니다
+Remediation Agent	Remediation Agent	수정 에이전트	기능 이름이므로 영문으로 둡니다. 일반명 Agent는 에이전트입니다. 사용자 결정
+Project Coverage	프로젝트 적용 범위		프로젝트를 가져오고 분석한 현황입니다. 코드 커버리지(Coverage)와 구분합니다
+Perspective	관점		프로젝트 목록의 보기 방식
+Widget	위젯		대시보드의 구성 요소
+Section	섹션		대시보드에서 위젯을 묶는 단위
+Visualization	시각화		위젯의 표시 방식(차트, 상위 목록 등)
+Trend	추세	트렌드	
+Legend	범례		
+Mean Time to Resolve	평균 해결 시간		약어 MTTR은 그대로 둡니다
+Top List	상위 목록		대시보드 위젯의 시각화 방식
+Slice By	분할 기준		원형 차트를 조각으로 나누는 기준. Group By는 그룹 기준입니다
+Facet	Facet	패싯	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Browse	탐색	브라우징	프로젝트 권한 이름. 다른 한국어 팩 다수의 표기입니다
+Public	공개	퍼블릭	프로젝트 공개 범위. 짝은 Private(비공개)입니다
+Sparkline	Sparkline	스파크라인	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+PR Decoration	PR 데코레이션	PR 장식	분석 결과를 풀 리퀘스트에 표시하는 기능. 사용자 결정
+Event	이벤트		프로젝트 활동의 버전, 품질 게이트 변경 등의 기록
+Private	비공개	프라이빗	프로젝트 공개 범위. 짝은 Public(공개)입니다
+Role	역할		"롤"은 "스크롤"의 일부이므로 금지 표기로 두지 않습니다
+Execute Analysis	분석 실행		프로젝트 권한 이름. 같은 권한 목록의 See Source Code는 소스 코드 보기, Administer Issues는 이슈 관리입니다
+Orphan Pull Request	브랜치 없는 PR	고아 풀 리퀘스트	대상 브랜치가 삭제된 풀 리퀘스트. 사용자 결정
+Disconnect	연결 해제		동작 낱말. 짝은 Bind(연결)입니다
+Configuration	구성		DevOps 플랫폼과 인증 설정의 구성. 동작 Configure도 구성입니다
+Integration	통합	연동	DevOps 플랫폼 통합
+Analysis Scope	분석 범위		
+Server Base URL	서버 기본 URL		
+Organization	조직		GitHub 조직 등
+Installation	설치		GitHub App 설치
+Personal Access Token	개인 액세스 토큰		
+GitHub App	GitHub App		GitHub의 기능 이름이므로 영문으로 둡니다
+Just-in-Time Provisioning	Just-in-Time 프로비저닝	적시 프로비저닝	방식 이름이므로 Just-in-Time은 영문으로 둡니다. 짝은 Automatic Provisioning(자동 프로비저닝)입니다
+Client Secret	클라이언트 시크릿	클라이언트 비밀	Client ID는 클라이언트 ID입니다
+Private Key	개인 키	프라이빗 키|비공개 키	
+Identity Provider	ID 공급자		
+Design & Architecture	Design & Architecture	설계와 아키텍처|설계 및 아키텍처	기능 이름이므로 영문으로 둡니다. 사용자 결정
+Early Access	얼리 액세스		무료 체험으로 먼저 제공하는 기능
+Monorepo	모노레포	모노리포	Monorepository도 모노레포입니다
+Slug	슬러그		저장소 슬러그, 그룹 URL 슬러그
+Mapping	매핑		역할 권한 매핑
+Signing Secret	서명 시크릿		Slack 앱 자격 증명
+Localization	지역화	현지화|로컬라이제이션	
+Announcement	공지		
+Exclusion	제외		분석 범위의 파일 제외. 짝은 Inclusion(포함)입니다
+Housekeeping	데이터 정리	하우스키핑	오래된 분석, 브랜치, 로그 데이터를 지우는 설정 범주
+Retention	보존		데이터 보존 기간
+Audit Log	감사 로그		
+Advanced Security	Advanced Security		SonarQube Advanced Security. 상용 기능 이름이므로 영문으로 둡니다
+Software Composition Analysis	소프트웨어 구성 분석		약어 SCA는 그대로 둡니다
+Modern Authentication	최신 인증	모던 인증	Microsoft의 OAuth 기반 인증. Basic Authentication은 기본 인증입니다
+Tenant	테넌트		Microsoft 테넌트
+Background Task	백그라운드 작업	백그라운드 태스크	
+User Token	사용자 토큰		
+Appearance	모양		내 계정의 테마 설정
+Permission Holder	권한 보유자		
+Marketplace	마켓플레이스		
+Plugin	플러그인		
+Uninstall	제거	언인스톨	동작 낱말. 플러그인 제거
+Update Center	업데이트 센터		
+Scanner Context	스캐너 컨텍스트		
+Worker	Worker	워커	Compute Engine Worker. 영문으로 둡니다. 사용자 결정
+Compute Engine	Compute Engine		SonarQube 서버 구성 요소 이름이므로 영문으로 둡니다. 약어 CE도 그대로 둡니다
+Log Level	로그 수준	로그 레벨	
+Search Engine	검색 엔진		SonarQube 서버 구성 요소
+Node	노드		클러스터의 애플리케이션 노드, 검색 노드
+Revoke	폐기		토큰을 폐기하는 동작. 권한을 거두는 revoke는 회수입니다
+Delivery	전송		Webhook 전송
+Payload	Payload	페이로드	Webhook Payload. 영문으로 둡니다. 사용자 결정
+Group Membership	그룹 멤버십		
+Callback URL	콜백 URL		
+Reauthorize	다시 인증		
+Web API	Web API	웹 API	SonarQube API 문서의 이름이므로 영문으로 둡니다
+Onboarding	온보딩		프로젝트 온보딩
+API Token	API 토큰		Bitbucket Cloud의 API 토큰
+Scanner	스캐너		npm 프로젝트용 스캐너 등. 제품명 SonarScanner는 영문으로 둡니다
+Build Wrapper	Build Wrapper	빌드 래퍼	C/C++ 분석 도구 이름이므로 영문으로 둡니다
+Compilation Database	컴파일 데이터베이스		
+Automatic Analysis	자동 분석		CI-based Analysis는 CI 기반 분석입니다
+Auto-import	자동 가져오기		
+Prerequisite	사전 요구사항	전제 조건|사전 요구 사항	튜토리얼의 사전 준비 단계. 사용자 결정
+LLM Provider	LLM 공급자	LLM 제공자|LLM 프로바이더	AI 기능이 쓰는 모델 제공 서비스. Identity Provider(ID 공급자)와 같은 낱말입니다. 사용자 결정
+Vortex	Vortex	보텍스	Sonar Vortex. 제품 이름이므로 영문으로 둡니다. 단계 이름 Guide, Verify도 영문으로 둡니다. 사용자 결정
+Hunter Agent	Hunter Agent	헌터 에이전트	기능 이름이므로 영문으로 둡니다. 사용자 결정
+Agent-Centric Development Cycle	에이전트 중심 개발 주기		약어 ACDC는 그대로 둡니다. 사용자 결정
+Manual Remediation	수동 수정	수동 조치	Remediation Agent의 실행 방식. 사용자 결정
+Automated Remediation	자동 수정	자동 조치	Remediation Agent의 실행 방식. 홍보 문구의 Scheduled는 예약입니다. 사용자 결정
+Overage	초과 사용	오버리지|초과분	월 사용 한도를 넘어 추가로 쓰는 유료 사용량. Overage credits는 초과 사용 크레딧, Increase overage는 초과 사용량을 늘리다입니다. 사용자 결정
+Base Branch	Base Branch	베이스 브랜치	수정 브랜치와 풀 리퀘스트의 기반이 되는 저장소 브랜치. 영문으로 둡니다. 새 코드 정의의 Reference Branch(기준 브랜치)와 구별합니다. 사용자 결정
+Security Alert	보안 경고	보안 알림	프로젝트에서 심각한 발견 사항이 감지되면 표시하는 경고. Notification(알림)과 구별합니다
+Regulatory Report	규제 보고서		상세 지표, 이슈 목록, 프로젝트 구성을 묶은 보고서. Compliance Report(규정 준수 보고서)와 구별합니다. 사용자 결정
+Executive Report	경영진 보고서	임원 보고서	사용자 결정
+Agentic Task	에이전트 작업	에이전틱	Hunter Agent와 Remediation Agent가 수행하는 작업
+Pending	대기 중	보류 중	백그라운드 작업과 에이전트 작업의 상태
+Reindex	다시 색인	재색인|리인덱스	
+Recompute	다시 계산	재계산	포트폴리오와 애플리케이션의 집계를 다시 계산하는 동작
+Secret Key	시크릿 키	비밀 키	속성 암호화에 쓰는 키. Secret은 모두 시크릿으로 옮깁니다(Secret Token은 시크릿 토큰). 사용자 결정
+Maintenance	유지보수	유지 관리|유지 보수	서버 유지보수 화면. Maintainability(유지보수성)와 같은 띄어쓰기입니다. 사용자 결정
+Scan Unit	Scan Unit	스캔 유닛|스캔 단위|스캔 크레딧	Hunter Agent의 과금 단위. 영문으로 둡니다. 사용자 결정
+Playbook	Playbook	플레이북	Hunter Agent의 Playbook 기반 추론. 영문으로 둡니다. 사용자 결정
+Broken Access Control	취약한 접근 제어		OWASP Top 10의 항목 이름
+Run History	실행 기록		Hunter Agent 탭
+Intended Architecture	의도한 아키텍처		권한 설명에서 정한 표기
+Deviation	이탈	편차	의도한 아키텍처에서 벗어난 코드. Structural Deviation은 구조 이탈, Relationship Deviation은 관계 이탈입니다. 사용자 결정
+Directive	지시	디렉티브	코드를 바꾸라는 아키텍처 지시. 사용자 결정
+Exit Point	진출점		다른 프로젝트나 시스템을 호출하는 코드 위치. 사용자 결정
+Entry Point	진입점		다른 프로젝트의 호출을 받는 위치. 사용자 결정
+Weak Tangle	약한 얽힘		
+Split Responsibility	분산된 책임		하위 컴포넌트가 서로 연결되지 않은 컴포넌트
+Oversized Component	Oversized 컴포넌트	과대 컴포넌트	아키텍처 Smell의 하나. 하위 컴포넌트가 너무 많은 컴포넌트입니다. Oversized는 영문으로 둡니다. 사용자 결정
+Code Artifact	코드 아티팩트		
+System Component	시스템 컴포넌트		
+Software Bill of Materials	소프트웨어 자재 명세서		약어 SBOM은 그대로 둡니다. Bill of Materials는 자재 명세서입니다. 사용자 결정
+Copyleft	Copyleft	카피레프트	라이선스 범주. Weak Copyleft는 약한 Copyleft처럼 꾸밈말만 옮깁니다. 사용자 결정
+Permissive	Permissive	퍼미시브|허용형	라이선스 범주. Standard Permissive는 표준 Permissive입니다. 사용자 결정
+Maintainer	Maintainer	메인테이너|유지관리자	오픈소스 패키지를 관리하는 사람. 사용자 결정
+License Profile	라이선스 프로필	라이선스 프로파일	Quality Profile(품질 프로필)과 같은 표기
+Reachability	도달 가능성		Reachable은 도달 가능, Unreachable은 도달 불가입니다
+Withdrawn	철회됨		취약점 보고서나 권고의 철회
+Lockfile	잠금 파일		
+Prerelease	사전 릴리스		
+Breakdown	세부 내역		포트폴리오 세부 내역, 언어별 세부 내역. Rule breakdown은 규칙 분류입니다
+Grace Period	유예 기간		라이선스 만료 후 유예 기간
+Project Dump	프로젝트 덤프		프로젝트 가져오기와 내보내기
+Manual Measure	수동 측정값		포트폴리오의 프로젝트 선택 기준. Custom Measure는 사용자 지정 측정값입니다
+Base Usage Limit	기본 사용 한도		제품 구독에 포함된 사용 한도. 넘으면 초과 사용 한도가 적용됩니다
+Clean as You Code	Clean as You Code		SonarSource의 코드 품질 방법론 이름이므로 영문으로 둡니다. 상용 번들 governance에 나옵니다

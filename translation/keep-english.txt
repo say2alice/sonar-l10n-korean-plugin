@@ -1,0 +1,273 @@
+# 번역하지 않고 영문 그대로 두는 값의 규칙입니다. 형식과 기준은 문서 저장소 번역 지침 §5에 있습니다.
+# prefix <키 접두사>, pattern <값 전체와 일치하는 정규식>, key <키> 가운데 하나를 한 줄에 적습니다.
+
+# 인자 이름을 빼면 영문자가 없는 값(인자와 기호만 있는 값, 빈 값)
+pattern (\{[A-Za-z0-9_]+\}|[^A-Za-z])*
+
+# 제품명과 상표만으로 된 값
+pattern (Sonar|SonarSource|SonarQube|SonarQube for IDE|SonarQube Cloud|SonarQube Server|SonarQube Community Build|SonarLint|SonarCloud)
+pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Server|Bitbucket Data Center|Azure DevOps|Azure DevOps Server|Jenkins|Jira|Slack)
+# 제품명 뒤에 URL이나 ID가 붙은 입력 항목 이름(GitHub API URL, GitHub App ID)
+pattern (GitHub|GitLab|Bitbucket Data Center|Azure DevOps)( API)? URL|(GitHub )?App ID(: \{[A-Za-z0-9_]+\})?
+# 에디션 이름
+pattern (Developer|Enterprise|Data Center) Edition
+
+# 용어집에서 영문으로 두기로 한 용어만으로 된 값
+pattern Code Smells?
+pattern Clean as You Code
+pattern (Afferent|Efferent) [Cc]ouplings?
+
+# 대문자 약어만으로 된 값(CSV, JSON, URL, PR)
+pattern [A-Z]{2,5}
+
+# 기능 이름으로 영문 그대로 두는 값
+pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent|Hunter Agent|Vortex( Guide| Verify)?|Design & Architecture|Advanced Security|Advanced SAST( \(ASAST\))?|Compute Engine
+
+# 보안과 규정 준수 표준의 이름만으로 된 값
+pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA|CWE Top 25)( [0-9.]+| V[0-9R]+)?
+pattern OWASP (Mobile )?Application Security Verification Standard|DISA Security Technical Implementation Guides
+
+# 줄 번호 약식 표기(L12)
+key issue.ncloc_x.short
+
+# 지표 이름으로 영문 그대로 두는 값
+pattern LCOM4
+
+# 입력란의 예시 값(영문 슬러그)
+key settings.almintegration.github.manifest.name.placeholder
+key settings.almintegration.github.manifest.organization.placeholder
+key settings.authentication.gitlab.form.allowedGroups.placeholder
+
+# 프로그래밍 언어 이름만으로 된 설정 범주
+key property.category.java
+
+# 서비스 이름과 상태 인자만으로 된 알림(Sonar SCA {0})
+key property.sca.message.updated
+
+# 작은따옴표로 이스케이프한 꺾쇠 값. 번역하면 번역 품질 검사가 꺾쇠를 태그로 셉니다
+key settings.default.no_value
+key settings.default.complex_value
+key settings.default.password
+
+# Web API 문서의 이름과 HTTP 헤더 이름
+pattern Web API( v2)?
+key api_documentation.v2.request_subheader.request_content_type
+
+# 용어집에서 영문으로 두기로 한 용어와 콜론만으로 된 값
+key webhooks.delivery.payload
+
+# 튜토리얼에서 가리키는 외부 도구 화면의 메뉴, 버튼, 필드, 권한, 범위 이름(번역 지침 §5)
+key onboarding.create_project.pat_help.instructions.bitbucket_server.link
+key onboarding.create_project.pat_help.gitlab.read_api_permission
+key onboarding.tutorial.with.bitbucket_pipelines.variables.intro.link
+key onboarding.tutorial.env_variables.field
+key onboarding.tutorial.with.bitbucket_pipelines.variables.name.sentence.name
+key onboarding.tutorial.with.bitbucket_pipelines.variables.add.sentence.add
+key onboarding.tutorial.with.bitbucket_pipelines.variables.secured.sentence.secured
+key onboarding.tutorial.with.github_action.secret.intro.link
+key onboarding.tutorial.with.github_action.secret.name.sentence.name
+key onboarding.tutorial.with.github_action.secret.new.sentence.new_secret
+key onboarding.tutorial.with.github_action.secret.add.sentence.add_secret
+key onboarding.tutorial.with.gitlab_ci.variables.description.link
+key onboarding.tutorial.with.gitlab_ci.variables.step1
+key onboarding.tutorial.with.gitlab_ci.variables.step3.value
+key onboarding.tutorial.with.gitlab_ci.variables.section.step4.value
+key onboarding.tutorial.with.gitlab_ci.yaml.filename
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step1.sentence.new_item
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step1.sentence.type
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.server.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.server.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.repo_url.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.sentence.source
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.branches_prs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.branches_mrs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.discover_prs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.discover_mrs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.ref_specs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.ref_specs.add_behaviour.sentence.add
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.ref_specs.add_behaviour.sentence.ref_spec
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.ref_specs.set_pr_ref_specs.sentence.ref_spec
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.ref_specs.set_mr_ref_specs.sentence.ref_spec
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step3.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step3.mode.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step3.mode.action
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step3.script_path.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step3.script_path.action
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step4.sentence.save
+key onboarding.tutorial.with.jenkins.pipeline.step1.sentence.new_item
+key onboarding.tutorial.with.jenkins.pipeline.step1.sentence.type
+key onboarding.tutorial.with.jenkins.pipeline.step2.sentence.tab
+key onboarding.tutorial.with.jenkins.pipeline.step2.sentence.option
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.trigger.sentence.tab
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.trigger.sentence.option
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.pick_triggers.sentence.triggers
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.pick_triggers.sentence.push_events
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.click_advanced.sentence.advanced
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.secret_token.sentence.secret_token
+key onboarding.tutorial.with.jenkins.pipeline.gitlab.step2.secret_token.sentence.generate
+key onboarding.tutorial.with.jenkins.pipeline.step3.sentence.tab
+key onboarding.tutorial.with.jenkins.pipeline.step3.definition.label
+key onboarding.tutorial.with.jenkins.pipeline.step3.definition.action
+key onboarding.tutorial.with.jenkins.pipeline.step3.scm.sentence.label
+key onboarding.tutorial.with.jenkins.pipeline.step3.scm.sentence.branches_to_build
+key onboarding.tutorial.with.jenkins.pipeline.step3.script_path.label
+key onboarding.tutorial.with.jenkins.pipeline.step3.script_path.action
+key onboarding.tutorial.with.jenkins.pipeline.step4.sentence.save
+key onboarding.tutorial.with.jenkins.webhook.step1.name.label
+key onboarding.tutorial.with.jenkins.webhook.gitlab.step1.secret_token.label
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step2.sentence.events
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.sentence.triggers
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.sentence.option
+key onboarding.tutorial.with.jenkins.webhook.github.step2.sentence.events
+key onboarding.tutorial.with.jenkins.webhook.github.step2.sentence.option
+key onboarding.tutorial.with.jenkins.webhook.gitlab.step2.sentence.trigger
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step2.repo.label
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step2.repo.action
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step2.pr.label
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step2.pr.action
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.repo.label
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.repo.action
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.pr.label
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step2.pr.action
+key onboarding.tutorial.with.jenkins.webhook.github.step2.repo
+key onboarding.tutorial.with.jenkins.webhook.github.step2.pr
+key onboarding.tutorial.with.jenkins.webhook.gitlab.step2.repo
+key onboarding.tutorial.with.jenkins.webhook.gitlab.step2.mr
+key onboarding.tutorial.with.jenkins.webhook.github.step3.sentence.add_webhook
+key onboarding.tutorial.with.jenkins.webhook.bitbucketcloud.step3.sentence.save
+key onboarding.tutorial.with.jenkins.webhook.bitbucket.step3.sentence.create
+key onboarding.tutorial.with.jenkins.webhook.gitlab.step3.sentence.add_webhook
+key onboarding.tutorial.with.jenkins.jenkinsfile.maven.step3.replace.sentence.default
+key onboarding.tutorial.with.jenkins.jenkinsfile.maven.step3.help1.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.maven.step3.help2.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.maven.step3.help2.sentence.name
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.title.sentence.default_msbuild
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step1.sentence.msbuild
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step2.sentence.path
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step3.sentence.msbuild
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step3.sentence.msbuild_plugin
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step3.sentence.add_msbuild
+key onboarding.tutorial.with.jenkins.dotnet.msbuild.prereqs.step3.sentence.name
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.title.sentence.default_scanner
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step1.sentence.path
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.default_scanner
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.add_scanner_for_msbuild
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step3.sentence.name
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step4.sentence.install_auto
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_from
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_auto
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.replace.sentence.default
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help1.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help2.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help2.sentence.name
+key onboarding.tutorial.with.azure_pipelines.ExtensionInstallation.sentence.button
+key onboarding.tutorial.with.azure_pipelines.ServiceEndpoint.step1.sentence.menu
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.win.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.nix.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.win.sentence.inline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.nix.sentence.inline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare_additional.ccpp.additional
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare_additional.ccpp.advanced
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build.ccpp.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_script.ccpp.sentence.build_wrapper
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.sentence.pipeline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.dotnet
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.maven
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.gradle
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.cpp
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.objectivec
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.other
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.manual.sentence.mode
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.run.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.run.key.sentence.project_key
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.advanced_properties.sentence.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.advanced_properties.sentence.properties
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_version
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_architecture
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_source
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.pre-installed
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java.settings.sentence.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java.settings.sentence.option
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.publish_qg.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.sentence.tab
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.sentence.continuous_integration
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.no_branches.sentence.tab
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.no_branches.sentence.continuous_integration
+
+# 빌드 도구, 언어, 플랫폼 이름만으로 된 값(튜토리얼의 빌드 선택지)
+pattern Maven|Gradle|Make|\.NET( Core| Framework)?|(Windows|Linux) \+ \.NET (Core|Framework)|Objective-C|JS/TS & Web|Python|Rust/Cargo|Linux|Windows|macOS|x86_64|ARM64
+# CI 도구 이름
+pattern GitHub Actions|GitLab CI|Azure Pipelines|Bitbucket Pipelines
+
+# 꺾쇠로 감싼 자리 표시 값. 번역하면 번역 품질 검사가 꺾쇠를 태그로 셉니다
+key onboarding.analysis.build_wrapper.execute_build_command
+
+# AI 기능의 제품, 기능, 모델 이름만으로 된 값
+key ai_capabilities_server.vortex.title
+key ai_capabilities.llm_providers.supported_models.hunter_agent
+key ai_capabilities.llm_providers.supported_models.remediation_agent
+# 시간대 예시 값
+key ai_capabilities.remediation_agent.scheduled.timezone.placeholder
+
+# 약어만으로 된 값과 큰 수의 단위 기호(1.2k처럼 숫자 뒤에 붙음)
+key managed.SCIM
+key short_number_suffix.g
+key short_number_suffix.k
+key short_number_suffix.m
+
+# 페이지 제목 틀. 인자와 기호만 있습니다
+key page_title.template.default
+key page_title.template.with_category
+key page_title.template.with_instance
+
+# 라이선스 이름과 버전 표기 틀
+key footer.license.lgplv3
+key footer.version.full
+key footer.version.short
+
+# Vortex 기능 이름과 인자만으로 된 값
+key vortex_dashboard.adoption_coverage.capability_coverage.legend.both
+key vortex_dashboard.project_activity.guide_calls
+key vortex_dashboard.project_activity.verify_calls
+
+# 자리 표시 값. 꺾쇠를 번역 품질 검사가 태그로 셉니다
+key architecture.patterns.edit.spotlight.structure.placeholder
+
+# SBOM 형식 이름과 괄호 속 약어
+key dependencies.list.export_as_sbom.type.cyclonedx
+key dependencies.list.export_as_sbom.type.spdx_23
+key dependencies.list.export_as_sbom.type.spdx_30
+key dependencies.risk.what.basicInfo.chanceOfFutureExploitation.epss
+key dependencies.risk.what.basicInfo.knownExploited.kev
+
+# 패키지 관리자와 패키지 저장소 이름
+pattern Cargo|CocoaPods|Packagist|Conan|Go|npm|NuGet|PyPI|Gem|vcpkg
+# 약어와 인자만으로 된 값
+key dependencies.risks.cvss_score
+
+# 태그와 인자만으로 된 값, 번역 품질 검사가 태그로 세는 꺾쇠 값
+key portfolio_dashboard.breakdown.slice_filter.dimension_with_value
+key views.deleted_metric
+
+# 브랜치 이름
+key views.projects.selection_mode.main_branch
+
+# 이메일 주소만으로 된 값
+pattern [A-Za-z0-9._-]+@[A-Za-z0-9.-]+
