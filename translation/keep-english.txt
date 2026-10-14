@@ -224,3 +224,9 @@ key ai_capabilities.llm_providers.supported_models.hunter_agent
 key ai_capabilities.llm_providers.supported_models.remediation_agent
 # 시간대 예시 값
 key ai_capabilities.remediation_agent.scheduled.timezone.placeholder
+
+# 약어만으로 된 값과 큰 수의 단위 기호(1.2k처럼 숫자 뒤에 붙음)
+key managed.SCIM
+key short_number_suffix.g
+key short_number_suffix.k
+key short_number_suffix.m
