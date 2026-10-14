@@ -54,3 +54,7 @@ key api_documentation.v2.request_subheader.request_content_type
 
 # 용어집에서 영문으로 두기로 한 용어와 콜론만으로 된 값
 key webhooks.delivery.payload
+
+# 튜토리얼에서 가리키는 외부 제품의 메뉴, 권한, 범위 이름
+key onboarding.create_project.pat_help.instructions.bitbucket_server.link
+key onboarding.create_project.pat_help.gitlab.read_api_permission
