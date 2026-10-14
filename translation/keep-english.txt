@@ -14,6 +14,7 @@ pattern (Developer|Enterprise|Data Center) Edition
 
 # 용어집에서 영문으로 두기로 한 용어만으로 된 값
 pattern Code Smells?
+pattern Clean as You Code
 pattern (Afferent|Efferent) [Cc]ouplings?
 
 # 대문자 약어만으로 된 값(CSV, JSON, URL, PR)
@@ -267,3 +268,6 @@ key views.deleted_metric
 
 # 브랜치 이름
 key views.projects.selection_mode.main_branch
+
+# 이메일 주소만으로 된 값
+pattern [A-Za-z0-9._-]+@[A-Za-z0-9.-]+
