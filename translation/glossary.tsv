@@ -288,3 +288,6 @@ Revoke	폐기		토큰을 폐기하는 동작. 권한을 거두는 revoke는 회�
 Delivery	전송		웹훅 전송
 Payload	페이로드		
 Group Membership	그룹 멤버십		
+Callback URL	콜백 URL		
+Reauthorize	다시 인증		
+Web API	Web API	웹 API	SonarQube API 문서의 이름이므로 영문으로 둡니다

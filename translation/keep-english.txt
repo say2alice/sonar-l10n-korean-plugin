@@ -47,3 +47,7 @@ key property.sca.message.updated
 key settings.default.no_value
 key settings.default.complex_value
 key settings.default.password
+
+# Web API 문서의 이름과 HTTP 헤더 이름
+pattern Web API( v2)?
+key api_documentation.v2.request_subheader.request_content_type
