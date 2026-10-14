@@ -42,3 +42,8 @@ key property.category.java
 
 # 서비스 이름과 상태 인자만으로 된 알림(Sonar SCA {0})
 key property.sca.message.updated
+
+# 작은따옴표로 이스케이프한 꺾쇠 값. 번역하면 번역 품질 검사가 꺾쇠를 태그로 셉니다
+key settings.default.no_value
+key settings.default.complex_value
+key settings.default.password
