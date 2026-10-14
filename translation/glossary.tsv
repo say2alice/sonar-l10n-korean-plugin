@@ -327,7 +327,7 @@ Exit Point	진출점		다른 프로젝트나 시스템을 호출하는 코드 �
 Entry Point	진입점		다른 프로젝트의 호출을 받는 위치. 사용자 결정
 Weak Tangle	약한 얽힘		
 Split Responsibility	분산된 책임		하위 컴포넌트가 서로 연결되지 않은 컴포넌트
-Oversized Component	과대 컴포넌트		
+Oversized Component	Oversized 컴포넌트	과대 컴포넌트	아키텍처 Smell의 하나. 하위 컴포넌트가 너무 많은 컴포넌트입니다. Oversized는 영문으로 둡니다. 사용자 결정
 Code Artifact	코드 아티팩트		
 System Component	시스템 컴포넌트		
 Software Bill of Materials	소프트웨어 자재 명세서		약어 SBOM은 그대로 둡니다. Bill of Materials는 자재 명세서입니다. 사용자 결정
