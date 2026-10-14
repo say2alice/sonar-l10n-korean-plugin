@@ -239,3 +239,5 @@ Event	이벤트		프로젝트 활동의 버전, 품질 게이트 변경 등의 �
 Private	비공개	프라이빗	프로젝트 공개 범위. 짝은 Public(공개)입니다
 Role	역할		"롤"은 "스크롤"의 일부이므로 금지 표기로 두지 않습니다
 Execute Analysis	분석 실행		프로젝트 권한 이름. 같은 권한 목록의 See Source Code는 소스 코드 보기, Administer Issues는 이슈 관리입니다
+Orphan Pull Request	고아 풀 리퀘스트		기준 브랜치가 삭제된 풀 리퀘스트. 다른 한국어 팩 다수의 표기입니다
+Disconnect	연결 해제		동작 낱말. 짝은 Bind(연결)입니다
