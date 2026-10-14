@@ -279,3 +279,8 @@ Plugin	플러그인
 Uninstall	제거	언인스톨	동작 낱말. 플러그인 제거
 Update Center	업데이트 센터		
 Scanner Context	스캐너 컨텍스트		
+Worker	워커		Compute Engine 워커
+Compute Engine	Compute Engine		SonarQube 서버 구성 요소 이름이므로 영문으로 둡니다. 약어 CE도 그대로 둡니다
+Log Level	로그 수준	로그 레벨	
+Search Engine	검색 엔진		SonarQube 서버 구성 요소
+Node	노드		클러스터의 애플리케이션 노드, 검색 노드

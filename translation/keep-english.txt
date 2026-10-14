@@ -20,7 +20,7 @@ pattern (Afferent|Efferent) [Cc]ouplings?
 pattern [A-Z]{2,5}
 
 # 기능 이름으로 영문 그대로 두는 값
-pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent|Design & Architecture|Advanced Security|Advanced SAST( \(ASAST\))?
+pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent|Design & Architecture|Advanced Security|Advanced SAST( \(ASAST\))?|Compute Engine
 
 # 보안과 규정 준수 표준의 이름만으로 된 값
 pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA|CWE Top 25)( [0-9.]+| V[0-9R]+)?
