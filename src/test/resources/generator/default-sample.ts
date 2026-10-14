@@ -17,6 +17,7 @@ export const defaultMessages = {
   'hotspots.find_in_status_filter_x': ' You can find it again.',
   'trailing_space': 'Ends with space ',
   'since_previous_version.short': 'Δ version',
+  'since_previous_version_detailed.short': '\u0394 version ({0})',
   /* 값 앞의 블록 주석 */
   'with_hash': 'Value with # and : and = inside',
 };

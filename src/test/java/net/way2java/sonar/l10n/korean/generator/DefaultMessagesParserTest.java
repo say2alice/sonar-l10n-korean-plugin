@@ -37,6 +37,7 @@ class DefaultMessagesParserTest {
         Map.entry("hotspots.find_in_status_filter_x", " You can find it again."),
         Map.entry("trailing_space", "Ends with space "),
         Map.entry("since_previous_version.short", "Δ version"),
+        Map.entry("since_previous_version_detailed.short", "Δ version ({0})"),
         Map.entry("with_hash", "Value with # and : and = inside"));
   }
 
@@ -46,6 +47,17 @@ class DefaultMessagesParserTest {
     assertThatThrownBy(() -> DefaultMessagesParser.parse("export const defaultMessages = { a: `x ${y}` };"))
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessageContaining("${}");
+  }
+
+  // NFR-BD-05
+  @Test
+  void rejectsUnsupportedEscapes() {
+    for (String escape : new String[] {"\\x41", "\\1", "\\01"}) {
+      assertThatThrownBy(() -> DefaultMessagesParser.parse("export const defaultMessages = { a: 'x" + escape + "' };"))
+          .as(escape)
+          .isInstanceOf(IllegalArgumentException.class)
+          .hasMessageContaining("다루지 않습니다");
+    }
   }
 
   // NFR-BD-05
