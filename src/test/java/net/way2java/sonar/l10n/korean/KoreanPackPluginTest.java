@@ -19,7 +19,7 @@ class KoreanPackPluginTest {
   @Test
   void defineRegistersNoExtension() {
     Plugin.Context context = new Plugin.Context(
-        SonarRuntimeImpl.forSonarQube(Version.create(25, 12), SonarQubeSide.SERVER, SonarEdition.COMMUNITY));
+        SonarRuntimeImpl.forSonarQube(Version.create(26, 1), SonarQubeSide.SERVER, SonarEdition.COMMUNITY));
 
     new KoreanPackPlugin().define(context);
 
