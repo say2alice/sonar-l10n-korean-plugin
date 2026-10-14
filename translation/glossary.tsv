@@ -306,4 +306,13 @@ Agent-Centric Development Cycle	에이전트 중심 개발 주기		약어 ACDC�
 Manual Remediation	수동 수정	수동 조치	Remediation Agent의 실행 방식. 사용자 결정
 Automated Remediation	자동 수정	자동 조치	Remediation Agent의 실행 방식. 홍보 문구의 Scheduled는 예약입니다. 사용자 결정
 Overage	초과 사용	오버리지|초과분	월 사용 한도를 넘어 추가로 쓰는 유료 사용량. Overage credits는 초과 사용 크레딧, Increase overage는 초과 사용량을 늘리다입니다. 사용자 결정
-Base Branch	베이스 브랜치		수정 브랜치와 풀 리퀘스트의 기반이 되는 저장소 브랜치. 새 코드 정의의 Reference Branch(기준 브랜치)와 구별합니다
+Base Branch	Base Branch	베이스 브랜치	수정 브랜치와 풀 리퀘스트의 기반이 되는 저장소 브랜치. 영문으로 둡니다. 새 코드 정의의 Reference Branch(기준 브랜치)와 구별합니다. 사용자 결정
+Security Alert	보안 경고	보안 알림	프로젝트에서 심각한 발견 사항이 감지되면 표시하는 경고. Notification(알림)과 구별합니다
+Regulatory Report	규제 보고서		상세 지표, 이슈 목록, 프로젝트 구성을 묶은 보고서. Compliance Report(규정 준수 보고서)와 구별합니다. 사용자 결정
+Executive Report	경영진 보고서	임원 보고서	사용자 결정
+Agentic Task	에이전트 작업	에이전틱	Hunter Agent와 Remediation Agent가 수행하는 작업
+Pending	대기 중	보류 중	백그라운드 작업과 에이전트 작업의 상태
+Reindex	다시 색인	재색인|리인덱스	
+Recompute	다시 계산	재계산	포트폴리오와 애플리케이션의 집계를 다시 계산하는 동작
+Secret Key	비밀 키	시크릿 키	속성 암호화에 쓰는 키. 헤더의 Secret과 Client Secret은 시크릿입니다
+Maintenance	유지보수	유지 관리|유지 보수	서버 유지보수 화면. Maintainability(유지보수성)와 같은 띄어쓰기입니다. 사용자 결정
