@@ -248,3 +248,15 @@ key vortex_dashboard.project_activity.verify_calls
 
 # 자리 표시 값. 꺾쇠를 번역 품질 검사가 태그로 셉니다
 key architecture.patterns.edit.spotlight.structure.placeholder
+
+# SBOM 형식 이름과 괄호 속 약어
+key dependencies.list.export_as_sbom.type.cyclonedx
+key dependencies.list.export_as_sbom.type.spdx_23
+key dependencies.list.export_as_sbom.type.spdx_30
+key dependencies.risk.what.basicInfo.chanceOfFutureExploitation.epss
+key dependencies.risk.what.basicInfo.knownExploited.kev
+
+# 패키지 관리자와 패키지 저장소 이름
+pattern Cargo|CocoaPods|Packagist|Conan|Go|npm|NuGet|PyPI|Gem|vcpkg
+# 약어와 인자만으로 된 값
+key dependencies.risks.cvss_score

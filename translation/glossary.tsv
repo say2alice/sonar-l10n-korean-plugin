@@ -330,3 +330,12 @@ Split Responsibility	분산된 책임		하위 컴포넌트가 서로 연결되�
 Oversized Component	과대 컴포넌트		
 Code Artifact	코드 아티팩트		
 System Component	시스템 컴포넌트		
+Software Bill of Materials	소프트웨어 자재 명세서		약어 SBOM은 그대로 둡니다. Bill of Materials는 자재 명세서입니다. 사용자 결정
+Copyleft	Copyleft	카피레프트	라이선스 범주. Weak Copyleft는 약한 Copyleft처럼 꾸밈말만 옮깁니다. 사용자 결정
+Permissive	Permissive	퍼미시브|허용형	라이선스 범주. Standard Permissive는 표준 Permissive입니다. 사용자 결정
+Maintainer	Maintainer	메인테이너|유지관리자	오픈소스 패키지를 관리하는 사람. 사용자 결정
+License Profile	라이선스 프로필	라이선스 프로파일	Quality Profile(품질 프로필)과 같은 표기
+Reachability	도달 가능성		Reachable은 도달 가능, Unreachable은 도달 불가입니다
+Withdrawn	철회됨		취약점 보고서나 권고의 철회
+Lockfile	잠금 파일		
+Prerelease	사전 릴리스		
