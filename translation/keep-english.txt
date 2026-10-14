@@ -39,3 +39,6 @@ key settings.authentication.gitlab.form.allowedGroups.placeholder
 
 # 프로그래밍 언어 이름만으로 된 설정 범주
 key property.category.java
+
+# 서비스 이름과 상태 인자만으로 된 알림(Sonar SCA {0})
+key property.sca.message.updated
