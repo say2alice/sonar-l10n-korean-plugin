@@ -258,3 +258,5 @@ key dependencies.risk.what.basicInfo.knownExploited.kev
 
 # 패키지 관리자와 패키지 저장소 이름
 pattern Cargo|CocoaPods|Packagist|Conan|Go|npm|NuGet|PyPI|Gem|vcpkg
+# 약어와 인자만으로 된 값
+key dependencies.risks.cvss_score
