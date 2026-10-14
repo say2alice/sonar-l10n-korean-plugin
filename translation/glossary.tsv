@@ -298,3 +298,4 @@ Build Wrapper	Build Wrapper	빌드 래퍼	C/C++ 분석 도구 이름이므로 �
 Compilation Database	컴파일 데이터베이스		
 Automatic Analysis	자동 분석		CI-based Analysis는 CI 기반 분석입니다
 Auto-import	자동 가져오기		
+Prerequisite	사전 요구사항	전제 조건|사전 요구 사항	튜토리얼의 사전 준비 단계. 사용자 결정
