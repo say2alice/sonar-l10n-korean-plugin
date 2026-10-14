@@ -245,3 +245,6 @@ key footer.version.short
 key vortex_dashboard.adoption_coverage.capability_coverage.legend.both
 key vortex_dashboard.project_activity.guide_calls
 key vortex_dashboard.project_activity.verify_calls
+
+# 자리 표시 값. 꺾쇠를 번역 품질 검사가 태그로 셉니다
+key architecture.patterns.edit.spotlight.structure.placeholder
