@@ -58,3 +58,6 @@ key webhooks.delivery.payload
 # 튜토리얼에서 가리키는 외부 제품의 메뉴, 권한, 범위 이름
 key onboarding.create_project.pat_help.instructions.bitbucket_server.link
 key onboarding.create_project.pat_help.gitlab.read_api_permission
+
+# 빌드 도구, 언어, 플랫폼 이름만으로 된 값(튜토리얼의 빌드 선택지)
+pattern Maven|Gradle|Make|\.NET|(Windows|Linux) \+ \.NET (Core|Framework)|Objective-C|JS/TS & Web|Python|Rust/Cargo

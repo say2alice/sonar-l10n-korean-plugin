@@ -293,3 +293,4 @@ Reauthorize	다시 인증
 Web API	Web API	웹 API	SonarQube API 문서의 이름이므로 영문으로 둡니다
 Onboarding	온보딩		프로젝트 온보딩
 API Token	API 토큰		Bitbucket Cloud의 API 토큰
+Scanner	스캐너		npm 프로젝트용 스캐너 등. 제품명 SonarScanner는 영문으로 둡니다
