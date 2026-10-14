@@ -55,10 +55,46 @@ key api_documentation.v2.request_subheader.request_content_type
 # 용어집에서 영문으로 두기로 한 용어와 콜론만으로 된 값
 key webhooks.delivery.payload
 
-# 튜토리얼에서 가리키는 외부 제품의 메뉴, 권한, 범위 이름
+# 튜토리얼에서 가리키는 외부 도구 화면의 메뉴, 버튼, 필드, 권한, 범위 이름(번역 지침 §5)
 key onboarding.create_project.pat_help.instructions.bitbucket_server.link
 key onboarding.create_project.pat_help.gitlab.read_api_permission
 key onboarding.tutorial.with.bitbucket_pipelines.variables.intro.link
+key onboarding.tutorial.env_variables.field
+key onboarding.tutorial.with.bitbucket_pipelines.variables.name.sentence.name
+key onboarding.tutorial.with.bitbucket_pipelines.variables.add.sentence.add
+key onboarding.tutorial.with.bitbucket_pipelines.variables.secured.sentence.secured
+key onboarding.tutorial.with.github_action.secret.intro.link
+key onboarding.tutorial.with.github_action.secret.name.sentence.name
+key onboarding.tutorial.with.github_action.secret.new.sentence.new_secret
+key onboarding.tutorial.with.github_action.secret.add.sentence.add_secret
+key onboarding.tutorial.with.gitlab_ci.variables.description.link
+key onboarding.tutorial.with.gitlab_ci.variables.step1
+key onboarding.tutorial.with.gitlab_ci.variables.step3.value
+key onboarding.tutorial.with.gitlab_ci.variables.section.step4.value
+key onboarding.tutorial.with.gitlab_ci.yaml.filename
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step1.sentence.new_item
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step1.sentence.type
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.server.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucket.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.server.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.bitbucketcloud.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.github.repo_url.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.sentence.tab
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.sentence.source
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.creds.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.owner.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.gitlab.repo.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.branches_prs.label
+key onboarding.tutorial.with.jenkins.multi_branch_pipeline.step2.behaviors.branches_mrs.label
 
 # 빌드 도구, 언어, 플랫폼 이름만으로 된 값(튜토리얼의 빌드 선택지)
 pattern Maven|Gradle|Make|\.NET( Core| Framework)?|(Windows|Linux) \+ \.NET (Core|Framework)|Objective-C|JS/TS & Web|Python|Rust/Cargo|Linux|Windows|macOS|x86_64|ARM64
