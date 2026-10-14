@@ -10,6 +10,7 @@ pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Ser
 
 # 용어집에서 영문으로 두기로 한 용어만으로 된 값
 pattern Code Smells?
+pattern (Afferent|Efferent) [Cc]ouplings?
 
 # 대문자 약어만으로 된 값(CSV, JSON, URL, PR)
 pattern [A-Z]{2,5}

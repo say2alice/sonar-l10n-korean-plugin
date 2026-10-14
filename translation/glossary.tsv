@@ -197,7 +197,8 @@ Remediation Effort	수정 작업량
 Debt Ratio	부채 비율		기술 부채 비율
 Uncovered	커버되지 않은		커버되지 않은 라인, 조건
 Lines to Cover	커버할 라인		
-Afferent Coupling	구심 결합도		짝은 Efferent Coupling(원심 결합도)입니다
+Afferent Coupling	Afferent Coupling	구심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Efferent Coupling	Efferent Coupling	원심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
 Tangle	얽힘		파일 얽힘, 패키지 얽힘
 Integration Test	통합 테스트		약어 IT는 그대로 둡니다
 Line	라인		코드의 줄. 라인 커버리지, 라인 번호, 라인별 등. "줄"은 다른 뜻(줄이다)으로도 쓰이므로 금지 표기로 두지 않습니다
@@ -230,10 +231,10 @@ Legend	범례
 Mean Time to Resolve	평균 해결 시간		약어 MTTR은 그대로 둡니다
 Top List	상위 목록		대시보드 위젯의 시각화 방식
 Slice By	분할 기준		원형 차트를 조각으로 나누는 기준. Group By는 그룹 기준입니다
-Facet	패싯		
+Facet	Facet	패싯	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
 Browse	탐색	브라우징	프로젝트 권한 이름. 다른 한국어 팩 다수의 표기입니다
 Public	공개	퍼블릭	프로젝트 공개 범위. 짝은 Private(비공개)입니다
-Sparkline	스파크라인		
+Sparkline	Sparkline	스파크라인	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
 PR Decoration	PR 데코레이션	PR 장식	분석 결과를 풀 리퀘스트에 표시하는 기능. 사용자 결정
 Event	이벤트		프로젝트 활동의 버전, 품질 게이트 변경 등의 기록
 Private	비공개	프라이빗	프로젝트 공개 범위. 짝은 Public(공개)입니다
