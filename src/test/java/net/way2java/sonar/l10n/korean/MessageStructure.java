@@ -74,4 +74,30 @@ record MessageStructure(Set<String> arguments, Set<String> selectBranches, List<
     tags.sort(null);
     return new MessageStructure(arguments, selectBranches, tags);
   }
+
+  /**
+   * 번역문의 구성이 원문과 다른 점을 돌려줍니다. 같으면 빈 목록입니다.
+   *
+   * @throws IllegalArgumentException 원문의 ICU 메시지 구문이 유효하지 않을 때
+   */
+  static List<String> differences(String source, String translated) {
+    MessageStructure expected = of(source);
+    MessageStructure actual;
+    try {
+      actual = of(translated);
+    } catch (IllegalArgumentException e) {
+      return List.of("ICU 구문 오류 " + e.getMessage());
+    }
+    List<String> differences = new ArrayList<>();
+    if (!expected.arguments().equals(actual.arguments())) {
+      differences.add("인자 " + expected.arguments() + " → " + actual.arguments());
+    }
+    if (!expected.selectBranches().equals(actual.selectBranches())) {
+      differences.add("select 분기 " + expected.selectBranches() + " → " + actual.selectBranches());
+    }
+    if (!expected.tags().equals(actual.tags())) {
+      differences.add("태그 " + expected.tags() + " → " + actual.tags());
+    }
+    return differences;
+  }
 }

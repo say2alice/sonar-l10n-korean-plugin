@@ -188,7 +188,7 @@
       </plugin>
 
       <plugin>
-        <!-- 영문 번들 생성기와 번역 보조 도구를 Toolchains의 JDK로 실행합니다. 빌드 단계에는 묶지 않고 scripts/의 스크립트가 호출합니다 -->
+        <!-- 영문 번들 생성기, 상용 번들 동기화 도구, 번역 보조 도구를 Toolchains의 JDK로 실행합니다. 빌드 단계에는 묶지 않고 scripts/의 스크립트가 호출합니다 -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>${exec-maven-plugin.version}</version>
@@ -222,6 +222,33 @@
                 <argument>${sonarqube.webapp.messages.path}</argument>
                 <argument>${diff.from}</argument>
                 <argument>${diff.to}</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>commercial-sync</id>
+            <configuration>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>net.way2java.sonar.l10n.korean.generator.CommercialBundleSync</argument>
+                <argument>sync</argument>
+                <argument>${project.basedir}/translation/commercial</argument>
+                <argument>${project.basedir}/src/main/resources/org/sonar/l10n</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>commercial-update</id>
+            <configuration>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath/>
+                <argument>net.way2java.sonar.l10n.korean.generator.CommercialBundleSync</argument>
+                <argument>update</argument>
+                <argument>${commercial.jar}</argument>
+                <argument>${project.basedir}/translation/commercial</argument>
+                <argument>${project.basedir}/src/main/resources/org/sonar/l10n</argument>
               </arguments>
             </configuration>
           </execution>
