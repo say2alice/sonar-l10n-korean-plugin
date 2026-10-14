@@ -240,3 +240,8 @@ key page_title.template.with_instance
 key footer.license.lgplv3
 key footer.version.full
 key footer.version.short
+
+# Vortex 기능 이름과 인자만으로 된 값
+key vortex_dashboard.adoption_coverage.capability_coverage.legend.both
+key vortex_dashboard.project_activity.guide_calls
+key vortex_dashboard.project_activity.verify_calls
