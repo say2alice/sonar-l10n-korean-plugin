@@ -271,3 +271,6 @@ Software Composition Analysis	소프트웨어 구성 분석		약어 SCA는 그�
 Modern Authentication	최신 인증	모던 인증	Microsoft의 OAuth 기반 인증. Basic Authentication은 기본 인증입니다
 Tenant	테넌트		Microsoft 테넌트
 Background Task	백그라운드 작업	백그라운드 태스크	
+User Token	사용자 토큰		
+Appearance	모양		내 계정의 테마 설정
+Permission Holder	권한 보유자		
