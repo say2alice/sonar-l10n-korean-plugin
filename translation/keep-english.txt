@@ -20,7 +20,7 @@ pattern (Afferent|Efferent) [Cc]ouplings?
 pattern [A-Z]{2,5}
 
 # 기능 이름으로 영문 그대로 두는 값
-pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent|Hunter Agent|Design & Architecture|Advanced Security|Advanced SAST( \(ASAST\))?|Compute Engine
+pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent|Hunter Agent|Vortex( Guide| Verify)?|Design & Architecture|Advanced Security|Advanced SAST( \(ASAST\))?|Compute Engine
 
 # 보안과 규정 준수 표준의 이름만으로 된 값
 pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA|CWE Top 25)( [0-9.]+| V[0-9R]+)?
@@ -240,3 +240,11 @@ key page_title.template.with_instance
 key footer.license.lgplv3
 key footer.version.full
 key footer.version.short
+
+# Vortex 기능 이름과 인자만으로 된 값
+key vortex_dashboard.adoption_coverage.capability_coverage.legend.both
+key vortex_dashboard.project_activity.guide_calls
+key vortex_dashboard.project_activity.verify_calls
+
+# 자리 표시 값. 꺾쇠를 번역 품질 검사가 태그로 셉니다
+key architecture.patterns.edit.spotlight.structure.placeholder
