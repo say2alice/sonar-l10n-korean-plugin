@@ -10,12 +10,13 @@ pattern (GitHub|GitHub Enterprise|GitLab|Bitbucket|Bitbucket Cloud|Bitbucket Ser
 
 # 용어집에서 영문으로 두기로 한 용어만으로 된 값
 pattern Code Smells?
+pattern (Afferent|Efferent) [Cc]ouplings?
 
 # 대문자 약어만으로 된 값(CSV, JSON, URL, PR)
 pattern [A-Z]{2,5}
 
 # 기능 이름으로 영문 그대로 두는 값
-pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix
+pattern AI Code Assurance|AI CODE ASSURANCE|AI CodeFix|Remediation Agent
 
 # 보안과 규정 준수 표준의 이름만으로 된 값
 pattern (OWASP (Top 10|Mobile Top 10|ASVS|MASVS)( for LLM)?|STIG ASD|PCI DSS|WCAG|EU CRA|CWE Top 25)( [0-9.]+| V[0-9R]+)?

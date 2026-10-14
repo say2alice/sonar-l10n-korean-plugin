@@ -197,7 +197,8 @@ Remediation Effort	수정 작업량
 Debt Ratio	부채 비율		기술 부채 비율
 Uncovered	커버되지 않은		커버되지 않은 라인, 조건
 Lines to Cover	커버할 라인		
-Afferent Coupling	구심 결합도		짝은 Efferent Coupling(원심 결합도)입니다
+Afferent Coupling	Afferent Coupling	구심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Efferent Coupling	Efferent Coupling	원심 결합도	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
 Tangle	얽힘		파일 얽힘, 패키지 얽힘
 Integration Test	통합 테스트		약어 IT는 그대로 둡니다
 Line	라인		코드의 줄. 라인 커버리지, 라인 번호, 라인별 등. "줄"은 다른 뜻(줄이다)으로도 쓰이므로 금지 표기로 두지 않습니다
@@ -212,3 +213,32 @@ Finding	발견 사항
 Security Report	보안 보고서		
 Requirement	요구 사항		보안 표준의 요구 사항
 Cyber Resilience Act	사이버 복원력법		EU CRA. 표준 이름 EU CRA는 영문으로 둡니다
+Merge Request	머지 리퀘스트	병합 요청|머지 요청	GitLab의 풀 리퀘스트. Pull Request(풀 리퀘스트)와 같은 음차 방식입니다. 약어 MR은 그대로 둡니다. 사용자 결정
+Bind	연결	바인딩	프로젝트를 DevOps 플랫폼이나 Jira에 묶는 동작. Binding, Bound도 연결입니다. 사용자 결정
+Provisioning	프로비저닝	프로비져닝	
+Main Branch	메인 브랜치	주 브랜치	
+Dashboard	대시보드		
+Duplicate	복제		동작 낱말. 대시보드를 복사본으로 만드는 동작입니다. 중복(Duplications)과 구분합니다
+Baseline	기준선	베이스라인	새 코드를 가르는 기준이 되는 분석이나 브랜치입니다
+Remediation Agent	Remediation Agent	수정 에이전트	기능 이름이므로 영문으로 둡니다. 일반명 Agent는 에이전트입니다. 사용자 결정
+Project Coverage	프로젝트 적용 범위		프로젝트를 가져오고 분석한 현황입니다. 코드 커버리지(Coverage)와 구분합니다
+Perspective	관점		프로젝트 목록의 보기 방식
+Widget	위젯		대시보드의 구성 요소
+Section	섹션		대시보드에서 위젯을 묶는 단위
+Visualization	시각화		위젯의 표시 방식(차트, 상위 목록 등)
+Trend	추세	트렌드	
+Legend	범례		
+Mean Time to Resolve	평균 해결 시간		약어 MTTR은 그대로 둡니다
+Top List	상위 목록		대시보드 위젯의 시각화 방식
+Slice By	분할 기준		원형 차트를 조각으로 나누는 기준. Group By는 그룹 기준입니다
+Facet	Facet	패싯	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+Browse	탐색	브라우징	프로젝트 권한 이름. 다른 한국어 팩 다수의 표기입니다
+Public	공개	퍼블릭	프로젝트 공개 범위. 짝은 Private(비공개)입니다
+Sparkline	Sparkline	스파크라인	널리 쓰이는 한국어 표기가 없어 영문으로 둡니다. 사용자 결정
+PR Decoration	PR 데코레이션	PR 장식	분석 결과를 풀 리퀘스트에 표시하는 기능. 사용자 결정
+Event	이벤트		프로젝트 활동의 버전, 품질 게이트 변경 등의 기록
+Private	비공개	프라이빗	프로젝트 공개 범위. 짝은 Public(공개)입니다
+Role	역할		"롤"은 "스크롤"의 일부이므로 금지 표기로 두지 않습니다
+Execute Analysis	분석 실행		프로젝트 권한 이름. 같은 권한 목록의 See Source Code는 소스 코드 보기, Administer Issues는 이슈 관리입니다
+Orphan Pull Request	브랜치 없는 PR	고아 풀 리퀘스트	대상 브랜치가 삭제된 풀 리퀘스트. 사용자 결정
+Disconnect	연결 해제		동작 낱말. 짝은 Bind(연결)입니다
