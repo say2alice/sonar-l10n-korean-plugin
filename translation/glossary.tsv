@@ -23,7 +23,7 @@ Application	애플리케이션	어플리케이션	널리 쓰이는 음차 표기
 Portfolio	포트폴리오		널리 쓰이는 음차 표기. 기존 팩 다수
 False Positive	오탐	거짓 양성|거짓 긍정	기존 팩 다수
 Assignee	담당자		기존 팩 모두
-Webhook	웹훅		기존 팩. 나머지 팩은 영문으로 두었습니다
+Webhook	Webhook	웹훅	영문으로 둡니다. 사용자 결정
 Administration	관리		기존 팩 다수
 Accepted	수락됨	수용됨	기존 팩 다수
 Add	추가		동작 낱말. 버튼은 명사형입니다
@@ -285,8 +285,8 @@ Log Level	로그 수준	로그 레벨
 Search Engine	검색 엔진		SonarQube 서버 구성 요소
 Node	노드		클러스터의 애플리케이션 노드, 검색 노드
 Revoke	폐기		토큰을 폐기하는 동작. 권한을 거두는 revoke는 회수입니다
-Delivery	전송		웹훅 전송
-Payload	Payload	페이로드	웹훅 Payload. 영문으로 둡니다. 사용자 결정
+Delivery	전송		Webhook 전송
+Payload	Payload	페이로드	Webhook Payload. 영문으로 둡니다. 사용자 결정
 Group Membership	그룹 멤버십		
 Callback URL	콜백 URL		
 Reauthorize	다시 인증		
