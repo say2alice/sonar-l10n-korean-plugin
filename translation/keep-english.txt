@@ -167,6 +167,47 @@ key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step1.sentence.path
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.default_scanner
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step2.sentence.add_scanner_for_msbuild
 key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step3.sentence.name
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_from
+key onboarding.tutorial.with.jenkins.dotnet.scanner.prereqs.step5.sentence.install_auto
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.replace.sentence.default
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help1.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help2.sentence.path
+key onboarding.tutorial.with.jenkins.jenkinsfile.other.step3.help2.sentence.name
+key onboarding.tutorial.with.azure_pipelines.ExtensionInstallation.sentence.button
+key onboarding.tutorial.with.azure_pipelines.ServiceEndpoint.step1.sentence.menu
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.win.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.nix.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.win.sentence.inline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_wrapper.ccpp.nix.sentence.inline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare_additional.ccpp.additional
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare_additional.ccpp.advanced
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build.ccpp.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.build_script.ccpp.sentence.build_wrapper
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.sentence.pipeline
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.dotnet
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.maven
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.gradle
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.cpp
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.objectivec
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.prepare.run_analysis.values.other
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.manual.sentence.mode
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.run.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.run.key.sentence.project_key
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.advanced_properties.sentence.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.advanced_properties.sentence.properties
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_version
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_architecture
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.java_source
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java_installer.pre-installed
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java.settings.sentence.section
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.java.settings.sentence.option
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.publish_qg.sentence.task
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.sentence.tab
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.sentence.continuous_integration
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.no_branches.sentence.tab
+key onboarding.tutorial.with.azure_pipelines.BranchAnalysis.continous_integration.no_branches.sentence.continuous_integration
 
 # 빌드 도구, 언어, 플랫폼 이름만으로 된 값(튜토리얼의 빌드 선택지)
 pattern Maven|Gradle|Make|\.NET( Core| Framework)?|(Windows|Linux) \+ \.NET (Core|Framework)|Objective-C|JS/TS & Web|Python|Rust/Cargo|Linux|Windows|macOS|x86_64|ARM64
