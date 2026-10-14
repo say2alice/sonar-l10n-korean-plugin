@@ -13,9 +13,72 @@ SonarQube 웹 화면 문구의 원본은 서버의 `core.properties`에서 웹�
 | 지원 범위 | Community Build 26.1 이상 |
 | 버전 | `<기준 Community Build 메이저>.<마이너>.<재릴리스 번호>` |
 | 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
-| 상태 | 번역 진행 중이며 첫 릴리스 전입니다. 설치와 사용 방법은 첫 릴리스 때 이 문서에 더합니다 |
+| 내려받기 | <https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/releases> |
 
 설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
+
+## 설치와 사용
+
+### 설치하기 전에
+
+- Community Build 26.1 이상에 설치합니다. 26.1보다 낮은 버전에 설치하면 서버가 시작되지 않고 로그에 `Plugin Korean Pack [l10nkorean] requires at least Sonar Plugin API version 13.4.3.4290`이 남습니다. 이때는 jar를 지우면 다시 시작됩니다.
+- 다른 언어팩과 함께 설치하지 않습니다. 기존 한국어팩(`l10nko`)도 마찬가지입니다. 이 언어팩은 웹 화면의 키를 자체 번들로 가져가므로, 함께 설치하면 다른 언어팩의 언어로 볼 때 화면 문구의 상당수가 영문으로 바뀝니다. 다른 언어팩이 있으면 관리 > 마켓플레이스에서 제거하거나 `extensions/plugins/`에서 jar를 지웁니다.
+- 상용 에디션(Developer, Enterprise, Data Center)은 지원 범위 밖입니다. 상용 에디션 서버 본체의 번들이 번역을 가리지 않도록 그 번들의 한국어 파일을 함께 넣었지만, 상용 기능 화면은 모두 확인하지 않았습니다.
+
+### Docker 컨테이너에 설치
+
+공식 Docker 이미지로 실행 중인 서버에 설치하는 절차입니다. 명령의 `sonarqube`는 컨테이너 이름이고, `26.10.0`은 설치할 버전입니다. 둘 다 실제 값으로 바꿔 입력합니다.
+
+1. 릴리스의 jar를 내려받습니다. 릴리스 페이지의 링크로 받아도 됩니다.
+
+    ```bash
+    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.10.0/sonar-l10n-korean-plugin-26.10.0.jar
+    ```
+
+    현재 폴더에 `sonar-l10n-korean-plugin-26.10.0.jar`가 생겨야 합니다.
+
+2. jar를 컨테이너의 플러그인 폴더에 복사합니다.
+
+    ```bash
+    docker cp sonar-l10n-korean-plugin-26.10.0.jar sonarqube:/opt/sonarqube/extensions/plugins/
+    ```
+
+    `Successfully copied`로 시작하는 줄이 나와야 합니다.
+
+3. 컨테이너를 다시 시작합니다.
+
+    ```bash
+    docker restart sonarqube
+    ```
+
+    `sonarqube`가 나와야 합니다. 서버가 다시 뜨는 데 1 ~ 2분이 걸립니다.
+
+4. 플러그인이 배포되었는지 확인합니다.
+
+    ```bash
+    docker logs sonarqube | grep "Korean Pack"
+    ```
+
+    `Deploy Korean Pack / 26.10.0`이 든 줄이 나와야 합니다. 아무것도 나오지 않으면 2단계의 경로와 서버 버전을 확인합니다.
+
+5. 관리자로 로그인하면 처음 한 번 플러그인 설치 위험 동의 화면이 나옵니다. 내용을 확인하고 동의합니다.
+
+컨테이너를 새로 만들 때 `/opt/sonarqube/extensions`가 볼륨에 있지 않으면 플러그인이 사라지므로 2단계부터 다시 합니다.
+
+### ZIP으로 설치한 서버에 설치
+
+1. jar를 SonarQube 설치 폴더의 `extensions/plugins/`에 복사합니다.
+2. 서버를 다시 시작합니다. 리눅스에서는 `bin/linux-x86-64/sonar.sh restart`입니다.
+3. `logs/web.log`에 `Deploy Korean Pack`이 든 줄이 있는지 확인합니다.
+
+### 한국어로 보기
+
+SonarQube는 브라우저 언어 설정을 따릅니다. 브라우저의 언어 목록에서 한국어를 맨 위에 둡니다. Chrome은 설정 > 언어에서, Firefox는 설정 > 일반 > 언어에서 바꿉니다. 바꾼 뒤 SonarQube 화면을 새로 고칩니다.
+
+### 업데이트와 제거
+
+- 업데이트: `extensions/plugins/`에서 이전 버전의 jar를 지우고 새 jar를 복사한 뒤 서버를 다시 시작합니다. 두 버전이 함께 있으면 서버가 `Found two versions of the plugin 'Korean Pack'`을 남기고 시작되지 않습니다.
+- 제거: `extensions/plugins/`에서 jar를 지우고 서버를 다시 시작합니다. 화면은 영어로 돌아갑니다.
 
 ## 구성
 
@@ -111,7 +174,7 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 
 ## 작업 방식
 
-CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행합니다. 미번역 키는 번역 중에는 보고만 하고, `main` 대상 병합 요청에서만 실패로 처리합니다.
+CI는 병합 요청과 `develop`, `main` 푸시에서 `./mvnw verify`를 실행합니다. 미번역 키는 번역 중에는 보고만 하고, `main` 대상 병합 요청에서만 실패로 처리합니다. `main`에 `v<버전>` 태그를 푸시하면 CI가 릴리스를 만듭니다.
 
 ### 빌드
 
