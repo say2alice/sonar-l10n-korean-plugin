@@ -1,25 +1,18 @@
-# 병합 요청과 develop, main 푸시에서 ./mvnw verify를 실행합니다.
+# 병합 요청과 develop, main 푸시에서 ./mvnw verify를 실행하고, v<버전> 태그에서 릴리스를 만듭니다.
 # 설계: 문서 저장소 docs/design/development-environment.md §6
 workflow:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
     - if: $CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/
 
 variables:
   # 캐시는 프로젝트 폴더 안만 담으므로 Wrapper 배포본과 로컬 저장소를 이곳으로 옮깁니다
   MAVEN_USER_HOME: "$CI_PROJECT_DIR/.m2"
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
 
-verify:
+.maven:
   image: eclipse-temurin:25-jdk
-  # 미번역 키는 릴리스(main 병합) 때만 실패로 처리합니다(문서 저장소 ADR-0014)
-  rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
-      variables:
-        REQUIRE_COMPLETE: "true"
-    - when: on_success
-  variables:
-    REQUIRE_COMPLETE: "false"
   tags:
     - shared-docker
   cache:
@@ -28,12 +21,33 @@ verify:
       - .m2/repository
       - .m2/wrapper
   before_script:
-    # mvnw는 unzip이 없으면 .tar.gz를 받아 .zip 기준으로 고정한 SHA-256 검증에 실패합니다
-    - apt-get update -qq && apt-get install -y -qq --no-install-recommends unzip > /dev/null
+    # mvnw는 unzip이 없으면 .tar.gz를 받아 .zip 기준으로 고정한 SHA-256 검증에 실패합니다. curl은 릴리스 잡이 씁니다
+    - apt-get update -qq && apt-get install -y -qq --no-install-recommends unzip curl > /dev/null
     # 컴파일과 테스트의 JDK는 Toolchains로 고르므로 이미지의 JDK 25를 등록합니다
     - mkdir -p "$HOME/.m2"
     - >-
       printf '<toolchains><toolchain><type>jdk</type><provides><version>25</version></provides><configuration><jdkHome>%s</jdkHome></configuration></toolchain></toolchains>\n'
       "$JAVA_HOME" > "$HOME/.m2/toolchains.xml"
+
+verify:
+  extends: .maven
+  # 미번역 키는 릴리스(main 병합) 때만 실패로 처리합니다(문서 저장소 ADR-0014)
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+      variables:
+        REQUIRE_COMPLETE: "true"
+    - when: on_success
+  variables:
+    REQUIRE_COMPLETE: "false"
   script:
     - ./mvnw -B verify -Dtranslation.requireComplete=$REQUIRE_COMPLETE
+
+# 태그와 pom.xml 버전 확인, 미번역을 실패로 처리하는 빌드, jar 올리기, 릴리스 생성(문서 저장소 ADR-0018)
+release:
+  extends: .maven
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - scripts/release.sh "$CI_COMMIT_TAG"
