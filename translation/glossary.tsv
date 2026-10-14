@@ -315,3 +315,4 @@ Pending	대기 중	보류 중	백그라운드 작업과 에이전트 작업의 �
 Reindex	다시 색인	재색인|리인덱스	
 Recompute	다시 계산	재계산	포트폴리오와 애플리케이션의 집계를 다시 계산하는 동작
 Secret Key	비밀 키	시크릿 키	속성 암호화에 쓰는 키. 헤더의 Secret과 Client Secret은 시크릿입니다
+Maintenance	유지보수	유지 관리|유지 보수	서버 유지보수 화면. Maintainability(유지보수성)와 같은 띄어쓰기입니다. 사용자 결정
