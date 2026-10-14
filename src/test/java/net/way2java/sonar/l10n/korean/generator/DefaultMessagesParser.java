@@ -126,7 +126,14 @@ public final class DefaultMessagesParser {
       case 'b' -> text.append('\b');
       case 'f' -> text.append('\f');
       case 'v' -> text.append('\u000B');
-      case '0' -> text.append('\0');
+      case '0' -> {
+        if (pos < source.length() && Character.isDigit(source.charAt(pos))) {
+          throw error("8진수 이스케이프는 다루지 않습니다");
+        }
+        text.append('\0');
+      }
+      case '1', '2', '3', '4', '5', '6', '7', '8', '9' -> throw error("8진수 이스케이프는 다루지 않습니다");
+      case 'x' -> throw error("\\x 이스케이프는 다루지 않습니다");
       case 'u' -> text.appendCodePoint(readUnicodeEscape());
       case '\r' -> {
         if (peek() == '\n') {
