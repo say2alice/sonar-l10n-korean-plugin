@@ -339,3 +339,8 @@ Reachability	도달 가능성		Reachable은 도달 가능, Unreachable은 도달
 Withdrawn	철회됨		취약점 보고서나 권고의 철회
 Lockfile	잠금 파일		
 Prerelease	사전 릴리스		
+Breakdown	세부 내역		포트폴리오 세부 내역, 언어별 세부 내역. Rule breakdown은 규칙 분류입니다
+Grace Period	유예 기간		라이선스 만료 후 유예 기간
+Project Dump	프로젝트 덤프		프로젝트 가져오기와 내보내기
+Manual Measure	수동 측정값		포트폴리오의 프로젝트 선택 기준. Custom Measure는 사용자 지정 측정값입니다
+Base Usage Limit	기본 사용 한도		제품 구독에 포함된 사용 한도. 넘으면 초과 사용 한도가 적용됩니다
