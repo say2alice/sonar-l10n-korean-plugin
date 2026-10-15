@@ -41,7 +41,7 @@ public final class KoreanPackComparison {
   private KoreanPackComparison() {
   }
 
-  /** `dir`은 문서 저장소의 `local/reference/korean-repos/` 아래 `<소유자>_<저장소>` 폴더 이름입니다. */
+  /** `dir`은 이 저장소의 `local/reference/korean-repos/` 아래 `<소유자>_<저장소>` 폴더 이름입니다. */
   record KoreanPack(String name, String lineage, String dir) {
   }
 

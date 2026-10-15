@@ -91,15 +91,16 @@ SonarQube는 브라우저 언어 설정을 따릅니다. 브라우저의 언어 
 
 ## 개발자 안내
 
-설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
+설계, 결정 기록, 번역 규칙, 진행 현황은 Home 저장소 <https://gitlab.way2java.net/project/ai-managed-project>의 `docs/sonar-l10n-ko/`에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 폴더의 문서 이름이며, 그 폴더의 목차에서 찾을 수 있습니다.
 
 ### 개발 환경 구성
 
-이 저장소는 문서 저장소 안에 클론해 작업합니다. 번역 대조표 도구가 문서 저장소의 참고 자료를 읽고, 작업 단위와 번역 규칙도 문서 저장소에 있기 때문입니다.
+이 저장소는 Home 저장소의 `project/` 아래에 클론해 작업합니다. 작업 단위와 번역 규칙이 Home 저장소의 문서에 있기 때문입니다. `project/`는 Home이 추적하지 않는 폴더라 클론한 뒤 만듭니다.
 
 ```bash
-git clone https://gitlab.way2java.net/project/sonar-l10n-ko-docs.git
-cd sonar-l10n-ko-docs
+git clone https://gitlab.way2java.net/project/ai-managed-project.git
+mkdir ai-managed-project/project
+cd ai-managed-project/project
 git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 ```
 
@@ -109,7 +110,7 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 | `unzip`, `sha256sum`(또는 `shasum`) | Maven Wrapper가 Maven 배포본을 처음 내려받아 검증할 때. Maven은 설치하지 않습니다 |
 | Docker, `curl` | 컨테이너에 설치해 확인할 때 |
 | GitHub 접속 | 영문 번들 생성기가 웹앱 원본을 받을 때. 빌드에는 필요 없습니다 |
-| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 문서 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
+| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 이 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
 
 `~/.m2/toolchains.xml`에는 JDK 25 항목이 있어야 합니다. `jdkHome`만 PC에 맞게 바꿉니다.
 
@@ -221,7 +222,7 @@ jar에 들어가는 파일입니다.
     scripts/translation-sheet.sh common -
     ```
 
-    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 문서 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
+    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 이 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
 
 2. 대조표를 보며 단위의 값을 약 100키씩 묶어 번역합니다.
 
@@ -345,7 +346,7 @@ Docker와 `curl`이 필요합니다. 빌드한 jar를 공식 이미지의 컨테
 | 4 | `main`에 `v<버전>` 태그를 붙여 푸시합니다. `release` 잡이 `scripts/release.sh`로 빌드하고, jar를 패키지 저장소에 올리고, 릴리스 노트를 본문으로 릴리스를 만듭니다 |
 | 5 | `develop`의 버전을 다음 재릴리스 버전(`<버전>`의 재릴리스 번호 + 1, `-SNAPSHOT`)으로 올립니다 |
 
-러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 문서 저장소 `.env`의 `GITLAB_TOKEN`을 씁니다.
+러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`을 씁니다. `.env`는 이 저장소, Home의 `project/`, Home 루트의 순서로 찾습니다.
 
 ## 라이선스
 
