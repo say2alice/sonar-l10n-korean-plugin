@@ -21,6 +21,11 @@ if [ ! -d "$webapp/.git" ]; then
   echo "웹앱 클론이 없습니다: $webapp" >&2
   exit 1
 fi
+# 체크아웃하지 않은 클론은 검색할 파일이 없어 모든 키가 쓰임을 찾지 못한 것으로 나옵니다
+if [ -z "$(git -C "$webapp" ls-files | head -1)" ]; then
+  echo "웹앱 클론에 체크아웃된 파일이 없습니다: $webapp. 문서 저장소 번역 작업 단위 §3.1의 방법으로 클론하십시오" >&2
+  exit 1
+fi
 
 for key in "$@"; do
   echo "== $key"
