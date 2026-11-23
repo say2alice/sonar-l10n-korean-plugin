@@ -5,7 +5,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 | 항목 | 내용 |
 | --- | --- |
 | 지원 범위 | Community Build 26.1 이상 |
-| 내려받기 | <https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/releases> |
+| 내려받기 | <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases> |
 | 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
 
 플러그인을 설치해 쓰려면 [사용자 안내](#사용자-안내)를, 번역을 고치거나 플러그인을 개발하려면 [개발자 안내](#개발자-안내)를 읽습니다.
@@ -23,7 +23,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 ### 내려받기
 
-릴리스 페이지 <https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
+릴리스 페이지 <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
 
 | 항목 | 내용 |
 | --- | --- |
@@ -91,16 +91,16 @@ SonarQube는 브라우저 언어 설정을 따릅니다. 브라우저의 언어 
 
 ## 개발자 안내
 
-설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
+설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/jangb/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
 
 ### 개발 환경 구성
 
 이 저장소는 문서 저장소 안에 클론해 작업합니다. 작업 단위와 번역 규칙이 문서 저장소에 있기 때문입니다. 개발에 쓰는 참고 자료(참고 언어팩, 웹앱 클론, 다른 한국어 팩)는 문서 저장소가 아니라 이 저장소의 `local/reference/`에 둡니다. `local/`과 `.env`는 추적하지 않습니다.
 
 ```bash
-git clone https://gitlab.way2java.net/project/sonar-l10n-ko-docs.git
+git clone https://gitlab.way2java.net/jangb/sonar-l10n-ko-docs.git
 cd sonar-l10n-ko-docs
-git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
+git clone https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin.git
 ```
 
 | 요건 | 쓰는 곳 |
