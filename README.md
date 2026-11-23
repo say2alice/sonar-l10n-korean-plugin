@@ -91,16 +91,15 @@ SonarQube는 브라우저 언어 설정을 따릅니다. 브라우저의 언어 
 
 ## 개발자 안내
 
-설계, 결정 기록, 번역 규칙, 진행 현황은 Home 저장소 <https://gitlab.way2java.net/project/ai-managed-project>의 `docs/sonar-l10n-ko/`에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 폴더의 문서 이름이며, 그 폴더의 목차에서 찾을 수 있습니다.
+설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
 
 ### 개발 환경 구성
 
-이 저장소는 Home 저장소의 `project/` 아래에 클론해 작업합니다. 작업 단위와 번역 규칙이 Home 저장소의 문서에 있기 때문입니다. `project/`는 Home이 추적하지 않는 폴더라 클론한 뒤 만듭니다.
+이 저장소는 문서 저장소 안에 클론해 작업합니다. 작업 단위와 번역 규칙이 문서 저장소에 있기 때문입니다. 개발에 쓰는 참고 자료(참고 언어팩, 웹앱 클론, 다른 한국어 팩)는 문서 저장소가 아니라 이 저장소의 `local/reference/`에 둡니다. `local/`과 `.env`는 추적하지 않습니다.
 
 ```bash
-git clone https://gitlab.way2java.net/project/ai-managed-project.git
-mkdir ai-managed-project/project
-cd ai-managed-project/project
+git clone https://gitlab.way2java.net/project/sonar-l10n-ko-docs.git
+cd sonar-l10n-ko-docs
 git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 ```
 
@@ -346,7 +345,7 @@ Docker와 `curl`이 필요합니다. 빌드한 jar를 공식 이미지의 컨테
 | 4 | `main`에 `v<버전>` 태그를 붙여 푸시합니다. `release` 잡이 `scripts/release.sh`로 빌드하고, jar를 패키지 저장소에 올리고, 릴리스 노트를 본문으로 릴리스를 만듭니다 |
 | 5 | 버전은 릴리스 뒤 다음 작업의 첫 병합 요청에서 다음 재릴리스 버전(`<버전>`의 재릴리스 번호 + 1, `-SNAPSHOT`)으로 올립니다. 기준 원본을 갱신할 때는 그 버전으로 바꿉니다 |
 
-러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`을 씁니다. `.env`는 이 저장소, Home의 `project/`, Home 루트의 순서로 찾습니다.
+러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`을 씁니다. `.env`는 이 저장소, 문서 저장소의 순서로 찾습니다.
 
 ## 라이선스
 
