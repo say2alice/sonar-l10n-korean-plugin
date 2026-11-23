@@ -345,3 +345,15 @@ Project Dump	프로젝트 덤프		프로젝트 가져오기와 내보내기
 Manual Measure	수동 측정값		포트폴리오의 프로젝트 선택 기준. Custom Measure는 사용자 지정 측정값입니다
 Base Usage Limit	기본 사용 한도		제품 구독에 포함된 사용 한도. 넘으면 초과 사용 한도가 적용됩니다
 Clean as You Code	Clean as You Code		SonarSource의 코드 품질 방법론 이름이므로 영문으로 둡니다. 상용 번들 governance에 나옵니다
+Lightwell	Lightwell		의존성 위험 수정 서비스의 이름이므로 영문으로 둡니다. Lightwell Network, Lightwell Clearinghouse도 같습니다
+Clearinghouse	Clearinghouse		Lightwell Clearinghouse의 이름이므로 영문으로 둡니다. 예: Clearinghouse 후보
+Backport	백포트		새 버전의 수정을 지금 쓰는 버전 계열에 옮기는 일입니다
+Upstream Fix	업스트림 수정		패키지 원 저작자가 낸 수정입니다
+Major Upgrade	메이저 업그레이드		시맨틱 버전의 메이저 버전을 올리는 업그레이드입니다. Minor는 마이너, Patch는 패치로 씁니다
+Drop-in Replacement	그대로 교체		코드를 바꾸지 않고 같은 버전 자리에 교체하는 수정입니다
+Fixability	수정 가능성		
+Advisory	권고		보안 권고입니다. 예: 권고 ID
+Container Image	컨테이너 이미지		
+Workspace	워크스페이스		Bitbucket Cloud의 워크스페이스입니다
+Ask AI	AI에게 질문		도움말 메뉴의 AI 질문 기능입니다
+Attack Surface	공격 표면		
