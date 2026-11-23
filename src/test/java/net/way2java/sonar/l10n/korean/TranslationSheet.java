@@ -16,7 +16,7 @@ import java.util.StringJoiner;
 import net.way2java.sonar.l10n.korean.generator.BundleFile;
 
 /**
- * 번역 작업 단위의 키마다 원문, 지금 번역, 참고 팩의 번역을 나란히 둔 대조표를 만듭니다.
+ * 번역 작업 단위의 키마다 원문, 지금 번역, 참고 팩(중국어 팩, 일본어 팩)의 번역을 나란히 둔 대조표를 만듭니다.
  *
  * <p>빌드에는 들어가지 않으며 `scripts/translation-sheet.sh`가 실행합니다. 열과 쓰는 법은 문서 저장소 번역 작업 단위 §3.1에
  * 있습니다.
@@ -26,17 +26,17 @@ public final class TranslationSheet {
   /** 점이 없는 키(작업 단위 1)를 가리키는 접두사 인자입니다. */
   static final String NO_DOT = "-";
 
-  static final String HEADER = "key\tenglish\tkorean\tstatus\tjapanese\trussian\treference_note";
+  static final String HEADER = "key\tenglish\tkorean\tstatus\tchinese\tjapanese\treference_note";
 
   private TranslationSheet() {
   }
 
-  record Row(String key, String english, String korean, String status, String japanese, String russian,
+  record Row(String key, String english, String korean, String status, String chinese, String japanese,
       String referenceNote) {
 
     String toTsv() {
       StringJoiner line = new StringJoiner("\t");
-      for (String cell : List.of(key, english, korean, status, japanese, russian, referenceNote)) {
+      for (String cell : List.of(key, english, korean, status, chinese, japanese, referenceNote)) {
         line.add(escape(cell));
       }
       return line.toString();
@@ -78,7 +78,7 @@ public final class TranslationSheet {
 
     List<Row> rows = rows(BundleFile.readOrdered(Bundles.ENGLISH), BundleFile.readOrdered(Bundles.TRANSLATION),
         KeepEnglishRules.load(Bundles.KEEP_ENGLISH), prefixes,
-        ReferencePack.load(referenceDir, "ja"), ReferencePack.load(referenceDir, "ru"));
+        ReferencePack.load(referenceDir, "zh"), ReferencePack.load(referenceDir, "ja"));
 
     List<String> lines = new ArrayList<>();
     lines.add(HEADER);
@@ -93,7 +93,7 @@ public final class TranslationSheet {
 
   /** 번역 파일의 순서로 단위의 키를 골라 대조표의 행을 만듭니다. */
   static List<Row> rows(Map<String, String> english, Map<String, String> translation, KeepEnglishRules rules,
-      Set<String> prefixes, ReferencePack japanese, ReferencePack russian) {
+      Set<String> prefixes, ReferencePack chinese, ReferencePack japanese) {
     List<Row> rows = new ArrayList<>();
     translation.forEach((key, korean) -> {
       if (!inUnit(key, prefixes)) {
@@ -101,13 +101,13 @@ public final class TranslationSheet {
       }
       String source = english.getOrDefault(key, "");
       StringJoiner note = new StringJoiner(",");
-      for (ReferencePack pack : List.of(japanese, russian)) {
+      for (ReferencePack pack : List.of(chinese, japanese)) {
         if (pack.translatedOtherEnglish(key, source)) {
           note.add(pack.name());
         }
       }
       rows.add(new Row(key, source, korean, status(key, korean, source, rules),
-          japanese.translationOf(key), russian.translationOf(key), note.toString()));
+          chinese.translationOf(key), japanese.translationOf(key), note.toString()));
     });
     return rows;
   }
