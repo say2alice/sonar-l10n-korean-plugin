@@ -6,7 +6,7 @@
 
   <groupId>net.way2java.sonar.l10n</groupId>
   <artifactId>sonar-l10n-korean-plugin</artifactId>
-  <version>26.10.1-SNAPSHOT</version>
+  <version>26.11.0-SNAPSHOT</version>
   <packaging>sonar-plugin</packaging>
 
   <name>Korean Pack</name>
@@ -46,14 +46,14 @@
     <sonar.plugin.api.min.version>13.4.3.4290</sonar.plugin.api.min.version>
 
     <!-- 번역 기준 원본. 영문 번들 생성기와 기준 태그 검사가 읽습니다(문서 저장소 ADR-0015) -->
-    <sonarqube.webapp.tag>sqcb-26.10.0</sonarqube.webapp.tag>
+    <sonarqube.webapp.tag>sqcb-26.11.0</sonarqube.webapp.tag>
     <sonarqube.webapp.messages.path>libs/sq-server-commons/src/l10n/default.ts</sonarqube.webapp.messages.path>
     <!-- true이면 미번역 키가 있을 때 빌드가 실패합니다. CI는 main 대상 병합 요청에서 켭니다(문서 저장소 ADR-0014) -->
     <translation.requireComplete>false</translation.requireComplete>
 
     <sonar-plugin-api.version>14.1.0.5543</sonar-plugin-api.version>
     <!-- 플러그인 테스트의 실행 환경인 sonar-plugin-api-impl의 버전 -->
-    <sonarqube.version>26.10.0.133078</sonarqube.version>
+    <sonarqube.version>26.11.0.134175</sonarqube.version>
     <icu4j.version>78.3</icu4j.version>
     <junit.version>6.1.3</junit.version>
     <assertj.version>3.27.7</assertj.version>
