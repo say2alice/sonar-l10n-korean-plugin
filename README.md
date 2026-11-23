@@ -109,7 +109,7 @@ git clone https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin.git
 | `unzip`, `sha256sum`(또는 `shasum`) | Maven Wrapper가 Maven 배포본을 처음 내려받아 검증할 때. Maven은 설치하지 않습니다 |
 | Docker, `curl` | 컨테이너에 설치해 확인할 때 |
 | GitHub 접속 | 영문 번들 생성기가 웹앱 원본을 받을 때. 빌드에는 필요 없습니다 |
-| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 이 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
+| 중국어 팩, 일본어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/xuhuisheng/sonar-l10n-zh`, `https://github.com/cresco-sonar/sonar-l10n-ja`를 이 저장소의 `local/reference/sonar-l10n-zh/`, `local/reference/sonar-l10n-ja/`에 클론합니다 |
 
 `~/.m2/toolchains.xml`에는 JDK 25 항목이 있어야 합니다. `jdkHome`만 PC에 맞게 바꿉니다.
 
@@ -221,7 +221,7 @@ jar에 들어가는 파일입니다.
     scripts/translation-sheet.sh common -
     ```
 
-    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 이 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
+    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 중국어 팩과 일본어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 이 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
 
 2. 대조표를 보며 단위의 값을 약 100키씩 묶어 번역합니다.
 

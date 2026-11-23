@@ -6,7 +6,7 @@
 # 예:     scripts/translation-sheet.sh common -
 #         scripts/translation-sheet.sh issues cct coding_rules hotspot
 #
-# 접두사 -는 점이 없는 키입니다. 참고 팩은 L10N_REFERENCE_DIR 아래의 sonar-l10n-ja, sonar-l10n-ru에서 읽으며,
+# 접두사 -는 점이 없는 키입니다. 참고 팩은 L10N_REFERENCE_DIR 아래의 sonar-l10n-zh, sonar-l10n-ja에서 읽으며,
 # 기본값은 이 저장소의 local/reference입니다.
 set -euo pipefail
 
