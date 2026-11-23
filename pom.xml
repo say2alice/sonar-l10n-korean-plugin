@@ -11,7 +11,7 @@
 
   <name>Korean Pack</name>
   <description>Language pack for Korean</description>
-  <url>https://gitlab.way2java.net/project/sonar-l10n-korean-plugin</url>
+  <url>https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin</url>
   <inceptionYear>2026</inceptionYear>
 
   <licenses>
@@ -23,13 +23,13 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git</connection>
-    <url>https://gitlab.way2java.net/project/sonar-l10n-korean-plugin</url>
+    <connection>scm:git:https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin.git</connection>
+    <url>https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin</url>
   </scm>
 
   <issueManagement>
     <system>GitLab</system>
-    <url>https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/issues</url>
+    <url>https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/issues</url>
   </issueManagement>
 
   <properties>

@@ -23,7 +23,7 @@ package=sonar-l10n-korean-plugin
 file="$package-$version.jar"
 
 api=${CI_API_V4_URL:-https://gitlab.way2java.net/api/v4}
-project=${CI_PROJECT_ID:-project%2Fsonar-l10n-korean-plugin}
+project=${CI_PROJECT_ID:-jangb%2Fsonar-l10n-korean-plugin}
 if [ -n "${CI_JOB_TOKEN:-}" ]; then
   auth="JOB-TOKEN: $CI_JOB_TOKEN"
 else
@@ -74,4 +74,4 @@ curl -sS --fail-with-body --header "$auth" \
   --data-urlencode "link_type=package" \
   "$api/projects/$project/releases/$tag/assets/links" > /dev/null
 
-echo "완료: ${CI_PROJECT_URL:-https://gitlab.way2java.net/project/sonar-l10n-korean-plugin}/-/releases/$tag"
+echo "완료: ${CI_PROJECT_URL:-https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin}/-/releases/$tag"
