@@ -5,7 +5,7 @@
 # 사용법: scripts/korean-pack-compare.sh <단위> <접두사>...
 # 예:     scripts/korean-pack-compare.sh common -
 #
-# 한국어 팩은 L10N_REFERENCE_DIR(기본: 이 저장소를 담은 문서 저장소의 local/reference) 아래 korean-repos에서 읽습니다.
+# 한국어 팩은 L10N_REFERENCE_DIR(기본: 이 저장소의 local/reference) 아래 korean-repos에서 읽습니다.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -17,6 +17,6 @@ fi
 
 unit=$1
 shift
-reference=${L10N_REFERENCE_DIR:-../local/reference}
+reference=${L10N_REFERENCE_DIR:-local/reference}
 
 ./mvnw -q test-compile exec:exec@compare -Dsheet.unit="$unit" -Dsheet.reference="$reference" -Dsheet.prefixes="$*"

@@ -5,7 +5,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 | 항목 | 내용 |
 | --- | --- |
 | 지원 범위 | Community Build 26.1 이상 |
-| 내려받기 | <https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/releases> |
+| 내려받기 | <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases> |
 | 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
 
 플러그인을 설치해 쓰려면 [사용자 안내](#사용자-안내)를, 번역을 고치거나 플러그인을 개발하려면 [개발자 안내](#개발자-안내)를 읽습니다.
@@ -23,32 +23,40 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 ### 내려받기
 
-릴리스 페이지 <https://gitlab.way2java.net/project/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
+릴리스 페이지 <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
 
 | 항목 | 내용 |
 | --- | --- |
 | 파일 이름 | `sonar-l10n-korean-plugin-<버전>.jar` |
 | 버전 | `<기준 Community Build 메이저>.<마이너>.<재릴리스 번호>`. 예를 들어 `26.10.0`은 Community Build 26.10의 화면 문구를 번역한 첫 릴리스입니다 |
-| 고르는 방법 | 가장 최근 릴리스를 받습니다. 서버 버전이 지원 범위 안이면 서버 버전과 릴리스 버전이 달라도 됩니다 |
+| 고르는 방법 | 서버의 Community Build 버전에 맞는 릴리스를 받습니다(아래 표). 지원 범위(26.1 이상) 안이면 다른 릴리스도 설치되지만, 서버 버전과 다른 기준의 번역이라 일부 문구가 영문이나 다른 문장으로 나옵니다 |
+
+서버 버전별 권장 릴리스입니다. 서버 버전과 같은 기준의 릴리스를 권하고, 그 버전의 릴리스가 없으면 서버 버전보다 높은 기준 중 가장 낮은 릴리스를 권합니다. 번역 수정은 최신 릴리스에만 들어갑니다.
+
+| 서버(Community Build) | 권장 릴리스 |
+| --- | --- |
+| 26.11 | `v26.11.0` |
+| 26.10 | `v26.10.0` |
+| 26.1 ~ 26.9 | `v26.10.0` |
 
 ### 설치
 
 #### Docker 컨테이너
 
-공식 Docker 이미지로 실행 중인 서버에 설치하는 절차입니다. 명령의 `sonarqube`는 컨테이너 이름이고, `26.10.0`은 설치할 버전입니다. 둘 다 실제 값으로 바꿔 입력합니다.
+공식 Docker 이미지로 실행 중인 서버에 설치하는 절차입니다. 명령의 `sonarqube`는 컨테이너 이름이고, `26.11.0`은 설치할 버전입니다. 둘 다 실제 값으로 바꿔 입력합니다.
 
 1. 릴리스의 jar를 내려받습니다. 릴리스 페이지의 링크로 받아도 됩니다.
 
     ```bash
-    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.10.0/sonar-l10n-korean-plugin-26.10.0.jar
+    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.11.0/sonar-l10n-korean-plugin-26.11.0.jar
     ```
 
-    현재 폴더에 `sonar-l10n-korean-plugin-26.10.0.jar`가 생겨야 합니다.
+    현재 폴더에 `sonar-l10n-korean-plugin-26.11.0.jar`가 생겨야 합니다.
 
 2. jar를 컨테이너의 플러그인 폴더에 복사합니다.
 
     ```bash
-    docker cp sonar-l10n-korean-plugin-26.10.0.jar sonarqube:/opt/sonarqube/extensions/plugins/
+    docker cp sonar-l10n-korean-plugin-26.11.0.jar sonarqube:/opt/sonarqube/extensions/plugins/
     ```
 
     `Successfully copied`로 시작하는 줄이 나와야 합니다.
@@ -67,7 +75,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
     docker logs sonarqube | grep "Korean Pack"
     ```
 
-    `Deploy Korean Pack / 26.10.0`이 든 줄이 나와야 합니다. 아무것도 나오지 않으면 2단계의 경로와 서버 버전을 확인합니다.
+    `Deploy Korean Pack / 26.11.0`이 든 줄이 나와야 합니다. 아무것도 나오지 않으면 2단계의 경로와 서버 버전을 확인합니다.
 
 5. 관리자로 로그인하면 처음 한 번 플러그인 설치 위험 동의 화면이 나옵니다. 내용을 확인하고 동의합니다.
 
@@ -86,21 +94,21 @@ SonarQube는 브라우저 언어 설정을 따릅니다. 브라우저의 언어 
 
 ### 업데이트와 제거
 
-- 업데이트: `extensions/plugins/`에서 이전 버전의 jar를 지우고 새 jar를 복사한 뒤 서버를 다시 시작합니다.
+- 업데이트: `extensions/plugins/`에서 이전 버전의 jar를 지우고 새 jar를 복사한 뒤 서버를 다시 시작합니다. SonarQube 서버를 올릴 때 이 언어팩도 서버 버전에 맞는 릴리스(내려받기 절의 표)로 바꿉니다.
 - 제거: `extensions/plugins/`에서 jar를 지우고 서버를 다시 시작합니다. 화면은 영어로 돌아갑니다.
 
 ## 개발자 안내
 
-설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/project/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
+설계, 결정 기록, 번역 규칙, 진행 현황은 문서 저장소 <https://gitlab.way2java.net/jangb/sonar-l10n-ko-docs>에 있습니다. 이 문서에서 "문서 저장소의 ○○"는 그 저장소의 문서 이름이며, 문서 저장소의 목차에서 찾을 수 있습니다.
 
 ### 개발 환경 구성
 
-이 저장소는 문서 저장소 안에 클론해 작업합니다. 번역 대조표 도구가 문서 저장소의 참고 자료를 읽고, 작업 단위와 번역 규칙도 문서 저장소에 있기 때문입니다.
+이 저장소는 문서 저장소 안에 클론해 작업합니다. 작업 단위와 번역 규칙이 문서 저장소에 있기 때문입니다. 개발에 쓰는 참고 자료(참고 언어팩, 웹앱 클론, 다른 한국어 팩)는 문서 저장소가 아니라 이 저장소의 `local/reference/`에 둡니다. `local/`과 `.env`는 추적하지 않습니다.
 
 ```bash
-git clone https://gitlab.way2java.net/project/sonar-l10n-ko-docs.git
+git clone https://gitlab.way2java.net/jangb/sonar-l10n-ko-docs.git
 cd sonar-l10n-ko-docs
-git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
+git clone https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin.git
 ```
 
 | 요건 | 쓰는 곳 |
@@ -109,7 +117,7 @@ git clone https://gitlab.way2java.net/project/sonar-l10n-korean-plugin.git
 | `unzip`, `sha256sum`(또는 `shasum`) | Maven Wrapper가 Maven 배포본을 처음 내려받아 검증할 때. Maven은 설치하지 않습니다 |
 | Docker, `curl` | 컨테이너에 설치해 확인할 때 |
 | GitHub 접속 | 영문 번들 생성기가 웹앱 원본을 받을 때. 빌드에는 필요 없습니다 |
-| 일본어 팩, 러시아어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/cresco-sonar/sonar-l10n-ja`, `https://github.com/1c-syntax/sonar-l10n-ru`를 문서 저장소의 `local/reference/sonar-l10n-ja/`, `local/reference/sonar-l10n-ru/`에 클론합니다 |
+| 중국어 팩, 일본어 팩 클론 | 번역 대조표의 참고 열. `https://github.com/xuhuisheng/sonar-l10n-zh`, `https://github.com/cresco-sonar/sonar-l10n-ja`를 이 저장소의 `local/reference/sonar-l10n-zh/`, `local/reference/sonar-l10n-ja/`에 클론합니다 |
 
 `~/.m2/toolchains.xml`에는 JDK 25 항목이 있어야 합니다. `jdkHome`만 PC에 맞게 바꿉니다.
 
@@ -221,7 +229,7 @@ jar에 들어가는 파일입니다.
     scripts/translation-sheet.sh common -
     ```
 
-    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 일본어 팩과 러시아어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 문서 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
+    `단위 common: <키 수>키, 미번역 <수>키`가 나오고, 키마다 원문, 지금 번역, 중국어 팩과 일본어 팩의 번역을 나란히 둔 `target/translation-sheet-common.tsv`가 생겨야 합니다. 참고 팩은 이 저장소의 `local/reference/`에서 읽으며, 다른 자리에 두었으면 `L10N_REFERENCE_DIR`로 지정합니다.
 
 2. 대조표를 보며 단위의 값을 약 100키씩 묶어 번역합니다.
 
@@ -339,13 +347,13 @@ Docker와 `curl`이 필요합니다. 빌드한 jar를 공식 이미지의 컨테
 
 | 순서 | 하는 일 |
 | ---: | --- |
-| 1 | 릴리스 준비 브랜치에서 `pom.xml` 버전의 `-SNAPSHOT`을 떼고, `release-notes/template.md`를 복사해 `release-notes/v<버전>.md`를 씁니다. 템플릿의 헤더와 순서, 표의 행 이름은 바꾸지 않습니다 |
+| 1 | 릴리스 준비 브랜치에서 `pom.xml` 버전의 `-SNAPSHOT`을 떼고, `release-notes/template.md`를 복사해 `release-notes/v<버전>.md`를 씁니다. 템플릿의 헤더와 순서, 표의 행 이름은 바꾸지 않습니다. 내려받기 절의 서버 버전별 권장 릴리스 표에 이 릴리스의 행을 더합니다 |
 | 2 | 릴리스와 같은 조건으로 빌드하고, 지원 하한과 최신 버전의 공식 이미지에 설치해 확인합니다 |
 | 3 | `develop`에 병합한 뒤 `develop`을 `main`에 병합합니다 |
 | 4 | `main`에 `v<버전>` 태그를 붙여 푸시합니다. `release` 잡이 `scripts/release.sh`로 빌드하고, jar를 패키지 저장소에 올리고, 릴리스 노트를 본문으로 릴리스를 만듭니다 |
-| 5 | `develop`의 버전을 다음 재릴리스 버전(`<버전>`의 재릴리스 번호 + 1, `-SNAPSHOT`)으로 올립니다 |
+| 5 | 버전은 릴리스 뒤 다음 작업의 첫 병합 요청에서 다음 재릴리스 버전(`<버전>`의 재릴리스 번호 + 1, `-SNAPSHOT`)으로 올립니다. 기준 원본을 갱신할 때는 그 버전으로 바꿉니다 |
 
-러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 문서 저장소 `.env`의 `GITLAB_TOKEN`을 씁니다.
+러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`을 씁니다. `.env`는 이 저장소, 문서 저장소의 순서로 찾습니다.
 
 ## 라이선스
 

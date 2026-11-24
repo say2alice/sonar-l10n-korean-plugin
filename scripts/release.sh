@@ -6,7 +6,8 @@
 #
 # 태그와 pom.xml의 버전, 릴리스 노트 release-notes/<태그>.md를 확인하고, 미번역을 실패로 처리하는 빌드를 한 뒤,
 # jar를 Generic 패키지 저장소에 올리고 릴리스를 만듭니다. 태그는 원격에 먼저 올라가 있어야 합니다.
-# 인증은 CI에서는 CI_JOB_TOKEN을 씁니다. 로컬에서는 GITLAB_TOKEN을 쓰며, 없으면 문서 저장소의 .env에서 읽습니다.
+# 인증은 CI에서는 CI_JOB_TOKEN을 씁니다. 로컬에서는 GITLAB_TOKEN을 쓰며, 없으면 .env를 이 저장소, 이 저장소를 담은
+# 문서 저장소의 순서로 찾아 처음 찾은 파일 하나를 읽습니다.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -22,17 +23,22 @@ package=sonar-l10n-korean-plugin
 file="$package-$version.jar"
 
 api=${CI_API_V4_URL:-https://gitlab.way2java.net/api/v4}
-project=${CI_PROJECT_ID:-project%2Fsonar-l10n-korean-plugin}
+project=${CI_PROJECT_ID:-jangb%2Fsonar-l10n-korean-plugin}
 if [ -n "${CI_JOB_TOKEN:-}" ]; then
   auth="JOB-TOKEN: $CI_JOB_TOKEN"
 else
-  if [ -z "${GITLAB_TOKEN:-}" ] && [ -f ../.env ]; then
-    set -a
-    . ../.env
-    set +a
+  if [ -z "${GITLAB_TOKEN:-}" ]; then
+    for env_file in .env ../.env; do
+      if [ -f "$env_file" ]; then
+        set -a
+        . "$env_file"
+        set +a
+        break
+      fi
+    done
   fi
   if [ -z "${GITLAB_TOKEN:-}" ]; then
-    echo "GITLAB_TOKEN이 없습니다. 문서 저장소의 .env에 두거나 환경 변수로 넘기십시오" >&2
+    echo "GITLAB_TOKEN이 없습니다. .env(이 저장소 또는 문서 저장소)에 두거나 환경 변수로 넘기십시오" >&2
     exit 1
   fi
   auth="PRIVATE-TOKEN: $GITLAB_TOKEN"
@@ -68,4 +74,4 @@ curl -sS --fail-with-body --header "$auth" \
   --data-urlencode "link_type=package" \
   "$api/projects/$project/releases/$tag/assets/links" > /dev/null
 
-echo "완료: ${CI_PROJECT_URL:-https://gitlab.way2java.net/project/sonar-l10n-korean-plugin}/-/releases/$tag"
+echo "완료: ${CI_PROJECT_URL:-https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin}/-/releases/$tag"

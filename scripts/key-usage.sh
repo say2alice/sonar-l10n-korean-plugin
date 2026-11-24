@@ -5,7 +5,7 @@
 # 사용법: scripts/key-usage.sh <키>...
 # 예:     scripts/key-usage.sh status open
 #
-# 웹앱 클론은 L10N_REFERENCE_DIR(기본: 이 저장소를 담은 문서 저장소의 local/reference) 아래 sonarqube-webapp에서 읽습니다.
+# 웹앱 클론은 L10N_REFERENCE_DIR(기본: 이 저장소의 local/reference) 아래 sonarqube-webapp에서 읽습니다.
 # 번역 함수의 호출과 id 속성만 찾으므로, 키 이름을 조합해 쓰는 곳은 나오지 않습니다.
 set -euo pipefail
 
@@ -16,7 +16,7 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
-webapp=${L10N_REFERENCE_DIR:-../local/reference}/sonarqube-webapp
+webapp=${L10N_REFERENCE_DIR:-local/reference}/sonarqube-webapp
 if [ ! -d "$webapp/.git" ]; then
   echo "웹앱 클론이 없습니다: $webapp" >&2
   exit 1

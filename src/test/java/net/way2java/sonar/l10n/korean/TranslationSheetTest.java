@@ -20,7 +20,7 @@ import org.junit.jupiter.api.io.TempDir;
 
 class TranslationSheetTest {
 
-  private static final ReferencePack NO_PACK = new ReferencePack("ru", Map.of(), Map.of());
+  private static final ReferencePack NO_PACK = new ReferencePack("zh", Map.of(), Map.of());
 
   // FR-TR-02
   @Test
@@ -63,7 +63,7 @@ class TranslationSheetTest {
         Map.of("save", "保存", "close", "ウィンドウを閉じる"));
 
     List<Row> rows = TranslationSheet.rows(english, new LinkedHashMap<>(english), rules(dir, ""), Set.of("-"),
-        japanese, NO_PACK);
+        NO_PACK, japanese);
 
     assertThat(rows).filteredOn(row -> row.key().equals("save"))
         .singleElement().extracting(Row::japanese, Row::referenceNote).containsExactly("保存", "");
@@ -71,6 +71,21 @@ class TranslationSheetTest {
         .singleElement().extracting(Row::referenceNote).isEqualTo("ja");
     assertThat(rows).filteredOn(row -> row.key().equals("new_key"))
         .singleElement().extracting(Row::japanese, Row::referenceNote).containsExactly("", "");
+  }
+
+  // FR-TR-01
+  @Test
+  void placesChineseBeforeJapaneseInColumnsAndNote(@TempDir Path dir) throws IOException {
+    Map<String, String> english = Map.of("close", "Close");
+    ReferencePack chinese = new ReferencePack("zh", Map.of("close", "Close tab"), Map.of("close", "关闭标签"));
+    ReferencePack japanese = new ReferencePack("ja", Map.of(), Map.of("close", "閉じる"));
+
+    List<Row> rows = TranslationSheet.rows(english, new LinkedHashMap<>(english), rules(dir, ""), Set.of("-"),
+        chinese, japanese);
+
+    assertThat(rows).singleElement().extracting(Row::chinese, Row::japanese, Row::referenceNote)
+        .containsExactly("关闭标签", "閉じる", "zh,ja");
+    assertThat(TranslationSheet.HEADER).contains("\tchinese\tjapanese\t");
   }
 
   // FR-TR-02
