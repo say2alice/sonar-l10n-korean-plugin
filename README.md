@@ -5,7 +5,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 | 항목 | 내용 |
 | --- | --- |
 | 지원 범위 | Community Build 26.1 이상 |
-| 내려받기 | <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases> |
+| 내려받기 | <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases><br />GitHub 미러: <https://github.com/say2alice/sonar-l10n-korean-plugin/releases> |
 | 플러그인 키 | `l10nkorean`. 기존 한국어팩 `l10nko`와 다른 플러그인입니다 |
 
 플러그인을 설치해 쓰려면 [사용자 안내](#사용자-안내)를, 번역을 고치거나 플러그인을 개발하려면 [개발자 안내](#개발자-안내)를 읽습니다.
@@ -23,7 +23,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 ### 내려받기
 
-릴리스 페이지 <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
+릴리스 페이지 <https://gitlab.way2java.net/jangb/sonar-l10n-korean-plugin/-/releases>에서 jar를 내려받습니다. 로그인하지 않아도 받을 수 있습니다. GitHub 미러의 릴리스 페이지 <https://github.com/say2alice/sonar-l10n-korean-plugin/releases>에도 같은 릴리스 노트와 같은 jar가 있습니다. 릴리스마다 기준 원본과 지원 범위, 주의사항을 적은 릴리스 노트가 있습니다.
 
 | 항목 | 내용 |
 | --- | --- |
@@ -163,7 +163,8 @@ jar에 들어가는 것은 진입점 클래스 하나와 번들 파일입니다.
 │   ├── key-usage.sh                # 웹앱 원본에서 키의 쓰임 검색
 │   ├── korean-pack-compare.sh      # 다른 한국어 팩과 번역 비교
 │   ├── run-sonarqube.sh            # 로컬 SonarQube 컨테이너에 jar 설치
-│   └── release.sh                  # 릴리스 생성
+│   ├── release.sh                  # GitLab 릴리스 생성
+│   └── github-release.sh           # GitHub 미러 저장소에 같은 릴리스 생성
 ├── translation/
 │   ├── glossary.tsv                # 용어집
 │   ├── keep-english.txt            # 영문 그대로 두는 값의 규칙
@@ -350,10 +351,10 @@ Docker와 `curl`이 필요합니다. 빌드한 jar를 공식 이미지의 컨테
 | 1 | 릴리스 준비 브랜치에서 `pom.xml` 버전의 `-SNAPSHOT`을 떼고, `release-notes/template.md`를 복사해 `release-notes/v<버전>.md`를 씁니다. 템플릿의 헤더와 순서, 표의 행 이름은 바꾸지 않습니다. 내려받기 절의 서버 버전별 권장 릴리스 표에 이 릴리스의 행을 더합니다 |
 | 2 | 릴리스와 같은 조건으로 빌드하고, 지원 하한과 최신 버전의 공식 이미지에 설치해 확인합니다 |
 | 3 | `develop`에 병합한 뒤 `develop`을 `main`에 병합합니다 |
-| 4 | `main`에 `v<버전>` 태그를 붙여 푸시합니다. `release` 잡이 `scripts/release.sh`로 빌드하고, jar를 패키지 저장소에 올리고, 릴리스 노트를 본문으로 릴리스를 만듭니다 |
+| 4 | `main`에 `v<버전>` 태그를 붙여 푸시합니다. `release` 잡이 `scripts/release.sh`로 빌드하고, jar를 패키지 저장소에 올리고, 릴리스 노트를 본문으로 릴리스를 만듭니다. 이어서 `github-release` 잡이 `scripts/github-release.sh`로 GitHub 미러 저장소에 같은 본문과 같은 jar의 릴리스를 만듭니다 |
 | 5 | 버전은 릴리스 뒤 다음 작업의 첫 병합 요청에서 다음 재릴리스 버전(`<버전>`의 재릴리스 번호 + 1, `-SNAPSHOT`)으로 올립니다. 기준 원본을 갱신할 때는 그 버전으로 바꿉니다 |
 
-러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`을 씁니다. `.env`는 이 저장소, 문서 저장소의 순서로 찾습니다.
+러너를 쓸 수 없을 때는 같은 스크립트를 로컬에서 `scripts/release.sh`, `scripts/github-release.sh`의 순서로 실행합니다. 인증은 `.env`의 `GITLAB_TOKEN`, `GITHUB_TOKEN`을 씁니다. `.env`는 이 저장소, 문서 저장소의 순서로 찾습니다. `scripts/github-release.sh`에는 `jq`가 필요합니다.
 
 ## 라이선스
 
