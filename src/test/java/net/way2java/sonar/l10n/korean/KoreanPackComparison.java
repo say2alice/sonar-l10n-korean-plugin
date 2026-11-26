@@ -20,12 +20,12 @@ import net.way2java.sonar.l10n.korean.generator.BundleFile;
  * 번역을 마친 작업 단위를 다른 한국어 팩의 번역과 비교합니다.
  *
  * <p>번역 중에는 쓰지 않고 단위를 마친 뒤 낱말 선택을 검토할 때 씁니다(문서 저장소 번역 지침 §1). 빌드에는 들어가지 않으며
- * `scripts/korean-pack-compare.sh`가 실행합니다. 쓰는 법은 문서 저장소 번역 작업 단위 §3.2에 있습니다.
+ * `scripts/korean-pack-compare.sh`가 실행합니다. 쓰는 법은 DEVELOPMENT.md의 개발 작업 > 번역 절에 있습니다.
  */
 public final class KoreanPackComparison {
 
   /**
-   * 비교할 팩입니다. 같은 계열은 한 표로 셉니다. 저장소 목록은 문서 저장소 한국어 언어팩 선행 사례 §2에 있습니다.
+   * 비교할 팩입니다. 같은 계열은 한 표로 셉니다. 클론할 저장소 목록은 DEVELOPMENT.md의 개발 작업 > 번역 절에 있습니다.
    *
    * <p>계열 안에서는 앞에 둔 팩의 번역을 그 계열의 번역으로 봅니다. LeeYudok 팩은 creatinov 팩을 원본으로 표기합니다.
    */

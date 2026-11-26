@@ -167,7 +167,7 @@ key github
 | 파일 | 고치는 때 |
 | --- | --- |
 | `src/main/resources/org/sonar/l10n/l10nkorean_ko.properties` | 값을 번역할 때 |
-| `translation/glossary.tsv` | 새 용어를 정했을 때. 여러 화면에서 되풀이되는 기능 용어와 번역이 갈릴 수 있는 동작, 상태 낱말만 올립니다 |
+| `translation/glossary.tsv` | 새 용어를 정했을 때. 여러 화면에서 되풀이되는 기능 용어와 번역이 갈릴 수 있는 동작, 상태 낱말만 올립니다. 탭으로 구분한 열은 `english`, `korean`, `forbidden`(쓰지 않는 표기, 여럿이면 `\|`로 구분), `note`(쓰임과 근거)입니다 |
 | `translation/keep-english.txt` | 값 전체를 영문으로 두기로 했을 때 |
 
 번역 대조표는 키마다 원문, 지금 번역, 중국어 팩과 일본어 팩의 번역을 나란히 둔 TSV입니다. 참고 팩은 이 저장소의 `local/reference/`에 클론합니다. 없으면 참고 열만 비웁니다.
@@ -185,6 +185,15 @@ git clone --depth 1 https://github.com/cresco-sonar/sonar-l10n-ja.git local/refe
 
     `단위 issues: <키 수>키, 미번역 <수>키`가 나오고 `target/translation-sheet-issues.tsv`가 생겨야 합니다. 참고 팩의 번역은 참고용이며 원문에서 번역합니다.
 
+    | 열 | 내용 |
+    | --- | --- |
+    | `key` | 키. 번역 파일의 순서를 따릅니다 |
+    | `english` | 원문 |
+    | `korean` | 번역 파일의 지금 값 |
+    | `status` | `미번역`, `번역`, `영문 유지`. 빌드의 미번역 검사와 같은 규칙으로 판정합니다 |
+    | `chinese`, `japanese` | 참고 팩의 번역. 그 팩에 키가 없으면 비웁니다 |
+    | `reference_note` | 참고 팩이 옮긴 영문이 지금 원문과 다르면 그 팩을 적습니다. 그 번역은 옛 원문의 것입니다 |
+
 2. 뜻이 여럿인 짧은 낱말(예: `Open`, `Status`)은 웹앱 소스에서 그 키가 쓰이는 화면을 찾아 정합니다. 웹앱 저장소를 기준 태그(`pom.xml`의 `sonarqube.webapp.tag`)로 얕게 클론한 뒤 찾습니다.
 
     ```bash
@@ -201,6 +210,24 @@ git clone --depth 1 https://github.com/cresco-sonar/sonar-l10n-ja.git local/refe
     ```
 
     `BUILD SUCCESS`와 `미번역 키 <수> / <전체 키 수>`가 나와야 합니다. 미번역 목록은 `target/untranslated-keys.txt`에 있습니다.
+
+번역을 마친 접두사는 다른 한국어 팩과 비교해 낱말 선택을 검토할 수 있습니다. 번역하는 중에는 쓰지 않습니다. 비교할 팩 네 곳을 이 저장소의 `local/reference/korean-repos/` 아래 `<소유자>_<저장소>` 폴더에 클론합니다.
+
+```bash
+mkdir -p local/reference/korean-repos && cd local/reference/korean-repos
+for r in SonarQubeCommunity/sonar-l10n-ko ronnie-neo-sonarsource/sonar-l10n-ko-plugin HokiCho8701/sonar-l10n-ko LeeYudok/sonar-l10n-ko; do
+  git clone --depth 1 "https://github.com/$r.git" "${r/\//_}"
+done
+cd -
+```
+
+1. 대조표와 같은 인자로 비교합니다.
+
+    ```bash
+    scripts/korean-pack-compare.sh issues issues
+    ```
+
+    `단위 issues: <키 수>키. 비교표: <파일>` 다음에 팩마다 키 수와 같은 번역의 수가 나오고, 다른 계열 두 곳 이상이 같은 번역을 쓰는데 이 팩과 다른 키의 목록이 나와야 합니다. 전체 비교표는 `target/korean-pack-compare-issues.tsv`입니다. LeeYudok 팩은 creatinov 팩을 원본으로 표기하므로 둘은 한 계열로 셉니다.
 
 ### 기준 원본 갱신
 

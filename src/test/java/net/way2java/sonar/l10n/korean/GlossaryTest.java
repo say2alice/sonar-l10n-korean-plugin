@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.junit.jupiter.api.Test;
 
-/** 용어집의 금지 표기가 번역문과 상용 번들 한국어 파일에 없는지 봅니다. 용어집 형식은 문서 저장소 번역 지침 §6에 있습니다. */
+/** 용어집의 금지 표기가 번역문과 상용 번들 한국어 파일에 없는지 봅니다. 용어집의 열은 DEVELOPMENT.md의 개발 작업 > 번역 절에 있습니다. */
 class GlossaryTest {
 
   private static final List<String> HEADER = List.of("english", "korean", "forbidden", "note");

@@ -18,8 +18,8 @@ import net.way2java.sonar.l10n.korean.generator.BundleFile;
 /**
  * 번역 작업 단위의 키마다 원문, 지금 번역, 참고 팩(중국어 팩, 일본어 팩)의 번역을 나란히 둔 대조표를 만듭니다.
  *
- * <p>빌드에는 들어가지 않으며 `scripts/translation-sheet.sh`가 실행합니다. 열과 쓰는 법은 문서 저장소 번역 작업 단위 §3.1에
- * 있습니다.
+ * <p>빌드에는 들어가지 않으며 `scripts/translation-sheet.sh`가 실행합니다. 열과 쓰는 법은 DEVELOPMENT.md의 개발 작업 > 번역
+ * 절에 있습니다.
  */
 public final class TranslationSheet {
 
@@ -117,7 +117,7 @@ public final class TranslationSheet {
     return prefixes.contains(prefixOf(key));
   }
 
-  /** 키의 첫 `.` 앞부분입니다. 점이 없는 키는 {@link #NO_DOT}입니다(문서 저장소 번역 작업 단위 §1). */
+  /** 키의 첫 `.` 앞부분입니다. 점이 없는 키는 {@link #NO_DOT}입니다(DEVELOPMENT.md의 개발 작업 > 번역 절). */
   static String prefixOf(String key) {
     int dot = key.indexOf('.');
     return dot < 0 ? NO_DOT : key.substring(0, dot);
