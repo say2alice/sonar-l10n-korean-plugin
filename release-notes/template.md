@@ -3,6 +3,7 @@
 헤더, 헤더 순서, 표의 행 이름은 바꾸지 않습니다. 해당하는 내용이 없는 절은 지우지 않고 없다고 한 줄로 적습니다.
 절 안에는 그 릴리스에만 해당하는 설명을 더할 수 있습니다.
 수치는 scripts/english-bundle.sh diff <이전 태그> <새 태그>의 출력을 옮깁니다.
+맨 끝의 Summary in English는 Marketplace 검토자와 영어 사용자를 위한 요약입니다(문서 저장소 ADR-0023).
 절차: 문서 저장소 docs/operations/plugin-release.md §3
 -->
 SonarQube Community Build 한국어 언어팩 <버전>입니다. <이 릴리스의 성격을 한 문장으로>
@@ -43,3 +44,15 @@ SonarQube Community Build 한국어 언어팩 <버전>입니다. <이 릴리스�
 ## 설치
 
 저장소 README의 설치와 사용 절을 따릅니다.
+
+## Summary in English
+
+SonarQube Community Build Korean language pack <버전>. <이 릴리스의 성격을 영어 한 문장으로>
+
+| Item | Details |
+| --- | --- |
+| Baseline | `default.ts` of web app tag `<기준 태그>`: <번역한 키 수> of <키 수> messages translated into Korean |
+| Supported versions | Community Build <하한> and later. Recommended for Community Build <권장 서버 버전> |
+| Changes | <이 릴리스에서 바뀐 것을 영어로> |
+
+Do not install this pack together with other language packs, including the existing Korean pack (`l10nko`). Installation steps are in the repository README (`README.en.md`).
