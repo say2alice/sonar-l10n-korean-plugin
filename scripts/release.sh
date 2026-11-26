@@ -4,7 +4,8 @@
 # 사용법: scripts/release.sh v<버전>
 # 예:     scripts/release.sh v26.10.0
 #
-# 태그와 pom.xml의 버전, 릴리스 노트 release-notes/<태그>.md를 확인하고, 미번역을 실패로 처리하는 빌드를 한 뒤,
+# 태그와 pom.xml의 버전, 릴리스 노트 release-notes/<태그>.md, 태그 커밋의 SonarQube Cloud 품질 게이트(scripts/quality-gate.sh,
+# 문서 저장소 ADR-0023)를 확인하고, 미번역을 실패로 처리하는 빌드를 한 뒤,
 # jar를 Generic 패키지 저장소에 올리고 릴리스를 만듭니다. 태그는 원격에 먼저 올라가 있어야 합니다.
 # 인증은 CI에서는 CI_JOB_TOKEN을 씁니다. 로컬에서는 GITLAB_TOKEN을 쓰며, 없으면 .env를 이 저장소, 이 저장소를 담은
 # 문서 저장소의 순서로 찾아 처음 찾은 파일 하나를 읽습니다.
@@ -53,6 +54,8 @@ if [ ! -f "$notes" ]; then
   echo "릴리스 노트가 없습니다: $notes" >&2
   exit 1
 fi
+
+scripts/quality-gate.sh "$tag"
 
 echo "빌드: $version"
 ./mvnw -B clean verify -Dtranslation.requireComplete=true
