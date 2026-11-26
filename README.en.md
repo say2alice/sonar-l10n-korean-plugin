@@ -28,9 +28,8 @@ Download `sonar-l10n-korean-plugin-<version>.jar` from the release that matches 
 
 | Server (Community Build) | Release |
 | --- | --- |
-| 26.11 | `v26.11.0` |
-| 26.10 | `v26.10.0` |
-| 26.1 ~ 26.9 | `v26.10.0` |
+| 26.11 | `v26.11.1` |
+| 26.1 ~ 26.10 | `v26.10.1` |
 
 Other releases also install on 26.1 and later, but because they translate a different version's text, some text appears in English or as a different sentence.
 
@@ -38,20 +37,20 @@ Other releases also install on 26.1 and later, but because they translate a diff
 
 #### Docker container
 
-Install on a server running from the official Docker image. In the commands, `sonarqube` is the container name and `26.11.0` is the version to install. Replace both with your actual values.
+Install on a server running from the official Docker image. In the commands, `sonarqube` is the container name and `26.11.1` is the version to install. Replace both with your actual values.
 
 1. Download the jar.
 
     ```bash
-    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.11.0/sonar-l10n-korean-plugin-26.11.0.jar
+    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.11.1/sonar-l10n-korean-plugin-26.11.1.jar
     ```
 
-    `sonar-l10n-korean-plugin-26.11.0.jar` should appear in the current folder.
+    `sonar-l10n-korean-plugin-26.11.1.jar` should appear in the current folder.
 
 2. Copy the jar to the container's plugin folder.
 
     ```bash
-    docker cp sonar-l10n-korean-plugin-26.11.0.jar sonarqube:/opt/sonarqube/extensions/plugins/
+    docker cp sonar-l10n-korean-plugin-26.11.1.jar sonarqube:/opt/sonarqube/extensions/plugins/
     ```
 
     A line starting with `Successfully copied` should appear.
@@ -70,7 +69,7 @@ Install on a server running from the official Docker image. In the commands, `so
     docker logs sonarqube | grep "Korean Pack"
     ```
 
-    A line containing `Deploy Korean Pack / 26.11.0` should appear. If not, check the path in step 2 and the server version.
+    A line containing `Deploy Korean Pack / 26.11.1` should appear. If not, check the path in step 2 and the server version.
 
 5. The first time you log in as an administrator, a plugin installation risk consent screen appears. Accept it.
 

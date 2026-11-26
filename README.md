@@ -28,9 +28,8 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 | 서버(Community Build) | 릴리스 |
 | --- | --- |
-| 26.11 | `v26.11.0` |
-| 26.10 | `v26.10.0` |
-| 26.1 ~ 26.9 | `v26.10.0` |
+| 26.11 | `v26.11.1` |
+| 26.1 ~ 26.10 | `v26.10.1` |
 
 다른 릴리스도 26.1 이상에 설치되지만, 서버 버전과 번역 기준이 달라 일부 문구가 영문이나 다른 문장으로 나옵니다.
 
@@ -38,20 +37,20 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
 
 #### Docker 컨테이너
 
-공식 Docker 이미지로 실행 중인 서버에 설치합니다. 명령의 `sonarqube`는 컨테이너 이름, `26.11.0`은 설치할 버전입니다. 실제 값으로 바꿔 입력합니다.
+공식 Docker 이미지로 실행 중인 서버에 설치합니다. 명령의 `sonarqube`는 컨테이너 이름, `26.11.1`은 설치할 버전입니다. 실제 값으로 바꿔 입력합니다.
 
 1. jar를 내려받습니다.
 
     ```bash
-    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.11.0/sonar-l10n-korean-plugin-26.11.0.jar
+    curl -fLO https://gitlab.way2java.net/api/v4/projects/105/packages/generic/sonar-l10n-korean-plugin/26.11.1/sonar-l10n-korean-plugin-26.11.1.jar
     ```
 
-    현재 폴더에 `sonar-l10n-korean-plugin-26.11.0.jar`가 생겨야 합니다.
+    현재 폴더에 `sonar-l10n-korean-plugin-26.11.1.jar`가 생겨야 합니다.
 
 2. jar를 컨테이너의 플러그인 폴더에 복사합니다.
 
     ```bash
-    docker cp sonar-l10n-korean-plugin-26.11.0.jar sonarqube:/opt/sonarqube/extensions/plugins/
+    docker cp sonar-l10n-korean-plugin-26.11.1.jar sonarqube:/opt/sonarqube/extensions/plugins/
     ```
 
     `Successfully copied`로 시작하는 줄이 나와야 합니다.
@@ -70,7 +69,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
     docker logs sonarqube | grep "Korean Pack"
     ```
 
-    `Deploy Korean Pack / 26.11.0`이 든 줄이 나와야 합니다. 나오지 않으면 2단계의 경로와 서버 버전을 확인합니다.
+    `Deploy Korean Pack / 26.11.1`이 든 줄이 나와야 합니다. 나오지 않으면 2단계의 경로와 서버 버전을 확인합니다.
 
 5. 관리자로 처음 로그인하면 플러그인 설치 위험 동의 화면이 나옵니다. 동의합니다.
 
