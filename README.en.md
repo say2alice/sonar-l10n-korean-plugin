@@ -53,7 +53,7 @@ Install on a server running from the official Docker image. In the commands, `so
     docker cp sonar-l10n-korean-plugin-26.11.1.jar sonarqube:/opt/sonarqube/extensions/plugins/
     ```
 
-    A line starting with `Successfully copied` should appear.
+    No output means success. When you type the command in a terminal, a line starting with `Successfully copied` appears.
 
 3. Restart the container.
 

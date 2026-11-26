@@ -53,7 +53,7 @@ SonarQube Community Build의 웹 화면을 한국어로 표시하는 언어팩 �
     docker cp sonar-l10n-korean-plugin-26.11.1.jar sonarqube:/opt/sonarqube/extensions/plugins/
     ```
 
-    `Successfully copied`로 시작하는 줄이 나와야 합니다.
+    아무것도 출력되지 않으면 됩니다. 터미널에서 직접 입력하면 `Successfully copied`로 시작하는 줄이 나옵니다.
 
 3. 컨테이너를 다시 시작합니다.
 
