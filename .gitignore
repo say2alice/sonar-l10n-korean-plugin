@@ -9,6 +9,10 @@ target/
 .project
 .settings/
 
+# 이 저장소에만 필요한 환경과 참고 자료 (Home README.md 의 저장소 구성)
+.env
+/local/
+
 # OS
 .DS_Store
 Thumbs.db
