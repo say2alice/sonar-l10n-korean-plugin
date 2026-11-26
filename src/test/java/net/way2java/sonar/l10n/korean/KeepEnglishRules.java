@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
- * 번역하지 않고 영문 그대로 두는 값의 규칙입니다. 형식은 문서 저장소 번역 지침 §5에 있습니다.
+ * 번역하지 않고 영문 그대로 두는 값의 규칙입니다. 형식은 DEVELOPMENT.md의 번역 지침 > 영문으로 두는 값 절에 있습니다.
  */
 final class KeepEnglishRules {
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 번역을 마친 작업 단위를 다른 한국어 팩과 비교해 target/korean-pack-compare-<단위>.tsv로 씁니다.
-# 낱말 선택을 검토할 때만 쓰며, 쓰는 법은 문서 저장소 번역 작업 단위 §3.2에 있습니다.
+# 낱말 선택을 검토할 때만 쓰며, 쓰는 법과 비교할 팩을 받는 방법은 DEVELOPMENT.md의 개발 작업 > 번역 절에 있습니다.
 #
 # 사용법: scripts/korean-pack-compare.sh <단위> <접두사>...
 # 예:     scripts/korean-pack-compare.sh common -

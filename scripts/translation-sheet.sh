@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 번역 작업 단위의 번역 대조표를 target/translation-sheet-<단위>.tsv로 만듭니다.
-# 열과 쓰는 법은 문서 저장소 번역 작업 단위 §3.1에 있습니다.
+# 열과 쓰는 법은 DEVELOPMENT.md의 개발 작업 > 번역 절에 있습니다.
 #
 # 사용법: scripts/translation-sheet.sh <단위> <접두사>...
 # 예:     scripts/translation-sheet.sh common -
