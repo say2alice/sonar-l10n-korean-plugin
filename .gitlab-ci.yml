@@ -32,13 +32,25 @@ variables:
 verify:
   extends: .maven
   # 미번역 키는 릴리스(main 병합) 때만 실패로 처리합니다(문서 저장소 ADR-0014)
+  # 빌드와 검사에 영향을 주는 경로가 바뀐 때만 실행합니다. README 같은 문서만 바뀐 푸시와 병합 요청에서는
+  # 파이프라인이 생기지 않습니다. 빌드가 새 경로를 읽게 되면 아래 목록에 더합니다(문서 저장소 개발환경 설계 §6)
   rules:
     - if: $CI_COMMIT_TAG
       when: never
     - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+      changes: &build-inputs
+        - pom.xml
+        - mvnw
+        - mvnw.cmd
+        - .mvn/**/*
+        - .gitattributes
+        - .gitlab-ci.yml
+        - src/**/*
+        - translation/**/*
+        - scripts/**/*
       variables:
         REQUIRE_COMPLETE: "true"
-    - when: on_success
+    - changes: *build-inputs
   variables:
     REQUIRE_COMPLETE: "false"
   script:
